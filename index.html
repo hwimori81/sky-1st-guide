@@ -1,0 +1,4073 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="《영웅전설 하늘의 궤적 the 1st》 (Switch 2 / 리메이크) 서장~종장 395 BP 만점 차트, 시한부 수집품, 캐릭터·아츠 계산기, 보스·샤이닝 폼 100% 인터랙티브 공략집" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="《영웅전설 하늘의 궤적 the 1st》 100% 퍼펙트 인터랙티브 공략집" />
+  <meta property="og:description" content="서장~종장 395 BP 만점 루트 · 카넬리아 11권 · 보물상자 · 아츠 계산기 · 샤이닝 폼 · 준유격사 1급 실시간 체크리스트" />
+  <title>《영웅전설 하늘의 궤적 the 1st》 100% 퍼펙트 인터랙티브 공략집</title>
+  <style>
+    :root {
+      --bg-primary: #0f172a;
+      --bg-secondary: #1e293b;
+      --bg-card: #1e293b;
+      --bg-card-hover: #26354d;
+      --bg-accent: #0f2942;
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --border-color: #334155;
+      --brand-gold: #f59e0b;
+      --brand-gold-soft: rgba(245, 158, 11, 0.15);
+      --brand-sky: #38bdf8;
+      --brand-sky-soft: rgba(56, 189, 248, 0.15);
+      --brand-emerald: #10b981;
+      --brand-emerald-soft: rgba(16, 185, 129, 0.15);
+      --brand-rose: #f43f5e;
+      --brand-rose-soft: rgba(244, 63, 94, 0.15);
+      --brand-purple: #a855f7;
+      --brand-purple-soft: rgba(168, 85, 247, 0.15);
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+      --radius: 12px;
+    }
+
+    [data-theme="light"] {
+      --bg-primary: #f1f5f9;
+      --bg-secondary: #ffffff;
+      --bg-card: #ffffff;
+      --bg-card-hover: #f8fafc;
+      --bg-accent: #e0f2fe;
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #94a3b8;
+      --border-color: #cbd5e1;
+      --brand-gold: #d97706;
+      --brand-gold-soft: rgba(217, 119, 6, 0.12);
+      --brand-sky: #0284c7;
+      --brand-sky-soft: rgba(2, 132, 199, 0.12);
+      --brand-emerald: #059669;
+      --brand-emerald-soft: rgba(5, 150, 105, 0.12);
+      --brand-rose: #e11d48;
+      --brand-rose-soft: rgba(225, 29, 72, 0.12);
+      --brand-purple: #7e22ce;
+      --brand-purple-soft: rgba(126, 34, 206, 0.12);
+      --shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', '맑은 고딕', sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      padding-bottom: 80px;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    /* Header & Hero */
+    .app-header {
+      background: linear-gradient(135deg, #0c192c 0%, #172a45 50%, #1e3a5f 100%);
+      border-bottom: 1px solid var(--border-color);
+      padding: 24px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+
+    [data-theme="light"] .app-header {
+      background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .brand-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-badge {
+      background: var(--brand-gold);
+      color: #000;
+      font-weight: 800;
+      font-size: 0.78rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      letter-spacing: 0.5px;
+    }
+
+    .brand-title h1 {
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+      padding: 7px 13px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+
+    .btn:hover {
+      border-color: var(--brand-sky);
+      transform: translateY(-1px);
+    }
+
+    .btn-danger:hover {
+      border-color: var(--brand-rose);
+      color: var(--brand-rose);
+    }
+
+    /* Dashboard Grid */
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 12px;
+    }
+
+    .stat-card {
+      background: rgba(15, 23, 42, 0.55);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 12px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    [data-theme="light"] .stat-card {
+      background: rgba(255, 255, 255, 0.85);
+    }
+
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .stat-value {
+      font-size: 1.25rem;
+      font-weight: 800;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .stat-sub {
+      font-size: 0.76rem;
+      color: var(--text-secondary);
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 7px;
+      background: rgba(148, 163, 184, 0.2);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-top: 2px;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--brand-sky), var(--brand-emerald));
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .progress-fill.gold {
+      background: linear-gradient(90deg, #f59e0b, #fbbf24);
+    }
+
+    /* Navigation Tabs & Controls */
+    .controls-section {
+      margin-top: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .chapter-tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+
+    .chapter-tab {
+      background: var(--bg-card);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-color);
+      padding: 11px 18px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .chapter-tab:hover {
+      color: var(--text-primary);
+      border-color: var(--brand-sky);
+    }
+
+    .chapter-tab.active {
+      background: var(--brand-sky-soft);
+      color: var(--brand-sky);
+      border-color: var(--brand-sky);
+      box-shadow: 0 0 0 1px var(--brand-sky);
+    }
+
+    .tab-progress-pill {
+      font-size: 0.73rem;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: rgba(148, 163, 184, 0.18);
+      color: var(--text-primary);
+    }
+
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--bg-card);
+      padding: 12px 16px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border-color);
+    }
+
+    .filter-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .chip {
+      background: transparent;
+      color: var(--text-secondary);
+      border: 1px solid var(--border-color);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .chip:hover {
+      color: var(--text-primary);
+      border-color: var(--text-secondary);
+    }
+
+    .chip.active {
+      background: var(--brand-gold-soft);
+      color: var(--brand-gold);
+      border-color: var(--brand-gold);
+    }
+
+    .search-box {
+      position: relative;
+      flex: 1;
+      min-width: 240px;
+      max-width: 340px;
+    }
+
+    .search-box input {
+      width: 100%;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      outline: none;
+    }
+
+    .search-box input:focus {
+      border-color: var(--brand-sky);
+    }
+
+    /* Main Content Panels */
+    .chapter-panel {
+      display: none;
+      margin-top: 20px;
+      animation: fadeIn 0.2s ease;
+    }
+
+    .chapter-panel.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Banner Alerts */
+    .alert-banner {
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      border-left: 4px solid var(--brand-gold);
+      background: var(--brand-gold-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .alert-banner.danger {
+      border-left-color: var(--brand-rose);
+      background: var(--brand-rose-soft);
+    }
+
+    .alert-banner.info {
+      border-left-color: var(--brand-sky);
+      background: var(--brand-sky-soft);
+    }
+
+    .alert-title {
+      font-weight: 800;
+      font-size: 0.96rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Timeline Step Section */
+    .step-section {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      margin-bottom: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .step-header {
+      padding: 16px 20px;
+      background: rgba(56, 189, 248, 0.06);
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .step-header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .step-number {
+      background: var(--brand-sky);
+      color: #0f172a;
+      font-weight: 800;
+      font-size: 0.78rem;
+      padding: 3px 10px;
+      border-radius: 6px;
+    }
+
+    .step-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+
+    .step-body {
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .step-section.collapsed .step-body {
+      display: none;
+    }
+
+    /* Checkable Item Row */
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-primary);
+      transition: all 0.15s ease;
+      cursor: pointer;
+    }
+
+    .check-item:hover {
+      border-color: var(--brand-sky);
+      background: var(--bg-card-hover);
+    }
+
+    .check-item.completed {
+      opacity: 0.62;
+      background: rgba(16, 185, 129, 0.05);
+      border-color: rgba(16, 185, 129, 0.35);
+    }
+
+    .check-item.completed .item-title {
+      text-decoration: line-through;
+      color: var(--text-secondary);
+    }
+
+    .check-box {
+      width: 22px;
+      height: 22px;
+      min-width: 22px;
+      border-radius: 6px;
+      border: 2px solid var(--text-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+      transition: all 0.15s ease;
+      background: transparent;
+      color: transparent;
+      font-size: 0.85rem;
+      font-weight: 900;
+    }
+
+    .check-item.completed .check-box {
+      background: var(--brand-emerald);
+      border-color: var(--brand-emerald);
+      color: #fff;
+    }
+
+    .item-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .item-header {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .item-title {
+      font-weight: 700;
+      font-size: 0.98rem;
+    }
+
+    .badge {
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .badge-main { background: var(--brand-sky-soft); color: var(--brand-sky); border: 1px solid rgba(56, 189, 248, 0.3); }
+    .badge-sub { background: var(--brand-emerald-soft); color: var(--brand-emerald); border: 1px solid rgba(16, 185, 129, 0.3); }
+    .badge-hidden { background: var(--brand-purple-soft); color: var(--brand-purple); border: 1px solid rgba(168, 85, 247, 0.3); }
+    .badge-bp { background: var(--brand-gold-soft); color: var(--brand-gold); border: 1px solid rgba(245, 158, 11, 0.4); }
+    .badge-missable { background: var(--brand-rose-soft); color: var(--brand-rose); border: 1px solid rgba(244, 63, 94, 0.4); }
+    .badge-book { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(192, 132, 252, 0.35); }
+    .badge-recipe { background: rgba(251, 146, 60, 0.15); color: #fb923c; border: 1px solid rgba(251, 146, 60, 0.35); }
+    .badge-chest { background: rgba(56, 189, 248, 0.12); color: #7dd3fc; border: 1px solid rgba(125, 211, 252, 0.3); }
+
+    .item-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .choice-box {
+      background: rgba(245, 158, 11, 0.08);
+      border-left: 3px solid var(--brand-gold);
+      padding: 8px 12px;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.87rem;
+      margin-top: 4px;
+      color: var(--text-primary);
+    }
+
+    .choice-box strong {
+      color: var(--brand-gold);
+    }
+
+    .deadline-text {
+      font-size: 0.82rem;
+      color: var(--brand-rose);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Tables */
+    .data-table-wrapper {
+      overflow-x: auto;
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+      margin-bottom: 20px;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      background: var(--bg-card);
+    }
+
+    .data-table th, .data-table td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .data-table th {
+      background: rgba(56, 189, 248, 0.08);
+      font-weight: 700;
+      color: var(--brand-sky);
+      white-space: nowrap;
+    }
+
+    .data-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Chest Grid */
+    .chest-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    /* Character Cards Grid */
+    .char-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .char-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: var(--shadow);
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+
+    .char-card:hover {
+      border-color: var(--brand-sky);
+      transform: translateY(-2px);
+    }
+
+    .char-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 12px;
+    }
+
+    .char-name {
+      font-size: 1.18rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .char-role {
+      font-size: 0.83rem;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+
+    .tier-badge {
+      font-weight: 900;
+      font-size: 0.82rem;
+      padding: 4px 10px;
+      border-radius: 8px;
+      white-space: nowrap;
+    }
+
+    .tier-sp { background: linear-gradient(135deg, #f59e0b, #ef4444); color: #fff; }
+    .tier-s { background: var(--brand-gold-soft); color: var(--brand-gold); border: 1px solid var(--brand-gold); }
+    .tier-a { background: var(--brand-sky-soft); color: var(--brand-sky); border: 1px solid var(--brand-sky); }
+    .tier-b { background: var(--brand-emerald-soft); color: var(--brand-emerald); border: 1px solid var(--brand-emerald); }
+
+    .char-meta-box {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 0.86rem;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .char-meta-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .char-section-title {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--brand-sky);
+      margin-top: 2px;
+    }
+
+    .char-list {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      padding-left: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .char-list strong {
+      color: var(--text-primary);
+    }
+
+    @media (max-width: 768px) {
+      .brand-title h1 { font-size: 1.15rem; }
+      .step-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .search-box { max-width: 100%; }
+      .char-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Header & Real-time Tracker -->
+  <header class="app-header">
+    <div class="container">
+      <div class="header-top">
+        <div class="brand-title">
+          <span class="brand-badge">SWITCH 2 / REMAKE 완벽 대응</span>
+          <h1>《영웅전설 하늘의 궤적 the 1st》 100% 퍼펙트 공략집</h1>
+        </div>
+        <div class="header-actions">
+          <button class="btn" id="headerIncompleteBtn" onclick="toggleIncompleteFilter()">⏳ 미완료만 보기: OFF</button>
+          <button class="btn" onclick="toggleBackupPanel()">💾 백업/복원 (PC↔모바일)</button>
+          <button class="btn" id="themeToggleBtn" onclick="toggleTheme()">🌙 다크/라이트 전환</button>
+          <button class="btn" onclick="expandAllSteps(true)">📂 모두 펼치기</button>
+          <button class="btn" onclick="expandAllSteps(false)">📁 모두 접기</button>
+          <button class="btn btn-danger" onclick="resetProgress()">🔄 체크 초기화</button>
+        </div>
+      </div>
+
+      <!-- Collapsible Backup / Restore Drawer -->
+      <div id="backupDrawer" style="display:none; background:rgba(15, 23, 42, 0.78); border:1px solid var(--brand-sky); border-radius:10px; padding:12px 16px; margin-bottom:14px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
+          <strong style="color:var(--brand-sky); font-size:0.9rem;">💾 진행도 동기화 코드 & JSON 파일 백업/복원 (PC ↔ 스마트폰/태블릿 연동)</strong>
+          <button class="btn" style="padding:3px 10px; font-size:0.78rem;" onclick="toggleBackupPanel()">닫기 ✕</button>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:8px; align-items:center;">
+          <input type="text" id="syncCodeInput" placeholder="여기에 동기화 코드를 붙여넣거나 [코드 생성/복사]를 누르세요" style="flex:1; min-width:240px; background:var(--bg-primary); color:var(--text-primary); border:1px solid var(--border-color); padding:7px 12px; border-radius:8px; font-size:0.84rem;" />
+          <button class="btn" style="border-color:var(--brand-emerald); color:var(--brand-emerald);" onclick="copySyncCode()">📋 현재 진행도 코드 복사</button>
+          <button class="btn" style="border-color:var(--brand-gold); color:var(--brand-gold);" onclick="restoreSyncCode()">📥 코드로 복원하기</button>
+          <button class="btn" onclick="downloadBackupJson()">⬇️ JSON 파일 저장</button>
+          <label class="btn" style="margin:0; cursor:pointer;">
+            ⬆️ JSON 파일 불러오기
+            <input type="file" accept=".json" style="display:none;" onchange="uploadBackupJson(event)" />
+          </label>
+        </div>
+        <div id="backupStatusMsg" style="font-size:0.78rem; color:var(--brand-emerald); margin-top:6px; display:none;"></div>
+      </div>
+
+      <div class="dashboard-grid">
+        <div class="stat-card">
+          <div class="stat-label">
+            <span>현재 탭 진행률</span>
+            <span id="currentTabCountText">0 / 0 완료</span>
+          </div>
+          <div class="stat-value" id="currentTabPercentText">0%</div>
+          <div class="progress-track">
+            <div class="progress-fill" id="currentTabProgressBar"></div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-label">
+            <span>서장 획득 BP (만점 53 BP)</span>
+            <span class="badge badge-bp">기본 41 + 보너스 12</span>
+          </div>
+          <div class="stat-value">
+            <span id="prologueBpText" style="color: var(--brand-gold);">0</span>
+            <span style="font-size: 0.9rem; color: var(--text-secondary);">/ 53 BP</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill gold" id="prologueBpBar"></div>
+          </div>
+          <div class="stat-sub" id="prologueBpNote">미스트발트 보스전 직전 최대: 42 BP</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-label">
+            <span>전체 누적 BP & 예상 유격사 랭크</span>
+            <span id="nextRankText">다음 승급: 10 BP</span>
+          </div>
+          <div class="stat-value">
+            <span id="totalBpText" style="color: var(--brand-sky);">0 BP</span>
+            <span id="currentRankBadge" class="badge badge-main">준유격사 9급</span>
+          </div>
+          <div class="stat-sub" id="rankRewardPreview">9급 시작 (1급 달성 목표: 총 350+ BP / 만점 395 BP)</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-label">
+            <span>시한부 핵심 수집 현황</span>
+            <span>최강 무기 & 트로피</span>
+          </div>
+          <div class="stat-value" style="font-size: 1.02rem; gap: 10px; flex-wrap: wrap;">
+            <span>📕 카넬리아: <strong id="carneliaCount" style="color:#c084fc;">0/11</strong></span>
+            <span>📦 서장 상자: <strong id="chestCount" style="color:#38bdf8;">0/32</strong></span>
+          </div>
+          <div class="stat-sub">🍳 서장 레시피: <strong id="recipeCount">0/8</strong> | 📰 리벨 통신: <strong id="liberlNewsCount">0/9</strong></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container">
+    <!-- Chapter Navigation & Filter Controls -->
+    <section class="controls-section">
+      <div class="chapter-tabs" id="chapterTabs">
+        <button class="chapter-tab active" data-tab="prologue" onclick="switchTab('prologue')">
+          🧭 서장: 롤렌트 (초정밀)
+          <span class="tab-progress-pill" id="pill-prologue">0%</span>
+        </button>
+        <button class="chapter-tab" data-tab="ch1" onclick="switchTab('ch1')">
+          ✈️ 제1장: 보스 (초정밀)
+          <span class="tab-progress-pill" id="pill-ch1">0%</span>
+        </button>
+        <button class="chapter-tab" data-tab="ch2" onclick="switchTab('ch2')">
+          🌊 제2장: 루안 (초정밀)
+          <span class="tab-progress-pill" id="pill-ch2">0%</span>
+        </button>
+        <button class="chapter-tab" data-tab="ch3" onclick="switchTab('ch3')">
+          ⚙️ 제3장: 차이스 (초정밀)
+          <span class="tab-progress-pill" id="pill-ch3">0%</span>
+        </button>
+        <button class="chapter-tab" data-tab="finale" onclick="switchTab('finale')">
+          👑 종장: 그란셀 (초정밀)
+          <span class="tab-progress-pill" id="pill-finale">0%</span>
+        </button>
+        <button class="chapter-tab" data-tab="characters" onclick="switchTab('characters')">
+          ⚔️ 캐릭터 & 쿼츠 공략
+        </button>
+        <button class="chapter-tab" data-tab="calculator" onclick="switchTab('calculator')">
+          🔮 아츠·쿼츠 계산기
+        </button>
+        <button class="chapter-tab" data-tab="bosses" onclick="switchTab('bosses')">
+          👹 보스 & 수배 마수
+        </button>
+        <button class="chapter-tab" data-tab="compendium" onclick="switchTab('compendium')">
+          📚 요리·트로피·2nd 연동
+          <span class="tab-progress-pill" id="pill-compendium">0%</span>
+        </button>
+        <button class="chapter-tab" data-tab="systems" onclick="switchTab('systems')">
+          🎖️ 랭크·샤이닝폼·장비·시스템
+        </button>
+      </div>
+
+      <div class="filter-bar">
+        <div class="filter-chips">
+          <button class="chip active" data-filter="all" onclick="setFilter('all')">전체 보기</button>
+          <button class="chip" data-filter="incomplete" onclick="setFilter('incomplete')">⏳ 미완료만 보기</button>
+          <button class="chip" data-filter="bp" onclick="setFilter('bp')">🔥 BP 획득/선택지</button>
+          <button class="chip" data-filter="missable" onclick="setFilter('missable')">⚠️ 시한부/놓침 주의</button>
+          <button class="chip" data-filter="book" onclick="setFilter('book')">📕 서적(카넬리아/통신)</button>
+          <button class="chip" data-filter="recipe" onclick="setFilter('recipe')">🍳 요리 레시피</button>
+          <button class="chip" data-filter="chest" onclick="setFilter('chest')">📦 보물상자</button>
+        </div>
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="퀘스트, 선택지, 아이템, 지역명 검색..." oninput="applyFilters()" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         PANEL 1: 서장 (PROLOGUE) 초정밀 스텝업 공략
+         ========================================== -->
+    <div id="panel-prologue" class="chapter-panel active">
+      <div class="alert-banner info">
+        <div class="alert-title">💡 《하늘의 궤적 the 1st》 리메이크 & 스위치 2 핵심 팁</div>
+        <div style="font-size: 0.88rem; color: var(--text-secondary);">
+          • <strong>보물상자 잔여 확인:</strong> 화면 <strong>좌측 하단 미니맵/범례에 보물상자 아이콘</strong>이 표시됩니다. 현재 맵의 상자를 모두 열면 아이콘이 사라지므로 맵 이동 전 반드시 확인하세요.<br/>
+          • <strong>서장 퍼펙트 목표:</strong> 메인 퀘스트 6종 + 서브 의뢰 8종 = 총 14종 (기본 41 BP + 보너스 선택지 12 BP = <strong>최대 53 BP</strong>) / 서장 지역 보물상자 <strong>32개</strong> / 서적 <strong>카넬리아 1·2권 & 리벨 통신 1호</strong>.
+        </div>
+      </div>
+
+      <!-- STEP 1 -->
+      <div class="step-section">
+        <div class="step-header" onclick="toggleStep(this)">
+          <div class="step-header-left">
+            <span class="step-number">STEP 1</span>
+            <span class="step-title">브라이트 가 출발 ~ 유격사 협회 실지 연수 (롤렌트 지하수로)</span>
+          </div>
+          <span style="font-size:0.85rem; color:var(--text-secondary);">클릭하여 접기/펼치기 ▾</span>
+        </div>
+        <div class="step-body">
+          <div class="check-item" data-id="p_recipe_1" data-tags="recipe">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-recipe">🍳 요리 레시피 #1</span>
+                <span class="item-title">[대표 요리] 메이플 쿠키 & [어레인지] 활력 스무디</span>
+              </div>
+              <div class="item-desc">서장 시작 시 기본 습득되어 있거나 브라이트 가/리논 종합상점에서 확인 가능. 요리 수첩에서 직접 요리하면 확률적으로 어레인지 요리(활력 스무디)가 파생됩니다.</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="p_main_1" data-tags="bp" data-bp="1" data-prologue-bp="1">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-main">메인 퀘스트 #1</span>
+                <span class="badge badge-bp">BP +1</span>
+                <span class="item-title">실지 연수·보물 회수 (롤렌트 지하수로)</span>
+              </div>
+              <div class="item-desc">롤렌트 유격사 협회에서 아이나에게 등록 후 멜더스 공방에서 오브먼트 세팅(`행동력 1`, `공격 1`) ➔ 지하수로에 진입해 가장 안쪽의 빛나는 상자에서 작은 상자를 회수하고 실기 전투 튜토리얼을 완료합니다.</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="p_chest_sewer" data-tags="chest" data-chest="4">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-chest">📦 보물상자 (4개)</span>
+                <span class="item-title">롤렌트 지하수로 보물상자 4개 전수 회수</span>
+              </div>
+              <div class="item-desc">
+                ① 입구 계단 내려간 후 첫 갈림길 서쪽 막다른 길 (티아의 약)<br/>
+                ② 북쪽 수로 다리 건너기 전 동쪽 구석 (EP 차지 I)<br/>
+                ③ 북쪽 수로 서쪽 라인 안쪽 구석 (소생약)<br/>
+                ④ 가장 안쪽 연수 목표 상자 (연수용 보물 상자 — 퀘스트 아이템)
+              </div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="p_book_diary" data-tags="book">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-book">📕 서적</span>
+                <span class="item-title">《루크의 일기》 자동 획득</span>
+              </div>
+              <div class="item-desc">실지 연수 완료 후 이벤트 진행 중 파텔·루크 일행과 관련된 이벤트에서 자동 입수됩니다.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="step-section">
+        <div class="step-header" onclick="toggleStep(this)">
+          <div class="step-header-left">
+            <span class="step-number">STEP 2</span>
+            <span class="step-title">시내 초기 수집 & 비취의 탑 (아이들 보호)</span>
+          </div>
+          <span style="font-size:0.85rem; color:var(--text-secondary);">클릭하여 접기/펼치기 ▾</span>
+        </div>
+        <div class="step-body">
+          <div class="alert-banner danger" style="margin-bottom:4px;">
+            <div class="alert-title">⚠️ 시한부 서적 & 레시피 먼저 챙기기!</div>
+            <div style="font-size: 0.86rem;">비취의 탑(에스라스의 탑)으로 출발하기 전에 롤렌트 시내를 한 바퀴 돌며 서적과 선술집 요리를 먼저 입수하세요.</div>
+          </div>
+
+          <div class="check-item" data-id="p_book_carnelia1" data-tags="book missable" data-carnelia="1">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-book">📕 카넬리아 제1권</span>
+                <span class="badge badge-missable">⚠️ 시한부 필수</span>
+                <span class="item-title">《카넬리아》 1권 입수 — 롤렌트 시내 민가(레토라)</span>
+              </div>
+              <div class="item-desc">롤렌트 주점 「아벤트」 뒤편 공동주택(민가) 2층에 있는 <strong>레토라(레틀러)</strong>에게 말을 걸면 《카넬리아》 1권을 받습니다. (전 11권 수집 시 종장에서 최강 무기 교환)</div>
+              <div class="deadline-text">⏰ 기한: 서장 진행 중 시내 체류 시점 (빠를수록 안전)</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="p_book_news1" data-tags="book missable" data-news="1">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-book">📰 리벨 통신 제1호</span>
+                <span class="badge badge-missable">⚠️ 서장 한정</span>
+                <span class="item-title">《리벨 통신 제1호》 구매 — 리논 종합상점 (100 미라)</span>
+              </div>
+              <div class="item-desc">롤렌트 시내 「리논 종합상점」에서 판매합니다. 1장으로 넘어가면 구매할 수 없으므로 반드시 구입 후 한 번 읽으세요.</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="p_recipe_avent" data-tags="recipe" data-recipe="4">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-recipe">🍳 요리 레시피 #2~#5</span>
+                <span class="item-title">주점 「아벤트」 판매 요리 4종 구매 및 레시피 등록</span>
+              </div>
+              <div class="item-desc">
+                롤렌트 주점 「아벤트」에서 아래 메뉴를 구매(시식)하여 수첩에 등록합니다:<br/>
+                • <strong>프라이드 포테이토</strong> / <strong>플라워리 소다</strong> / <strong>카마인 아이</strong> / <strong>꿈꾸는 등딱지 구이</strong><br/>
+                • <em>특제/어레인지 파생:</em> 직접 요리 시도 시 <strong>외곬 파스타</strong> 등 습득 가능.
+              </div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="p_chest_milch1" data-tags="chest" data-chest="6">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-chest">📦 보물상자 (6개)</span>
+                <span class="item-title">미르히 가도 보물상자 6개 회수 (마수 상자 포함)</span>
+              </div>
+              <div class="item-desc">
+                롤렌트 서쪽 출구 ➔ 베르테 다리 관문까지 이어지는 미르히 가도 전 구간의 상자 6개를 회수합니다.<br/>
+                • 1맵(롤렌트 측): 비취의 탑 갈림길 부근 및 도로변 상자 2개<br/>
+                • 2맵(퍼젤 농원 갈림길 ~ 베르테 관문 측): 북쪽 언덕길 마수 상자(가드 타이츠 등) 포함 4개 — 좌측 하단 상자 아이콘 소멸 확인!
+              </div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="p_chest_tower" data-tags="chest" data-chest="8">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-chest">📦 보물상자 (8개)</span>
+                <span class="item-title">비취의 탑 (에스라스의 탑) 보물상자 8개 전수 회수</span>
+              </div>
+              <div class="item-desc">
+                미르히 가도 1맵 북쪽 길로 진입하는 비취의 탑 내부(1층~옥상 직전 5층)에 총 8개의 상자가 있습니다.<br/>
+                • 2층(2개), 3층(2개: 마수 상자 포함), 4층(3개), 5층(1개). 옥상 이벤트 전 모든 층의 좌측 하단 상자 아이콘이 사라졌는지 확인하세요.
+              </div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="p_main_2" data-tags="bp missable" data-bp="3" data-prologue-bp="3">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-main">메인 퀘스트 #2</span>
+                <span class="badge badge-bp">기본 BP +3</span>
+                <span class="item-title">아이들 보호 (비취의 탑 옥상 보스전)</span>
+              </div>
+              <div class="item-desc">비취의 탑 최상층에서 파텔·루크를 위협하는 마수(랜선 즈우 등)를 처치합니다.</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="p_main_2_bonus" data-tags="bp missable" data-bp="1" data-prologue-bp="1">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-bp">🔥 추가 BP +1 선택지</span>
+                <span class="badge badge-missable">⚠️ 단 한 번뿐인 기회</span>
+                <span class="item-title">[아이들 보호] 돌입 시 선택지 정답</span>
+              </div>
+              <div class="item-desc">옥상에서 아이들을 구출하기 직전 나오는 선택지에서 단독 행동하지 말고 반드시 협동 선택지를 고르세요.</div>
+              <div class="choice-box">
+                정답 선택지: <strong>「요슈아와 동시에(함께) 돌입한다」</strong> ➔ <strong>BP +1 추가 획득!</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="step-section">
+        <div class="step-header" onclick="toggleStep(this)">
+          <div class="step-header-left">
+            <span class="step-number">STEP 3</span>
+            <span class="step-title">카시우스 출발 후 단기 의뢰 2종 & 퍼젤 농원의 마수 퇴치</span>
+          </div>
+          <span style="font-size:0.85rem; color:var(--text-secondary);">클릭하여 접기/펼치기 ▾</span>
+        </div>
+        <div class="step-body">
+          <div class="alert-banner danger" style="margin-bottom:4px;">
+            <div class="alert-title">🚨 최우선 기한 경고: 〈빛나는 돌 탐색〉 의뢰!</div>
+            <div style="font-size: 0.86rem;">〈빛나는 돌 탐색〉은 다음 메인 퀘스트인 말가 광산(클라우스 시장의 의뢰)으로 넘어가면 <strong>즉시 기한 만료(실패)</strong>됩니다. 퍼젤 농원으로 가기 전에 시내에서 바로 완료하세요!</div>
+          </div>
+
+          <div class="check-item" data-id="p_sub_1" data-tags="bp missable recipe" data-bp="2" data-prologue-bp="2" data-recipe="1">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-sub">서브 퀘스트 #1</span>
+                <span class="badge badge-bp">BP +2</span>
+                <span class="badge badge-recipe">🍳 드릴 미트볼</span>
+                <span class="badge badge-missable">⚠️ 단기 시한부</span>
+                <span class="item-title">빛나는 돌 탐색 (보상: 500 미라, 요리 『드릴 미트볼』)</span>
+              </div>
+              <div class="item-desc">
+                1. 길드 게시판 확인 후 <strong>멜더스 공방 뒤편(또는 주점 앞 길가)의 소년 카렐</strong>과 대화해 의뢰 수주.<br/>
+                2. 롤렌트 시내 <strong>리논 종합상점 서쪽 배수로 덮개(쇠창살)</strong>를 조사.<br/>
+                3. 롤렌트 지하수로로 들어가 입구 근처 동쪽 수로 끝의 반짝이는 지점을 조사해 『결정 파편』 입수 ➔ 카렐에게 전달하면 완료 및 요리 <strong>[드릴 미트볼]</strong> 레시피 획득!
+              </div>
+              <div class="deadline-text">⏰ 만료 시점: 말가 광산 이벤트 진행 전까지 (지금 즉시 클리어 권장)</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="p_sub_2" data-tags="bp missable" data-bp="3" data-prologue-bp="3">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-sub">서브 퀘스트 #2</span>
+                <span class="badge badge-bp">BP +3</span>
+                <span class="item-title">미르히 가도의 수배 마수 (보상: 1,000 미라)</span>
+              </div>
+              <div class="item-desc">퍼젤 농원으로 가는 길인 미르히 가도 2맵(베르테 관문 방향 길목 중앙 부근)에 배회하는 수배 마수 <strong>파인 플랜트</strong> 일행을 처치하고 길드에 보고합니다.</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="p_book_carnelia2" data-tags="book missable" data-carnelia="1">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-book">📕 카넬리아 제2권</span>
+                <span class="badge badge-missable">⚠️ 시한부 필수</span>
+                <span class="item-title">《카넬리아》 2권 입수 — 베르테 다리 관문 (병사 해럴드)</span>
+              </div>
+              <div class="item-desc">미르히 가도 서쪽 끝 <strong>베르테 다리 관소</strong>까지 이동해 오른쪽 구석에 서 있는 <strong>병사 해럴드(초소 경비병)</strong>에게 말을 걸면 《카넬리아》 2권을 획득합니다.</div>
+              <div class="deadline-text">⏰ 기한: 서장 종료 전 (수배 마수 잡으러 간 김에 바로 회수 권장)</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="p_main_3" data-tags="bp" data-bp="1" data-prologue-bp="1">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-main">메인 퀘스트 #3</span>
+                <span class="badge badge-bp">기본 BP +1</span>
+                <span class="item-title">퍼젤 농원의 마수 퇴치</span>
+              </div>
+              <div class="item-desc">미르히 가도 남서쪽 지선으로 들어가 퍼젤 농원의 티오 및 프란츠 일가와 대화 ➔ 야간 순찰 이벤트 후 비닐하우스에서 밭을 망치는 마수(차우차우 등)를 퇴치합니다.</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="p_main_3_bonus" data-tags="bp missable" data-bp="2" data-prologue-bp="2">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-bp">🔥 추가 BP +2 조건</span>
+                <span class="badge badge-missable">⚠️ 발각 주의</span>
+                <span class="item-title">[퍼젤 농원의 마수 퇴치] 야간 순찰 시 한 번도 들키지 않고 배후 기습</span>
+              </div>
+              <div class="item-desc">밤에 밭을 돌아다니는 마수에게 <strong>단 한 번도 발각되어 도망치게 하지 않고</strong>, 뒤쪽으로 살금살금 접근하여 한 번에 접촉(기습)에 성공하면 추가 BP +2를 받습니다. (실패 시 BP 차감되므로 순찰 시작 직전 세이브 필수!)</div>
+              <div class="choice-box">
+                달성 조건: <strong>마수의 시야를 피해 뒤에서 1회 만에 포획 성공</strong> ➔ <strong>BP +2 추가 획득!</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="step-section">
+        <div class="step-header" onclick="toggleStep(this)">
+          <div class="step-header-left">
+            <span class="step-number">STEP 4</span>
+            <span class="step-title">클라우스 시장의 의뢰 (말가 광산) & 중반 서브 의뢰 4종</span>
+          </div>
+          <span style="font-size:0.85rem; color:var(--text-secondary);">클릭하여 접기/펼치기 ▾</span>
+        </div>
+        <div class="step-body">
+          <div class="check-item" data-id="p_sub_3" data-tags="bp missable" data-bp="3" data-prologue-bp="3">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-sub">서브 퀘스트 #3</span>
+                <span class="badge badge-bp">BP +3</span>
+                <span class="item-title">버섯 채집 (의뢰인: 상인 오비드)</span>
+              </div>
+              <div class="item-desc">길드 게시판 확인 후 롤렌트 발착장(또는 주점 부근)의 <strong>오비드</strong>와 대화해 수주 ➔ 말가 산길 도중(광산 가기 전 남서쪽 지선 언덕)에 빛나는 『반딧불 버섯』을 채집하고 마수를 처치한 뒤 오비드에게 전달합니다.</div>
+              <div class="deadline-text">⏰ 만료 시점: 시장 저택 강도 사건 발생 전까지</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="p_sub_4" data-tags="bp missable" data-bp="3" data-prologue-bp="3">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-sub">서브 퀘스트 #4</span>
+                <span class="badge badge-bp">BP +3</span>
+                <span class="item-title">약 재료 채집 (의뢰인: 롤렌트 예배당 데바인 교구장)</span>
+              </div>
+              <div class="item-desc">예배당의 <strong>데바인 교구장</strong>에게 수주. 필요한 재료는 <strong>『베어스 클로(곰발톱 풀)』 1개 + 『마수의 가루』 5개</strong>입니다. 『베어스 클로』는 미스트발트(동쪽 숲)에서 채집할 수 있습니다.</div>
+              <div class="deadline-text">⏰ 만료 시점: 서장 종료 전까지</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="p_sub_5" data-tags="bp missable" data-bp="3" data-prologue-bp="3">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-sub">서브 퀘스트 #5</span>
+                <span class="badge badge-bp">기본 BP +3</span>
+                <span class="item-title">가로등 교환 (의뢰인: 멜더스 공방 프라이디)</span>
+              </div>
+              <div class="item-desc">멜더스 공방의 <strong>프라이디</strong>에게 『신형 오브먼트 등』을 받아 남쪽 <strong>엘리즈 가도</strong>(롤렌트 남문 밖 2번째 맵 초입 도로변)의 고장 난 가로등(6번째 가로등)을 수리합니다.</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="p_sub_5_bonus" data-tags="bp missable" data-bp="1" data-prologue-bp="1">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-bp">🔥 추가 BP +1 선택지</span>
+                <span class="badge badge-missable">⚠️ 암호 입력/전투 승리</span>
+                <span class="item-title">[가로등 교환] 가로등 수리 역할 분담 & 암호 『544818』</span>
+              </div>
+              <div class="item-desc">가로등 조사 후 마수가 습격할 때 역할 분담 선택지가 나옵니다. 어느 쪽을 골라도 조건 달성 시 BP +1과 <strong>『방해 2』 쿼츠</strong>를 얻습니다.</div>
+              <div class="choice-box">
+                • 방법 A: <strong>「마수는 에스텔에게 맡긴다」</strong> ➔ 요슈아가 수리하는 동안 에스텔 혼자 전투 승리 시 <strong>BP +1</strong><br/>
+                • 방법 B: <strong>「마수는 요슈아에게 맡긴다」</strong> ➔ 에스텔이 직접 해제 코드 <strong>「544818」</strong> 입력 시 <strong>BP +1</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="p_sub_6" data-tags="bp missable" data-bp="3" data-prologue-bp="3">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-sub">서브 퀘스트 #6</span>
+                <span class="badge badge-bp">기본 BP +3</span>
+                <span class="item-title">병사 훈련 (의뢰인: 베르테 다리 관문 애스턴 대장)</span>
+              </div>
+              <div class="item-desc">미르히 가도 서쪽 끝 <strong>베르테 다리 관문</strong>의 애스턴 대장과 대화하면 관문 병사들과 모의 전투를 벌입니다.</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="p_sub_6_bonus" data-tags="bp missable" data-bp="2" data-prologue-bp="2">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-bp">🔥 추가 BP +2 조건</span>
+                <span class="badge badge-missable">⚠️ 패배 시 스토리 진행 주의</span>
+                <span class="item-title">[병사 훈련] 왕국군 병사 모의전 승리</span>
+              </div>
+              <div class="item-desc">져도 퀘스트 자체는 완료되지만 BP와 보상이 깎입니다. S크래프트와 범위 아츠를 활용해 반드시 승리하세요!</div>
+              <div class="choice-box">
+                달성 조건: <strong>모의 전투에서 병사 부대 격파 승리</strong> ➔ <strong>BP +2 및 추가 보수(총 1,500 미라) 획득!</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="p_chest_malga" data-tags="chest" data-chest="3">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-chest">📦 보물상자 (3개)</span>
+                <span class="item-title">말가 산길 보물상자 3개 회수</span>
+              </div>
+              <div class="item-desc">롤렌트 북서쪽 출구로 나가는 말가 산길 구간에 있는 보물상자 3개를 모두 엽니다. (광산 내부에는 일반 보물상자가 없으므로 산길 야외 상자 3개 회수 후 좌측 하단 아이콘 소멸 확인)</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="p_main_4" data-tags="bp" data-bp="4" data-prologue-bp="4">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-main">메인 퀘스트 #4</span>
+                <span class="badge badge-bp">BP +4</span>
+                <span class="item-title">클라우스 시장의 의뢰 (말가 광산 칠요석 채굴 및 광부 구출)</span>
+              </div>
+              <div class="item-desc">클라우스 시장 저택에서 의뢰 수령 ➔ 말가 광산 깊숙한 곳의 가톤 두목에게 『취옥의 원석』 수령 ➔ 마수 출현 이벤트 후 승강기 열쇠를 얻어 지하 구역의 키러 버그 무리로부터 광부들을 전부 구출하고 시장에게 보고합니다.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 5 -->
+      <div class="step-section">
+        <div class="step-header" onclick="toggleStep(this)">
+          <div class="step-header-left">
+            <span class="step-number">STEP 5</span>
+            <span class="step-title">아기 고양이 탐색 & 기자들 안내 (비취의 탑 재방문)</span>
+          </div>
+          <span style="font-size:0.85rem; color:var(--text-secondary);">클릭하여 접기/펼치기 ▾</span>
+        </div>
+        <div class="step-body">
+          <div class="alert-banner danger" style="margin-bottom:4px;">
+            <div class="alert-title">⚠️ 비취의 탑 출발 전 〈아기 고양이 탐색〉 완료 권장!</div>
+            <div style="font-size: 0.86rem;">비취의 탑 최상층에서 기자들 안내 이벤트를 마치면 즉시 밤이 되며 시장 저택 강도 사건으로 이어집니다. 출발 전에 시내의 고양이 찾기 의뢰를 완료하세요.</div>
+          </div>
+
+          <div class="check-item" data-id="p_sub_7" data-tags="bp missable" data-bp="2" data-prologue-bp="2">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-sub">서브 퀘스트 #7</span>
+                <span class="badge badge-bp">BP +2</span>
+                <span class="badge badge-missable">⚠️ 시한부</span>
+                <span class="item-title">아기 고양이 탐색 (의뢰인: 주점 옆 노천 카페 소녀 이다 / 포트)</span>
+              </div>
+              <div class="item-desc">
+                시내 중앙 주점 옆 테이블에 있는 <strong>이다(포트)</strong>와 대화하여 고양이 『앙트완』 수색을 시작합니다:<br/>
+                1. 시내 동쪽 끝(시청으로 올라가는 계단 옆 골목)에서 고양이 발견<br/>
+                2. 발착장 입구 남쪽 표지판 근처에서 재발견<br/>
+                3. 시계탑 동쪽 예배당 옆 골목으로 따라간 뒤, <strong>예배당 내부 2층 발코니 구석</strong>에서 앙트완 포획 완료!
+              </div>
+              <div class="deadline-text">⏰ 만료 시점: 기자들 안내 완료 후 밤이 되기 전까지</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="p_main_5" data-tags="bp" data-bp="4" data-prologue-bp="4">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-main">메인 퀘스트 #5</span>
+                <span class="badge badge-bp">BP +4</span>
+                <span class="item-title">기자들 안내 (나이얼 & 도로시 동행 ➔ 비취의 탑 옥상)</span>
+              </div>
+              <div class="item-desc">호텔 롤렌트 및 주점 「아벤트」에서 리벨 통신 기자 <strong>나이얼</strong>, 사진기자 <strong>도로시</strong>와 합류한 뒤 비취의 탑 옥상까지 호위하여 촬영 이벤트를 진행합니다. (이벤트 후 셰라자드가 정식 파티에 합류)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 6 -->
+      <div class="step-section">
+        <div class="step-header" onclick="toggleStep(this)">
+          <div class="step-header-left">
+            <span class="step-number">STEP 6</span>
+            <span class="step-title">시장 저택의 강도 사건 추리 (BP +4) & 미스트발트 결전</span>
+          </div>
+          <span style="font-size:0.85rem; color:var(--text-secondary);">클릭하여 접기/펼치기 ▾</span>
+        </div>
+        <div class="step-body">
+          <div class="check-item" data-id="p_main_6_clues" data-tags="bp missable" data-bp="4" data-prologue-bp="4">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-bp">🔥 추리 선택지 BP +4</span>
+                <span class="badge badge-missable">⚠️ 4문항 연속 정답 필수</span>
+                <span class="item-title">[시장 저택의 강도 사건] 현장 단서 6곳 조사 후 셰라자드 추리 4문항 정답</span>
+              </div>
+              <div class="item-desc">
+                먼저 저택 내부를 빠짐없이 조사합니다: ① 2층 시장 집무실 열린 금고 ② 2층 테라스 난간 발자국 ③ 1층 현관문 자물쇠 ④ 다락방의 시트 ⑤ 시장 부인 미라벨 대화 ⑥ 하녀 리타 대화.<br/>
+                이후 1층으로 내려가 셰라자드와 사건을 정리할 때 아래 <strong>4가지 선택지를 순서대로 정확히 선택</strong>하세요:
+              </div>
+              <div class="choice-box">
+                1. 범인들의 목적은? ➔ <strong>「금고 안의 칠요석」</strong> (BP +1)<br/>
+                2. 범인은 몇 명인가? ➔ <strong>「3~4인으로 이루어진 그룹」</strong> (BP +1)<br/>
+                3. 어디로 침입했는가? ➔ <strong>「2층의 테라스에서」</strong> (BP +1)<br/>
+                4. 수상한 인물은? ➔ <strong>「최근 방문했던 여행자」</strong> (BP +1)
+              </div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="p_sub_8" data-tags="bp missable" data-bp="4" data-prologue-bp="4">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-sub">서브 퀘스트 #8</span>
+                <span class="badge badge-bp">BP +4</span>
+                <span class="badge badge-missable">⚠️ 보스전 전 필수</span>
+                <span class="item-title">엘리즈 가도의 수배 마수 (보상: 1,500 미라)</span>
+              </div>
+              <div class="item-desc">호텔 롤렌트 및 발착장 관리인 등 탐문을 마친 후, 미스트발트로 가기 전에 남쪽 <strong>엘리즈 가도</strong>(다리 건너기 직전 구간)에 출현한 수배 마수 <strong>원더 포겔</strong> 무리를 토벌하고 길드에 보고합니다.</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="p_chest_elize" data-tags="chest" data-chest="5">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-chest">📦 보물상자 (5개)</span>
+                <span class="item-title">엘리즈 가도 보물상자 5개 전수 회수</span>
+              </div>
+              <div class="item-desc">롤렌트 남문 ~ 그뤼네 관문 방면 엘리즈 가도 1·2맵의 상자 5개를 모두 회수합니다. (다리 밑 강가 길목 및 마수 상자 포함 — 좌측 하단 상자 아이콘 소멸 확인!)</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="p_Rank8_Check" data-tags="bp">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-bp">🏆 중간 점검: 42 BP</span>
+                <span class="item-title">유격사 협회 중간 보고 ➔ 『준유격사 8급』 승급 확인</span>
+              </div>
+              <div class="item-desc">미스트발트로 출발하기 전 길드의 아이나에게 퀘스트를 모두 보고하면 <strong>누적 42 BP</strong>(시장 저택 기본 6 + 추리 4 + 조제트 선택지 1 = 11 BP 합산 전 수치)가 되며, <strong>준유격사 8급 보상(양검 『소드 브레이커』 또는 쿼츠)</strong>을 받습니다.</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="p_chest_mistwald" data-tags="chest" data-chest="6">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-chest">📦 보물상자 (6개)</span>
+                <span class="item-title">미스트발트 (동쪽 안개 숲) 보물상자 6개 & 『베어스 클로』 회수</span>
+              </div>
+              <div class="item-desc">
+                롤렌트 동쪽 출구로 나가 미스트발트 숲을 탐색하며 보물상자 6개를 모두 엽니다.<br/>
+                • 만약 〈약 재료 채집〉을 아직 완료하지 않았다면 숲 안의 채집 포인트에서 『베어스 클로』를 캐서 시내 예배당에 먼저 전달하고 보스전에 진입하세요!
+              </div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="p_main_6_bonus2" data-tags="bp missable" data-bp="1" data-prologue-bp="1">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-bp">🔥 추가 BP +1 선택지</span>
+                <span class="badge badge-missable">⚠️ 보스전 직전 선택</span>
+                <span class="item-title">[시장 저택의 강도 사건] 미스트발트 최심부 조제트 대면 선택지</span>
+              </div>
+              <div class="item-desc">미스트발트 가장 안쪽에서 공적단 조제트 일행과 대치할 때 나오는 선택지에서 감정적으로 도발하지 않고 한발 물러서는 선택지를 고릅니다.</div>
+              <div class="choice-box">
+                정답 선택지: <strong>「으으... 어쩔 수 없지」</strong> ➔ <strong>BP +1 추가 획득!</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="p_main_6_clear" data-tags="bp" data-bp="6" data-prologue-bp="6">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-main">메인 퀘스트 #6 완료</span>
+                <span class="badge badge-bp">기본 BP +6</span>
+                <span class="item-title">보스: 조제트 & 공적 부하 3명 격파 ➔ 서장 클리어 (총 53 / 53 BP 달성!)</span>
+              </div>
+              <div class="item-desc">셰라자드의 『실피드 보이스』(범위 아츠)와 요슈아의 『쌍연격』으로 부하들을 먼저 정리한 뒤 조제트를 집중 공격해 승리하면 서장이 완벽하게 마무리되며 제1장(보스 지방)으로 넘어갑니다.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         PANEL 2: 제1장 (CHAPTER 1) 초정밀 스텝업 공략
+         ========================================== -->
+    <div id="panel-ch1" class="chapter-panel">
+      <div class="alert-banner info">
+        <div class="alert-title">✈️ 제1장 「사라진 비행 여객선」 (보스 지방 — 총 15개 의뢰 / 최대 66 BP / 상자 43개)</div>
+        <div style="font-size: 0.88rem; color: var(--text-secondary);">
+          • <strong>1장 핵심 목표:</strong> 메인·서브·히든 의뢰 15종 완수 / <strong>《카넬리아》 3·4권</strong> & <strong>《리벨 통신》 제2·3호</strong> / 한정 요리 <strong>『플라워리 젤리』, 『왕국풍 오믈렛』, 『딸기 밀크 크레이프』</strong> 회수.<br/>
+          • <strong>재진입 불가 던전 주의:</strong> 1장 마지막 던전인 <strong>『공적 아지트』</strong>는 보스 격파 후 재진입이 불가능하므로 내부 보물상자(『귀석반지』 포함)와 『검은 노트』를 반드시 챙겨야 합니다!
+        </div>
+      </div>
+
+      <!-- 1장 STEP 1 -->
+      <div class="step-section">
+        <div class="step-header" onclick="toggleStep(this)">
+          <div class="step-header-left">
+            <span class="step-number">STEP 1</span>
+            <span class="step-title">롤렌트 출발 (엘리사의 부탁) ~ 동 보스 가도 & 보스 시 입성</span>
+          </div>
+          <span style="font-size:0.85rem; color:var(--text-secondary);">클릭하여 접기/펼치기 ▾</span>
+        </div>
+        <div class="step-body">
+          <div class="check-item" data-id="c1_elissa_flag" data-tags="bp missable recipe" data-bp="4">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-hidden">서브/신규 의뢰 #1</span>
+                <span class="badge badge-bp">기본 2 + 보너스 2 BP</span>
+                <span class="badge badge-recipe">🍳 딸기 밀크 크레이프</span>
+                <span class="badge badge-missable">⚠️ 최고 주의</span>
+                <span class="item-title">엘리사의 부탁 (롤렌트 주점 「아벤트」 엘리사 ➔ 선택지 2종 정답)</span>
+              </div>
+              <div class="item-desc">롤렌트를 떠나기 전 주점 「아벤트」의 엘리사 의뢰를 진행합니다. 소 젖 짜기와 딸기 고르기에서 정답을 선택하면 추가 BP +2와 한정 레시피 <strong>『햇살 머금은 딸기 밀크 크레이프』</strong>를 획득합니다.</div>
+              <div class="choice-box">
+                • 선택지 1 (소 젖 짜기): <strong>「엄지랑 검지부터 힘을 준다」</strong> (BP +1)<br/>
+                • 선택지 2 (딸기 고르기): <strong>「표면의 돌기(씨)가 빨간 딸기」</strong> (BP +1)
+              </div>
+              <div class="deadline-text">⏰ 만료 시점: 정기선 실종 사건 본격 진행 전</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="c1_chest_eastbose" data-tags="chest">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-chest">📦 보물상자 (4개)</span>
+                <span class="item-title">베르테 관문 통과 ➔ 동 보스 가도 보물상자 4개 & 『베어스 클로』 채집</span>
+              </div>
+              <div class="item-desc">동 보스 가도(안개 협곡 갈림길 포함) 구간의 보물상자 4개를 모두 열고, 길가의 『베어스 클로(곰발톱 풀)』를 미리 채집해 두면 이후 퀘스트가 편해집니다.</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="c1_book_news2" data-tags="book missable" data-news="1">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-book">📰 리벨 통신 제2호</span>
+                <span class="badge badge-missable">⚠️ 1장 시한부</span>
+                <span class="item-title">《리벨 통신 제2호》 구매 — 보스 마켓 서점 (미네 프랑소와)</span>
+              </div>
+              <div class="item-desc">보스 시 도착 직후 보스 마켓 내 서점 코너에서 《리벨 통신 제2호》를 구매합니다.</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="c1_recipe_bosemarket" data-tags="recipe missable">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-recipe">🍳 보스 시내 요리 3종</span>
+                <span class="badge badge-missable">⚠️ 플라워리 젤리 단독 입수처</span>
+                <span class="item-title">보스 마켓 『플라워리 젤리』·『스위트 카스텔라』 & 주점 『레드 테일 수프』 구매</span>
+              </div>
+              <div class="item-desc">
+                • 보스 마켓 「카틀레야의 가게」: <strong>『플라워리 젤리』</strong>(게임 전체에서 이곳에서만 입수 가능!), <strong>『스위트 카스텔라』</strong><br/>
+                • 보스 주점 「키르셰」: <strong>『레드 테일 수프』</strong> 구매 및 등록
+              </div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="c1_sub_letter" data-tags="bp missable" data-bp="2">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-sub">서브 퀘스트 #2</span>
+                <span class="badge badge-bp">BP +2</span>
+                <span class="badge badge-missable">⚠️ 초단기 기한</span>
+                <span class="item-title">친서 배달 (보스 시장 저택 메이벨 시장 ➔ 하켄 게이트 모건 장군)</span>
+              </div>
+              <div class="item-desc">유격사 협회 등록 및 시장 메이벨 면담 후, 다시 시장에게 말을 걸거나 게시판을 확인해 친서를 받아 하켄 게이트로 갈 때 모건 장군에게 함께 전달합니다.</div>
+              <div class="deadline-text">⏰ 만료 시점: 하켄 게이트에서 모건 장군과 첫 면담하기 전 수주 필수!</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="c1_sub_omelet" data-tags="bp recipe missable" data-bp="3">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-sub">서브 퀘스트 #3</span>
+                <span class="badge badge-bp">BP +3</span>
+                <span class="badge badge-recipe">🍳 왕국풍 오믈렛</span>
+                <span class="badge badge-missable">⚠️ 단기 시한부</span>
+                <span class="item-title">식재료 수집 (고급 레스토랑 「안테로즈」 주방장 그로프)</span>
+              </div>
+              <div class="item-desc">조류형 마수들이 드롭하는 『마수의 조육』 5개를 그로프에게 전달하면 완료되며, 한정 레시피 <strong>『왕국풍 오믈렛』</strong>을 배웁니다.</div>
+              <div class="deadline-text">⏰ 만료 시점: 라벤누 폐갱 정기선 조사 전까지</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="c1_sub_eastmonster" data-tags="bp missable" data-bp="3">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-sub">서브 퀘스트 #4</span>
+                <span class="badge badge-bp">BP +3</span>
+                <span class="item-title">동 보스 가도의 수배 마수 (페인트 크래시 토벌)</span>
+              </div>
+              <div class="item-desc">동 보스 가도 안개 협곡 갈림길 부근에 있는 수배 마수 『페인트 크래시』를 토벌합니다.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1장 STEP 2 -->
+      <div class="step-section">
+        <div class="step-header" onclick="toggleStep(this)">
+          <div class="step-header-left">
+            <span class="step-number">STEP 2</span>
+            <span class="step-title">아이언 산길 ~ 하켄 게이트 (카넬리아 3권) & 호박의 탑 히든 퀘스트</span>
+          </div>
+          <span style="font-size:0.85rem; color:var(--text-secondary);">클릭하여 접기/펼치기 ▾</span>
+        </div>
+        <div class="step-body">
+          <div class="check-item" data-id="c1_chest_hakenroad" data-tags="chest recipe">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-chest">📦 보물상자</span>
+                <span class="badge badge-recipe">🍳 샐러드 샌드위치</span>
+                <span class="item-title">아이언 가도 보물상자 회수 & 하켄 게이트 휴게소 『샐러드 샌드위치』 구매</span>
+              </div>
+              <div class="item-desc">보스 남문에서 하켄 게이트로 이어지는 가도의 보물상자를 열고, 하켄 게이트 휴게소(주점)에서 <strong>『샐러드 샌드위치』</strong>를 사 먹습니다.</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="c1_book_carnelia3" data-tags="book missable" data-carnelia="1">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-book">📕 카넬리아 제3권</span>
+                <span class="badge badge-missable">⚠️ 초단기 시한부</span>
+                <span class="item-title">《카넬리아》 3권 입수 — 하켄 게이트 휴게소 안 (마르코)</span>
+              </div>
+              <div class="item-desc">하켄 게이트 막사에서 모건 장군 면담 후 밖으로 나와 <strong>올리비에(금발의 청년)가 합류하는 이벤트 직후</strong>, 보스 시로 돌아가기 전에 다시 <strong>하켄 게이트 휴게소 안의 마르코</strong>에게 말을 걸면 《카넬리아》 3권을 줍니다!</div>
+              <div class="deadline-text">⏰ 기한: 보스 시 귀환 후 시장과 대화하면 즉시 소멸! 하켄 게이트를 떠나기 전 필수 회수!</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="c1_hidden_amber" data-tags="bp chest missable" data-bp="4">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-hidden">히든 퀘스트 #5</span>
+                <span class="badge badge-bp">BP +4</span>
+                <span class="badge badge-chest">📦 호박의 탑 상자 9개</span>
+                <span class="badge badge-missable">⚠️ 게시판 미등록</span>
+                <span class="item-title">호박의 탑의 수상한 자 (알베르 구출) & 호박의 탑 보물상자 9개 전수 회수</span>
+              </div>
+              <div class="item-desc">하켄 게이트에서 보스 시로 복귀하는 길에 가도 동쪽 지선인 <strong>호박의 탑(앰버 타워)</strong>으로 들어가면 자동 발생합니다. 1~5층의 보물상자 9개를 모두 열면서 5층에서 마수에게 포위된 알베르를 구출하세요.</div>
+              <div class="deadline-text">⏰ 만료 시점: 라벤누 마을에서 정기선 조사 완료 전까지</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1장 STEP 3 -->
+      <div class="step-section">
+        <div class="step-header" onclick="toggleStep(this)">
+          <div class="step-header-left">
+            <span class="step-number">STEP 3</span>
+            <span class="step-title">서 보스 가도 ~ 라벤누 마을 & 폐갱 정기선 추리 (BP +3)</span>
+          </div>
+          <span style="font-size:0.85rem; color:var(--text-secondary);">클릭하여 접기/펼치기 ▾</span>
+        </div>
+        <div class="step-body">
+          <div class="check-item" data-id="c1_sub_escort" data-tags="bp missable" data-bp="5">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-sub">서브 퀘스트 #6</span>
+                <span class="badge badge-bp">기본 4 + 보너스 1 BP</span>
+                <span class="item-title">호위 의뢰 (보스 남동쪽 민가 하드 ➔ 크로네 산길 상인 호위)</span>
+              </div>
+              <div class="item-desc">보스 시 남동쪽 민가의 하드와 대화 후 서문 밖에서 상인과 합류해 서 보스 가도 끝 크로네 산길 입구까지 호위합니다. 산길에서 마수 습격 시 선택지가 뜹니다.</div>
+              <div class="choice-box">
+                정답 선택지: <strong>「정면 돌파지!」</strong> ➔ <strong>BP +1 추가 획득!</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="c1_sub_westmonster" data-tags="bp chest missable" data-bp="8">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-sub">서브 퀘스트 #7 & #8</span>
+                <span class="badge badge-bp">총 BP +8</span>
+                <span class="badge badge-chest">📦 서 보스·라벤누 상자</span>
+                <span class="item-title">서 보스 가도의 수배 마수 (BP 4) & 산길의 마수 탐색 (BP 4)</span>
+              </div>
+              <div class="item-desc">
+                • <strong>서 보스 가도의 수배 마수:</strong> 크로네 산길 입구 부근 『배드 스팅어』 토벌 (서 보스 가도 보물상자 4개 회수)<br/>
+                • <strong>산길의 마수 탐색:</strong> 라벤누 마을 입구 과수원의 피가로에게 수주 후 라벤누 북쪽 산길의 『페이트 스피너』 토벌 (라벤누 산길 보물상자 5개 회수)
+              </div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="c1_sub_bearclaw" data-tags="bp missable" data-bp="4">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-sub">서브 퀘스트 #9</span>
+                <span class="badge badge-bp">BP +4</span>
+                <span class="item-title">베어스 클로 조사 (보스 마켓 약초상 스펜서 노인)</span>
+              </div>
+              <div class="item-desc">동 보스 가도/안개 협곡 입구 등에서 채집한 『베어스 클로』를 스펜서 노인에게 가져가고, 산지 위치를 보고합니다.</div>
+              <div class="deadline-text">⏰ 만료 시점: 발레리아 호반으로 진행하기 전까지</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="c1_main_airship" data-tags="bp missable" data-bp="8">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-main">메인 퀘스트 #10 (추리)</span>
+                <span class="badge badge-bp">기본 5 + 보너스 3 BP</span>
+                <span class="badge badge-missable">⚠️ 추리 선택지</span>
+                <span class="item-title">[정기선 실종 사건] 라벤누 북쪽 폐갱 린데호 조사 & 하산 추리 선택지</span>
+              </div>
+              <div class="item-desc">라벤누 묘지의 루이에게 증언을 듣고 촌장에게 폐갱 열쇠를 받아 북쪽 폐갱으로 진입 ➔ 공적 도른 일당 격파 후 정기선 내부를 조사하고 산길을 내려올 때 추리 선택지가 나옵니다.</div>
+              <div class="choice-box">
+                정답 선택지: <strong>「아지트가 특수한 곳에 있어서」</strong> ➔ <strong>BP +3 추가 획득!</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1장 STEP 4 -->
+      <div class="step-section">
+        <div class="step-header" onclick="toggleStep(this)">
+          <div class="step-header-left">
+            <span class="step-number">STEP 4</span>
+            <span class="step-title">안개 협곡 ~ 안젤 신도 히든 퀘스트 & 발레리아 호반 (카넬리아 4권)</span>
+          </div>
+          <span style="font-size:0.85rem; color:var(--text-secondary);">클릭하여 접기/펼치기 ▾</span>
+        </div>
+        <div class="step-body">
+          <div class="check-item" data-id="c1_hidden_monster_followup" data-tags="bp missable" data-bp="3">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-hidden">히든 퀘스트 #11</span>
+                <span class="badge badge-bp">BP +3</span>
+                <span class="badge badge-missable">⚠️ 게시판 미등록</span>
+                <span class="item-title">마수 토벌 사후 처리 (보스 남문 밖 안젤 신도 경비병 구일)</span>
+              </div>
+              <div class="item-desc">정기선 실종 사건 보고 직후, 보스 시 남문 밖 안젤 신도 입구에 서 있는 <strong>병사 구일</strong>과 대화하면 즉시 전투(몰 스로터 무리)가 벌어지며 완료됩니다.</div>
+              <div class="deadline-text">⏰ 만료 시점: 발레리아 호반 여관에서 야간 이벤트를 진행하기 전까지!</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="c1_sub_mist_ansel" data-tags="bp chest missable" data-bp="9">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-sub">서브 퀘스트 #12 & #13</span>
+                <span class="badge badge-bp">총 BP +9</span>
+                <span class="badge badge-chest">📦 안개 협곡·안젤 신도 상자</span>
+                <span class="item-title">안개 협곡의 수배 마수 (BP 5) & 안젤 신도의 수배 마수 (BP 4)</span>
+              </div>
+              <div class="item-desc">
+                • <strong>안개 협곡:</strong> 서쪽 구역의 거대 설인 『자이언트 풋』 토벌 (화 속성 아츠 약점 / 안개 협곡 보물상자 6개 회수, 산장 윌음 노인의 파우스트 냄비 힌트 확인)<br/>
+                • <strong>안젤 신도:</strong> 발레리아 호반 가는 길의 『앰버 터틀』 토벌 (아츠 공격 필수 / 안젤 신도 보물상자 3개 회수)
+              </div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="c1_book_carnelia4" data-tags="book missable" data-carnelia="1">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-book">📕 카넬리아 제4권</span>
+                <span class="badge badge-missable">⚠️ 시한부 필수</span>
+                <span class="item-title">《카넬리아》 4권 입수 — 보스 마켓 서점 (남가도 강도 사건 발생 후)</span>
+              </div>
+              <div class="item-desc">남가구의 강도 사건이 발생한 뒤(발레리아 호반으로 출발하기 전), <strong>보스 마켓 서점</strong>에서 《카넬리아》 4권을 구매/입수합니다.</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="c1_recipe_lakeside" data-tags="recipe">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-recipe">🍳 호반 요리 4종</span>
+                <span class="item-title">발레리아 호반 여관 「물총새정」 생선 요리 4종 전수 구매</span>
+              </div>
+              <div class="item-desc">
+                물총새정 카운터의 레나에게 아래 4가지 요리를 모두 구매해 레시피를 등록합니다:<br/>
+                • <strong>『빈어 튀김』 / 『붕어 된장 조림』 / 『곤돌매기 꼬치구이』 / 『살모나 뫼니에르』</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1장 STEP 5 -->
+      <div class="step-section">
+        <div class="step-header" onclick="toggleStep(this)">
+          <div class="step-header-left">
+            <span class="step-number">STEP 5</span>
+            <span class="step-title">공적 아지트 잠입 (귀석반지 & 검은 노트) & 1장 클리어</span>
+          </div>
+          <span style="font-size:0.85rem; color:var(--text-secondary);">클릭하여 접기/펼치기 ▾</span>
+        </div>
+        <div class="step-body">
+          <div class="alert-banner danger" style="margin-bottom:4px;">
+            <div class="alert-title">🚨 공적 아지트 재진입 불가 경고!</div>
+            <div style="font-size: 0.86rem;">공적 아지트 최심부에서 보스전을 치르고 탈출하면 아지트에 다시 들어갈 수 없습니다. 내부의 <strong>보물상자 8개(『귀석반지』 포함)</strong>와 <strong>도력 청소기 안의 『검은 노트』</strong>를 반드시 먼저 챙기세요!</div>
+          </div>
+
+          <div class="check-item" data-id="c1_stolen_ring" data-tags="bp chest missable" data-bp="4">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-sub">서브 퀘스트 #14</span>
+                <span class="badge badge-bp">BP +4</span>
+                <span class="badge badge-chest">📦 아지트 상자 8개</span>
+                <span class="badge badge-missable">⚠️ 재진입 불가</span>
+                <span class="item-title">도둑맞은 반지 (공적 아지트 B2층 상자에서 『귀석반지』 회수 ➔ 보스 시 라나 전달)</span>
+              </div>
+              <div class="item-desc">보스 시 남동쪽 민가의 라나에게 의뢰 수주 ➔ 공적 아지트 내부 보물상자 8개를 모두 열면서 <strong>『귀석반지』</strong>를 입수한 뒤, 크로네 관문으로 넘어가기 전 라나에게 돌려줍니다.</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="c1_hidden_blacknote" data-tags="bp missable" data-bp="5">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-hidden">히든 퀘스트 #15</span>
+                <span class="badge badge-bp">BP +5</span>
+                <span class="badge badge-missable">⚠️ 아지트 청소기 조사</span>
+                <span class="item-title">검은 노트 (공적 아지트 B2층 방의 청소기 조사 ➔ 하켄 게이트 지하 감옥 병사 전달)</span>
+              </div>
+              <div class="item-desc">공적 아지트 B2층 방 구석의 <strong>검은 도력 흡입기(청소기)를 조사해 『검은 노트』</strong>를 획득한 뒤, 2장으로 넘어가기 전에 <strong>하켄 게이트 지하 구금실 앞 병사 옵트</strong>에게 가져다주면 완료됩니다!</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="c1_book_news3" data-tags="book missable" data-news="1">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-book">📰 리벨 통신 제3호</span>
+                <span class="badge badge-missable">⚠️ 1장 종료 직전</span>
+                <span class="item-title">《리벨 통신 제3호》 구매 — 보스 마켓 서점 (아지트 클리어 후)</span>
+              </div>
+              <div class="item-desc">공적 아지트를 클리어한 직후 크로네 관문으로 떠나기 전에 보스 마켓 서점에 들러 《리벨 통신 제3호》를 구매합니다.</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="c1_main_clear" data-tags="bp" data-bp="10">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-main">메인 퀘스트 완료</span>
+                <span class="badge badge-bp">BP +10</span>
+                <span class="item-title">남가구의 강도 사건 완료 (보스: 카푸아 3남매 2연전 격파 ➔ 1장 클리어!)</span>
+              </div>
+              <div class="item-desc">도른·키스·조제트 3남매를 격파(키스의 자기 버프 후 광역기 주의, 카오스 브랜드로 부하/도른 혼란 유효)하고 1장을 마무리합니다.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         PANEL 3: 제2장 (CHAPTER 2) 초정밀 스텝업 공략
+         ========================================== -->
+    <div id="panel-ch2" class="chapter-panel">
+      <div class="alert-banner info">
+        <div class="alert-title">🌊 제2장 「하얀 꽃의 마드리갈」 (루안 지방 — 총 17개 의뢰 / 최대 79 BP / 상자 39개)</div>
+        <div style="font-size: 0.88rem; color: var(--text-secondary);">
+          • <strong>2장 핵심 목표:</strong> 발렌느 등대 히든 의뢰 / 호텔 『착즙 주스』 초단기 입수 / 뒤낭 공작 3연속 선택지 / 고아원 방화 추리 / <strong>왕립학교 학원제 히든 3종 & 『바삭바삭 팝콘』</strong> / <strong>《카넬리아》 5권</strong> 회수.
+        </div>
+      </div>
+
+      <!-- 2장 STEP 1 -->
+      <div class="step-section">
+        <div class="step-header" onclick="toggleStep(this)">
+          <div class="step-header-left">
+            <span class="step-number">STEP 1</span>
+            <span class="step-title">크로네 산길 돌파 ~ 마놀리아 마을 & 발렌느 등대 히든 퀘스트</span>
+          </div>
+          <span style="font-size:0.85rem; color:var(--text-secondary);">클릭하여 접기/펼치기 ▾</span>
+        </div>
+        <div class="step-body">
+          <div class="check-item" data-id="c2_main_krone" data-tags="bp chest" data-bp="2">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-main">메인 퀘스트 #1</span>
+                <span class="badge badge-bp">BP +2</span>
+                <span class="badge badge-chest">📦 크로네 산길 상자 4개</span>
+                <span class="item-title">크로네 고개의 마수 퇴치 (크로네 관문 야간 전투 & 산길 보물상자 회수)</span>
+              </div>
+              <div class="item-desc">크로네 산길의 보물상자를 모두 회수하며 관문에 도착한 뒤, 밤에 습격하는 어택 독 무리를 애거트와 협력해 격파합니다.</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="c2_recipe_manoria" data-tags="recipe">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-recipe">🍳 마놀리아 요리</span>
+                <span class="item-title">마놀리아 마을 여관 「백목련정」에서 『아침 이슬 허브티』 구매</span>
+              </div>
+              <div class="item-desc">마놀리아 마을 도착 후 여관 1층에서 『아침 이슬 허브티』를 구매하고, 잡화점 사츠키에게서 꽃다발/식재료를 확인한 뒤 북서쪽 풍차 전망대로 향합니다.</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="c2_hidden_lighthouse" data-tags="bp chest missable" data-bp="4">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-hidden">히든 퀘스트 #2</span>
+                <span class="badge badge-bp">BP +4</span>
+                <span class="badge badge-chest">📦 메베 해안길 상자 4개</span>
+                <span class="badge badge-missable">⚠️ 루안 숙박 전 필수</span>
+                <span class="item-title">등대의 마수 소탕 (메베 해안길 발렌느 등대 포크 노인 구출)</span>
+              </div>
+              <div class="item-desc">머시아 고아원을 들른 뒤 메베 해안길을 따라 루안으로 갈 때, 해안길 서쪽 언덕의 <strong>발렌느 등대</strong>에 들어가 1~3층의 마수를 소탕하고 포크 노인을 구출합니다. (해안길 보물상자 4개 및 바닷가 동굴 끝 해골도 미리 확인하세요!)</div>
+              <div class="deadline-text">⏰ 만료 시점: 루안 시 호텔에서 첫날 밤을 보내기 전까지!</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2장 STEP 2 -->
+      <div class="step-section">
+        <div class="step-header" onclick="toggleStep(this)">
+          <div class="step-header-left">
+            <span class="step-number">STEP 2</span>
+            <span class="step-title">루안 시 도착 (착즙 주스 초단기 입수) & 초반 서브 의뢰 6종</span>
+          </div>
+          <span style="font-size:0.85rem; color:var(--text-secondary);">클릭하여 접기/펼치기 ▾</span>
+        </div>
+        <div class="step-body">
+          <div class="check-item" data-id="c2_recipe_juice" data-tags="recipe missable">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-recipe">🍳 초단기 시한부 레시피</span>
+                <span class="badge badge-missable">⚠️ 지하 객실 내려가기 전!</span>
+                <span class="item-title">『착즙 주스』 입수 — 호텔 블랑슈 프런트 (어니스트)</span>
+              </div>
+              <div class="item-desc">루안 호텔 블랑슈에서 뒤낭 공작 일행에게 스위트룸을 빼앗기는 이벤트 직후, 지하 객실로 내려가기 전에 <strong>프런트의 지배인 어니스트</strong>에게 말을 걸어 『착즙 주스』를 받습니다. 또한 카지노 바 「라반타르」에서 <strong>『아젤리아 로제』</strong>를 구매하세요.</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="c2_book_news45" data-tags="book missable" data-news="2">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-book">📰 리벨 통신 제4호 & 제5호</span>
+                <span class="badge badge-missable">⚠️ 2장 시한부</span>
+                <span class="item-title">《리벨 통신 제4호》(초반) & 《제5호》(2장 클리어 직전) — 루안 오닐 면세점</span>
+              </div>
+              <div class="item-desc">루안 북쪽 지구 「오닐 면세점」에서 2장 초반에 <strong>제4호</strong>를 구매하고, 2장 보스전 종료 후 차이스로 떠나기 직전에 <strong>제5호</strong>를 구매합니다.</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="c2_sub_early6" data-tags="bp missable" data-bp="21">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-sub">초반 서브 의뢰 6종</span>
+                <span class="badge badge-bp">총 BP +21</span>
+                <span class="badge badge-missable">⚠️ 고아원 화재 사건 전</span>
+                <span class="item-title">정비용 가방 운반(4) / 창고의 열쇠(2) / 시제품 탐색(3) / 고지도 조사(4) / 해안길·아이나 수배 마수(8)</span>
+              </div>
+              <div class="item-desc">
+                1. <strong>정비용 가방 운반 (BP 4):</strong> 루안 공방 옆 하운즈 ➔ 발렌느 등대 포크 노인에게 전달 (주점에서 『아젤리아 로제』 챙겨가면 보너스 보수)<br/>
+                2. <strong>창고의 열쇠 (BP 2):</strong> 남쪽 항구 해럴드 ➔ 도개교 남동쪽 낚시터 노인에게 낚싯대를 빌려 열쇠 건지기<br/>
+                3. <strong>시제품 탐색 (BP 3):</strong> 시장 저택 비서 실비 ➔ 아이나 가도 다리 근처 『고블린』 처치 후 도력총 회수<br/>
+                4. <strong>고지도 조사 (BP 3+1=4):</strong> 메베 해안길 바닷가 동굴 끝 해골 조사(『해적의 보물』 입수) 후 예배당 지미에게 보고 시 추가 BP +1<br/>
+                5. <strong>메베 해안길의 수배 마수 (BP 4):</strong> 『헬 배스』 토벌 (기절 방지 액세서리 권장)<br/>
+                6. <strong>아이나 가도의 수배 마수 (BP 4):</strong> 『재버』 토벌
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2장 STEP 3 -->
+      <div class="step-section">
+        <div class="step-header" onclick="toggleStep(this)">
+          <div class="step-header-left">
+            <span class="step-number">STEP 3</span>
+            <span class="step-title">머시아 고아원 화재 추리 (BP +4) & 뒤낭 공작 설득 / 감벽의 탑</span>
+          </div>
+          <span style="font-size:0.85rem; color:var(--text-secondary);">클릭하여 접기/펼치기 ▾</span>
+        </div>
+        <div class="step-body">
+          <div class="check-item" data-id="c2_main_orphanage" data-tags="bp missable" data-bp="9">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-main">메인 퀘스트 #9 (추리)</span>
+                <span class="badge badge-bp">기본 5 + 보너스 4 BP</span>
+                <span class="badge badge-missable">⚠️ 2문항 정답 필수</span>
+                <span class="item-title">[머시아 고아원 조사] 화재 현장 조사 추리 (+2) & 길버트 심문 선택지 (+2)</span>
+              </div>
+              <div class="item-desc">불탄 고아원의 정문·우유통 등 단서를 모두 조사한 뒤 나오는 추리 질문과 마놀리아 마을 복귀 후 길버트 대화에서 정답을 고릅니다. 이후 루안 남쪽 창고에서 레이븐 일당을 격파하면 클로제가 정식 합류합니다.</div>
+              <div class="choice-box">
+                • 선택지 1 (화재 원인): <strong>「누군가에 의한 방화」</strong> (BP +2)<br/>
+                • 선택지 2 (용의자 지목): <strong>「창고에 모이는 패거리」</strong> (BP +2)
+              </div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="c2_sub_duke" data-tags="bp missable" data-bp="6">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-sub">서브 퀘스트 #10</span>
+                <span class="badge badge-bp">기본 2 + 보너스 4 BP</span>
+                <span class="badge badge-missable">⚠️ 3연속 선택지 정답</span>
+                <span class="item-title">여행자 설득 (아이나 가도 남동쪽 끝 에어런 관문 — 뒤낭 공작 설득)</span>
+              </div>
+              <div class="item-desc">에어런 관문(곤하임 관문)에서 억지를 부리는 뒤낭 공작을 상대로 아래 3가지 선택지를 순서대로 골라 기분을 맞춰줍니다.</div>
+              <div class="choice-box">
+                1. <strong>「각하, 마중 나왔습니다.」</strong><br/>
+                2. <strong>「네! 이런 누추한 곳에……」</strong><br/>
+                3. <strong>「아, 각하의 발밑에……」</strong> ➔ <strong>최대 BP (+4 보너스) 획득!</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="c2_sub_mid5" data-tags="bp chest missable" data-bp="22">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-sub">중반 서브 의뢰 5종</span>
+                <span class="badge badge-bp">총 BP +22</span>
+                <span class="badge badge-chest">📦 감벽의 탑·간도 상자</span>
+                <span class="item-title">감벽의 탑의 수상한 자(4) / 탐색 호위(4) / 촛대 도난(4) / 간도·보양소 수배 마수(10)</span>
+              </div>
+              <div class="item-desc">
+                1. <strong>감벽의 탑의 수상한 자 (BP 4):</strong> 아이나 가도 남쪽 <strong>감벽의 탑(사파이어 타워)</strong> 5층에서 도로시 구출 & <strong>감벽의 탑 보물상자 11개 전수 회수!</strong><br/>
+                2. <strong>탐색 호위 (BP 4):</strong> 호텔 아메리아 수주 ➔ 마놀리아 간도에서 삼촌 로스 구출 (간도 보물상자 4개 회수)<br/>
+                3. <strong>촛대 도난 사건 (BP 4):</strong> 예배당 ➔ 도개교 크레인 ➔ 카지노 2층 룰렛 ➔ 항구 기중기 ➔ 발렌느 등대 포크 노인 순서로 암호 추적<br/>
+                4. <strong>마놀리아 간도 & 보양소의 수배 마수 (BP 5 + 5 = 10):</strong> 학원제 진입 전 수배 마수 2종 모두 토벌 완료!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2장 STEP 4 -->
+      <div class="step-section">
+        <div class="step-header" onclick="toggleStep(this)">
+          <div class="step-header-left">
+            <span class="step-number">STEP 4</span>
+            <span class="step-title">제니스 왕립학교 학원제 (히든 3종 & 팝콘 레시피) ~ 카넬리아 5권 & 결전</span>
+          </div>
+          <span style="font-size:0.85rem; color:var(--text-secondary);">클릭하여 접기/펼치기 ▾</span>
+        </div>
+        <div class="step-body">
+          <div class="check-item" data-id="c2_festival_3quests" data-tags="bp book chest missable" data-bp="10">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-main">메인 & 학원제 히든 3종</span>
+                <span class="badge badge-bp">기본 5 + 히든 5 BP</span>
+                <span class="badge badge-chest">📦 구교사 상자 주의</span>
+                <span class="badge badge-missable">⚠️ 구교사 탈출 전 확인!</span>
+                <span class="item-title">[학원제 도움] 장식 조사(+1) / 루안 경제사 3권(+1) / 구교사 마수 퇴치(+3)</span>
+              </div>
+              <div class="item-desc">
+                1. <strong>교정 장식 조사 (BP +1):</strong> 안뜰의 수위 파크스와 대화 후 [강당 정문], [남자 기숙사 문 옆], [클럽하우스-본관 연결통로] 3곳 조사.<br/>
+                2. <strong>연구 자료 수집 (BP +1):</strong> 클럽하우스 2층 자료실 로직과 대화 후 <strong>《루안 경제사 상·중·하》</strong>(남자 탈의실 의자 / 교무실 책상 / 남자 기숙사 책상)를 찾아 전달.<br/>
+                3. <strong>구교사의 마수 퇴치 (BP +3):</strong> 구교사 내부의 마수 4무리를 전부 처치. <em>(⚠️ 마수를 모두 잡은 뒤 구교사 밖으로 나오면 즉시 학원제가 시작되어 구교사에 다시 들어갈 수 없습니다. 나오기 전에 구교사 내부 및 우측 정원의 보물상자 4개를 반드시 먼저 여세요!)</em>
+              </div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="c2_recipe_festival" data-tags="recipe missable">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-recipe">🍳 학원제 한정 레시피 2종</span>
+                <span class="badge badge-missable">⚠️ 바삭바삭 팝콘 주의</span>
+                <span class="item-title">학원제 클럽하우스 1층 노점 — 『바삭바삭 팝콘』 & 『애플 아이스』 구매</span>
+              </div>
+              <div class="item-desc">학원제 당일 클럽하우스 1층 「빙과 플뢰레」 및 팝콘 가판대에서 <strong>『바삭바삭 팝콘』</strong>과 <strong>『애플 아이스』</strong>를 반드시 사 먹어 레시피를 등록합니다!</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="c2_book_carnelia5" data-tags="book missable" data-carnelia="1">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-book">📕 카넬리아 제5권</span>
+                <span class="badge badge-missable">⚠️ 학원제 직후 초단기</span>
+                <span class="item-title">《카넬리아》 5권 입수 — 루안 시 남쪽 도개교 다리 위 (마틸다)</span>
+              </div>
+              <div class="item-desc">학원제 연극이 끝나고 테레사 원장 습격 소식을 들어 루안 시로 돌아온 직후(시장 저택으로 돌입하기 전), <strong>루안 시 도개교 남쪽 다리 근처의 마틸다</strong>와 대화해 《카넬리아》 5권을 받습니다!</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="c2_main_clear" data-tags="bp" data-bp="10">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-main">메인 퀘스트 완료</span>
+                <span class="badge badge-bp">BP +10</span>
+                <span class="item-title">테레사 원장 습격 사건 완료 (달모어 시장 저택 & 보스: 팬텀 라이트 격파 ➔ 2장 클리어!)</span>
+              </div>
+              <div class="item-desc">달모어 시장 저택의 방들을 조사하며 보물상자를 챙기고, 바렌느 등대 및 항구 추격전 끝에 최종 보스 『팬텀 라이트 & 헬 하운드』를 격파합니다. (보스의 아츠 반사 결계 시 물리 크래프트/S크래프트로 타격)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         PANEL 4: 제3장 (CHAPTER 3) 초정밀 스텝업 공략
+         ========================================== -->
+    <div id="panel-ch3" class="chapter-panel">
+      <div class="alert-banner info">
+        <div class="alert-title">⚙️ 제3장 「검은 도력기」 (차이스 지방 — 총 15개 의뢰 / 최대 92 BP / 상자 68개)</div>
+        <div style="font-size: 0.88rem; color: var(--text-secondary);">
+          • <strong>3장 핵심 목표:</strong> 시작 직후 <strong>《카넬리아》 6권</strong> & 홍련의 탑 직후 <strong>《카넬리아》 7권</strong> / 사서 연속 퀘스트 도중 <strong>《내일의 요리》 직접 열람</strong> / 중앙 공방 발연통 5곳 해제 / <strong>트래토 평원길 숨겨진 석회 동굴에서 마수 식재료(어란·젤라틴) 파밍</strong>!
+        </div>
+      </div>
+
+      <!-- 3장 STEP 1 -->
+      <div class="step-section">
+        <div class="step-header" onclick="toggleStep(this)">
+          <div class="step-header-left">
+            <span class="step-number">STEP 1</span>
+            <span class="step-title">3장 시작 직후 카넬리아 6권 ~ 칼바드 터널 & 차이스 시 도착</span>
+          </div>
+          <span style="font-size:0.85rem; color:var(--text-secondary);">클릭하여 접기/펼치기 ▾</span>
+        </div>
+        <div class="step-body">
+          <div class="check-item" data-id="c3_book_carnelia6" data-tags="book missable" data-carnelia="1">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-book">📕 카넬리아 제6권</span>
+                <span class="badge badge-missable">⚠️ 3장 시작 직후 한정!</span>
+                <span class="item-title">《카넬리아》 6권 입수 — 제니스 왕립학교 클럽하우스 2층 (파비)</span>
+              </div>
+              <div class="item-desc">3장이 시작되어 에어 레텡 관문으로 떠나기 직전, 반드시 <strong>제니스 왕립학교 클럽하우스 2층 학생회실 맞은편 방</strong>에 들러 여학생 파비와 대화해 《카넬리아》 6권을 받습니다! (관문을 통과하면 루안 지방으로 다시 돌아갈 수 없습니다)</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="c3_chest_kaldia" data-tags="chest">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-chest">📦 보물상자 (8개)</span>
+                <span class="item-title">에어 레텡 관소 ➔ 칼바드 터널 (카렐리아 터널) 보물상자 8개 전수 회수</span>
+              </div>
+              <div class="item-desc">칼바드 지하 터널 내의 지선 길목들을 꼼꼼히 탐색하여 마수 상자를 포함한 보물상자 8개를 모두 열고 티타와 함께 차이스에 도착합니다.</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="c3_book_news6" data-tags="book recipe missable" data-news="1">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-book">📰 리벨 통신 제6호</span>
+                <span class="badge badge-recipe">🍳 차이스 시내 요리</span>
+                <span class="badge badge-missable">⚠️ 3장 시한부</span>
+                <span class="item-title">차이스 잡화점 「벨 스테이션」 《리벨 통신 제6호》 & 주점·가판대 요리 구매</span>
+              </div>
+              <div class="item-desc">차이스 시내 잡화점 「벨 스테이션」에서 《리벨 통신 제6호》를 구매하고, 주점 「포겔」 및 남쪽 거리 음료 가판대 「풀리암 드링크」에서 미등록 메뉴들을 구매합니다.</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="c3_main_blackorb" data-tags="bp" data-bp="5">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-main">메인 퀘스트 #1</span>
+                <span class="badge badge-bp">BP +5</span>
+                <span class="item-title">검은 오브먼트 조사 (러셀 박사 연구실 실험 이벤트)</span>
+              </div>
+              <div class="item-desc">차이스 길드 지부 키리카 지부장 면담 ➔ 카르디나 공방장 및 러셀 박사 자택/공방 3층 실험실 이벤트를 진행합니다.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3장 STEP 2 -->
+      <div class="step-section">
+        <div class="step-header" onclick="toggleStep(this)">
+          <div class="step-header-left">
+            <span class="step-number">STEP 2</span>
+            <span class="step-title">운반차 탐색·수리(히든) & 초반 서브 의뢰 (스트레거 알파 / 사서 / 식재료 파밍)</span>
+          </div>
+          <span style="font-size:0.85rem; color:var(--text-secondary);">클릭하여 접기/펼치기 ▾</span>
+        </div>
+        <div class="step-body">
+          <div class="check-item" data-id="c3_main_cart" data-tags="bp missable" data-bp="7">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-main">메인 & 히든 #2·#3</span>
+                <span class="badge badge-bp">탐색 3 + 수리 4 BP</span>
+                <span class="badge badge-missable">⚠️ 온천 출발 전 수리 필수!</span>
+                <span class="item-title">운반차 탐색 (BP 3) ➔ [히든] 운반차 수리 (BP 4) 연속 완수</span>
+              </div>
+              <div class="item-desc">
+                1. <strong>운반차 탐색 (BP 3):</strong> 트래토 평원길 남쪽 지선에서 마수에게 포위된 목재 운반차를 구출.<br/>
+                2. <strong>[히든] 운반차 수리 (BP 4):</strong> 구출 직후 차이스로 돌아와 <strong>중앙 공방 3층 공작실의 프로메</strong>에게 『구동 도력기』를 받고 1층 카르디나 공방장에게 통행 허가를 받은 뒤, 다시 트래토 평원길의 운반차로 가서 수리를 완료합니다! <em>(엘모 온천 펌프 수리를 완료하면 만료됩니다)</em>
+              </div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="c3_sub_strega" data-tags="bp missable" data-bp="6">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-sub">서브 퀘스트 #4</span>
+                <span class="badge badge-bp">기본 4 + 보너스 2 BP</span>
+                <span class="item-title">신제품 테스트 (에스텔에게 『스트레거 알파』 장착 후 4곳 이상 도보 방문)</span>
+              </div>
+              <div class="item-desc">차이스 무구점 옆 민가 2층에서 수주 후 에스텔에게 『스트레거 알파』 신발을 장착시킨 상태로 <strong>[엘모 온천, 볼프 요새, 생트하임 게이트, 레이스톤 요새, 에어 레텡]</strong> 중 4곳 이상을 방문한 뒤 보고하면 추가 BP +2와 명품 신발 『스트레거 P』를 받습니다.</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="c3_recipe_librarian" data-tags="recipe bp missable" data-bp="10">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-sub">연속 서브 4종 (#5~#8)</span>
+                <span class="badge badge-bp">총 BP +10</span>
+                <span class="badge badge-recipe">🍳 내일의 요리 (휴대 부야베스)</span>
+                <span class="badge badge-missable">⚠️ 책장 직접 열람 필수!</span>
+                <span class="item-title">임시 사서 구인 ➔ 잔업 ➔ 속·잔업 ➔ 속속·잔업 & 《내일의 요리》 직접 열람</span>
+              </div>
+              <div class="item-desc">
+                중앙 공방 2층 자료실의 콘스탄츠에게 수주하는 4단계 연속 퀘스트입니다:<br/>
+                • 1단계: 엘모 마을 여관 마오 할머니에게 책 회수 (BP 2)<br/>
+                • 2단계: 트래토 평원길 홍련의 탑 앞 열석 기둥 조사 (BP 2)<br/>
+                • 3단계: 칼바드 터널 중앙 갈림길(루안 방면) 열석 기둥 조사 (BP 3)<br/>
+                • 4단계: 트래토 평원길 남동쪽 <strong>숨겨진 석회 동굴 안쪽의 개구리 마수</strong> 처치 후 책 회수 (BP 3)<br/>
+                🚨 <strong>치명적 주의:</strong> 책을 반납한 뒤 <strong>자료실 책장에 꽂힌 《내일의 요리》를 반드시 직접 클릭해 읽어야 『휴대 부야베스』 레시피가 습득</strong>됩니다!
+              </div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="c3_sub_tomato_nosmoke" data-tags="bp recipe missable" data-bp="10">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-sub">서브 퀘스트 #9~#11</span>
+                <span class="badge badge-bp">총 BP +10</span>
+                <span class="badge badge-recipe">🍳 쓴 토마토 샌드위치</span>
+                <span class="item-title">신식재료 조달 (BP 3) / 금연 강화 주간 (BP 3) / 트래토 평원길의 수배 마수 (BP 4)</span>
+              </div>
+              <div class="item-desc">
+                • <strong>신식재료 조달:</strong> 중앙 공방 4층 실험실 온실의 루이에게 받은 『쓴 토마토』를 주점 「포겔」의 벤에게 전달하면 <strong>『쓴 토마토 샌드위치』</strong> 레시피 습득!<br/>
+                • <strong>금연 강화 주간:</strong> 공방 B1층 의무실 미리암 선생 수주 ➔ 3층 설계실 안쪽 테이블에서 담배 회수.<br/>
+                • <strong>트래토 평원길 보물상자 & 석회 동굴 마수 식재료 파밍:</strong> 평원길 및 석회 동굴 보물상자(총 18개)를 모두 열고, 동굴 몬스터들에게서 <strong>『마수의 어란』·『마수의 젤라틴』을 15~20개씩 미리 파밍</strong>해 두세요!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3장 STEP 3 -->
+      <div class="step-section">
+        <div class="step-header" onclick="toggleStep(this)">
+          <div class="step-header-left">
+            <span class="step-number">STEP 3</span>
+            <span class="step-title">엘모 마을 온천 펌프 수리 & 재결합의 사자 (복실복실 니트 모자)</span>
+          </div>
+          <span style="font-size:0.85rem; color:var(--text-secondary);">클릭하여 접기/펼치기 ▾</span>
+        </div>
+        <div class="step-body">
+          <div class="check-item" data-id="c3_hidden_love" data-tags="bp missable" data-bp="6">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-hidden">히든 퀘스트 #12</span>
+                <span class="badge badge-bp">기본 2 + 보너스 4 BP</span>
+                <span class="badge badge-missable">⚠️ 선물 동봉 필수</span>
+                <span class="item-title">재결합의 사자 (볼프 요새 병사 브람 ➔ 『복실복실 니트 모자』 함께 전달)</span>
+              </div>
+              <div class="item-desc">엘모 온천 펌프 수리 발생 후 남서쪽 끝 <strong>볼프 요새 입구의 병사 브람</strong>과 대화해 편지를 받습니다. 편지만 주지 말고 차이스 잡화점 「벨 스테이션」에서 <strong>『복실복실 니트 모자』(800 미라)</strong>를 사서 중앙 공방 B1층 작업장의 페이에게 함께 전달하면 <strong>BP +4가 추가</strong>됩니다!</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="c3_recipe_hotspring_gate" data-tags="recipe bp chest missable" data-bp="17">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-main">엘모 온천 수리 & 히든 의뢰</span>
+                <span class="badge badge-bp">총 BP +17</span>
+                <span class="badge badge-recipe">🍳 전골 요리 2종</span>
+                <span class="item-title">엘모 온천 펌프 수리(8) / [히든] 부모님께 드리는 선물(4) / 리터 가도 수배 마수 ①(5)</span>
+              </div>
+              <div class="item-desc">
+                • <strong>[히든] 부모님께 드리는 선물 (BP 4):</strong> 엘모 온천 사건 발생 중 차이스 시내에서 수주하여 완료<br/>
+                • 엘모 마을 여관 「단풍정」: <strong>『유혹 산채전골』</strong> 구매 및 온천 뒷산 펌프 수리 & 강견 구출 (BP 8)<br/>
+                • 북쪽 리터 가도 보물상자 4개 회수 & 『리터 가도의 수배 마수 ①』 토벌 (BP 5)<br/>
+                • 생트하임 게이트 식당: <strong>『궁극 고기전골』</strong> 구매
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3장 STEP 4 -->
+      <div class="step-section">
+        <div class="step-header" onclick="toggleStep(this)">
+          <div class="step-header-left">
+            <span class="step-number">STEP 4</span>
+            <span class="step-title">중앙 공방 발연통 5곳 해제 (BP +5) ~ 홍련의 탑 & 카넬리아 7권</span>
+          </div>
+          <span style="font-size:0.85rem; color:var(--text-secondary);">클릭하여 접기/펼치기 ▾</span>
+        </div>
+        <div class="step-body">
+          <div class="check-item" data-id="c3_main_smoke" data-tags="bp missable" data-bp="14">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-main">메인 퀘스트 #13</span>
+                <span class="badge badge-bp">기본 6 + 발연통 5 + 선택지 3 BP</span>
+                <span class="badge badge-missable">⚠️ 발연통 5곳 전부 해제</span>
+                <span class="item-title">[중앙 공방의 이변] 발연통 5곳 해제 (+5) & 홍련의 탑 입구 선택지 (+3)</span>
+              </div>
+              <div class="item-desc">
+                온천에서 돌아와 연기가 자욱한 중앙 공방에 진입하면 5층으로 올라가는 동안 아래 <strong>5곳의 발연통을 모두 조사해 해제</strong>하세요 (개당 BP +1):<br/>
+                ① 지하 1층 컨베이어 가장 안쪽 구석 ② 1층 안내데스크 왼쪽 의자 뒤 ③ 2층 엘리베이터 문 오른쪽 ④ 3층 설계실 안쪽 구석 ⑤ 4층 실험실(의무실 맞은편 방) 안쪽.
+              </div>
+              <div class="choice-box">
+                • 홍련의 탑 정문 앞 전투 승리 후 선택지: <strong>「검은 옷을 입은 녀석들이랑 관계가 있다거나?」</strong> ➔ <strong>BP +3 추가!</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="c3_chest_carneliatower" data-tags="chest">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-chest">📦 보물상자 (12개)</span>
+                <span class="item-title">홍련의 탑 (카넬리아 타워) 외부·내부 보물상자 12개 전수 회수</span>
+              </div>
+              <div class="item-desc">홍련의 탑 1~5층 내부의 보물상자 12개(마수 상자 포함)를 모두 열고 최상층에서 흑장속 특무병 및 어택 독을 격파합니다.</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="c3_book_carnelia7" data-tags="book missable" data-carnelia="1">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-book">📕 카넬리아 제7권</span>
+                <span class="badge badge-missable">⚠️ 초단기 시한부!</span>
+                <span class="item-title">《카넬리아》 7권 입수 — 볼프 요새 안쪽 (게르빈 부대장)</span>
+              </div>
+              <div class="item-desc">홍련의 탑에서 돌아와 애거트 치료 이벤트를 마친 직후(레이스톤 요새로 가기 전!), 남서쪽 끝 <strong>볼프 요새 안의 게르빈 부대장</strong>에게 달려가 《카넬리아》 7권을 받습니다!</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="c3_sub_abyssworm" data-tags="bp missable" data-bp="6">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-sub">서브 퀘스트 #14</span>
+                <span class="badge badge-bp">BP +6</span>
+                <span class="badge badge-missable">⚠️ 지진 반격 주의</span>
+                <span class="item-title">리터 가도의 수배 마수 ② (어비스 웜 6마리 토벌)</span>
+              </div>
+              <div class="item-desc">리터 가도 중간 언덕에 출현한 『어비스 웜』 6마리를 토벌합니다. 한 마리씩 건드리면 전체 지진 공격을 난사하므로, 클로제·에스텔의 『에어리얼』 등 광역 풍 속성 아츠나 요슈아의 『칠흑의 어금니』로 한꺼번에 정리하세요!</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3장 STEP 5 -->
+      <div class="step-section">
+        <div class="step-header" onclick="toggleStep(this)">
+          <div class="step-header-left">
+            <span class="step-number">STEP 5</span>
+            <span class="step-title">솔다트 군용로 보물상자 회수 & 레이스톤 요새 무발각 잠입 (BP +6)</span>
+          </div>
+          <span style="font-size:0.85rem; color:var(--text-secondary);">클릭하여 접기/펼치기 ▾</span>
+        </div>
+        <div class="step-body">
+          <div class="alert-banner danger" style="margin-bottom:4px;">
+            <div class="alert-title">🚨 솔다트 군용로 보물상자 회수 마지막 기회!</div>
+            <div style="font-size: 0.86rem;">비행정 사진을 가지고 레이스톤 요새 정문에 접근하면 스토리가 자동 진행되어 <strong>솔다트 군용로에 다시 나갈 수 없습니다.</strong> 정문 이벤트 전에 군용로의 보물상자 4개를 모두 여세요!</div>
+          </div>
+
+          <div class="check-item" data-id="c3_main_leiston" data-tags="bp chest missable" data-bp="16">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-main">메인 퀘스트 #15 완료</span>
+                <span class="badge badge-bp">기본 10 + 선택지 3 + 무발각 3 BP</span>
+                <span class="badge badge-chest">📦 솔다트 군용로 상자 4개</span>
+                <span class="badge badge-missable">⚠️ 잠입 전 세이브 필수</span>
+                <span class="item-title">[러셀 박사 탐색] 작전 회의 선택지 (+3) & 레이스톤 요새 무발각 잠입 (+3)</span>
+              </div>
+              <div class="item-desc">솔다트 군용로 상자 4개를 회수한 뒤 요새 정문 정찰 ➔ 길드 복귀 작전 회의 ➔ 컨테이너 잠입 및 시드 소령과의 협력으로 3장을 클리어합니다.</div>
+              <div class="choice-box">
+                • 길드 복귀 후 작전 회의 선택지: <strong>「친위대가 계략에 빠졌다는 거야?」</strong> (BP +3)<br/>
+                • 요새 내부 잠입 시: <strong>순찰 병사에게 단 한 번도 들키지 않고 연구동/사령부 진입</strong> (BP +3)
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         PANEL 5: 종장 (FINALE) 초정밀 스텝업 공략
+         ========================================== -->
+    <div id="panel-finale" class="chapter-panel">
+      <div class="alert-banner info">
+        <div class="alert-title">👑 종장 「왕도요란」 (그란셀 지방 — 총 10개 의뢰 / 최대 78 BP / 상자 60+개)</div>
+        <div style="font-size: 0.88rem; color: var(--text-secondary);">
+          • <strong>종장 핵심 목표:</strong> <strong>《카넬리아》 8~11권 완결 수집 및 최강 무기 교환</strong> / 5일차 밤 대성당 무발각 돌파(BP +5) / <strong>키르셰 도로 & 왕도 지하수로 진입 제한 전 상자 및 마지막 레시피 『뜯어먹는 스페어립』 회수</strong> / 준유격사 1급(투혼의 벨트) 등극!
+        </div>
+      </div>
+
+      <!-- 종장 STEP 1 -->
+      <div class="step-section">
+        <div class="step-header" onclick="toggleStep(this)">
+          <div class="step-header-left">
+            <span class="step-number">STEP 1</span>
+            <span class="step-title">종장 시작 (카넬리아 8·9권) ~ 키르셰 도로 상자 회수 & 왕도 1일차</span>
+          </div>
+          <span style="font-size:0.85rem; color:var(--text-secondary);">클릭하여 접기/펼치기 ▾</span>
+        </div>
+        <div class="step-body">
+          <div class="check-item" data-id="cf_book_carnelia89" data-tags="book missable" data-carnelia="2">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-book">📕 카넬리아 제8권 & 제9권</span>
+                <span class="badge badge-missable">⚠️ 종장 시작 직후 필수</span>
+                <span class="item-title">《카넬리아》 8권(에어 레텡 오터) & 9권(그뤼네 게이트 성벽 위 서번트) 연속 입수</span>
+              </div>
+              <div class="item-desc">
+                1. <strong>8권:</strong> 종장 시작 직후 생트하임 관문으로 가기 전, 남동쪽 <strong>에어 레텡 관소</strong>에 들러 병사 오터와 대화해 입수!<br/>
+                2. <strong>9권:</strong> 생트하임 관문을 넘어 그란셀 지방의 <strong>그뤼네 게이트 성벽 위</strong>에 있는 병사 서번트와 대화해 입수!
+              </div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="cf_chest_kirsche" data-tags="chest missable">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-chest">📦 야외 보물상자 전수 회수</span>
+                <span class="badge badge-missable">⚠️ 6일차 이후 출입 불가!</span>
+                <span class="item-title">키르셰 도로 (그뤼네 게이트 ~ 왕도 남문) & 엘베 산책로 보물상자 전수 회수</span>
+              </div>
+              <div class="item-desc">왕도 그란셀로 들어가는 길에 키르셰 도로와 남동쪽 엘베 산책로(엘베 별궁 앞까지)를 샅샅이 돌아 모든 야외 보물상자를 미리 회수합니다. (6일차 작전 개시 후에는 왕도 밖으로 나갈 수 없습니다!)</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="cf_recipe_grancel1" data-tags="recipe book missable" data-news="1">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-recipe">🍳 왕도 요리 2종</span>
+                <span class="badge badge-book">📰 리벨 통신 제7호</span>
+                <span class="badge badge-missable">⚠️ 4일차 결승 전 한정</span>
+                <span class="item-title">커피하우스 바랄 『농축 에스프레소』 / 노점 『아이스크림』 / 에델 백화점 《리벨 통신 제7호》</span>
+              </div>
+              <div class="item-desc">
+                • 왕도 서쪽 지구 커피하우스 「바랄」: <strong>『농축 에스프레소』</strong> & <strong>『진심 카레』</strong> 구매<br/>
+                • 왕도 동쪽 지구 노점 「소르베」: 한정 아이스크림 구매<br/>
+                • 동쪽 지구 「에델 백화점」 잡화 코너: <strong>《리벨 통신 제7호》</strong> 구매 (4일차까지만 판매!)
+              </div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="cf_main_day1" data-tags="bp missable" data-bp="1">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-bp">🔥 1일차 추가 BP +1 선택지</span>
+                <span class="badge badge-missable">⚠️ 길드 보고 시 선택</span>
+                <span class="item-title">[알리시아 여왕에게 전언] 1일차 그란셀 길드 지부 엘가 대화 선택지</span>
+              </div>
+              <div class="choice-box">
+                정답 선택지: <strong>「소개장을 묵살당할 수 있다?」</strong> ➔ <strong>BP +1 추가 획득!</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 종장 STEP 2 -->
+      <div class="step-section">
+        <div class="step-header" onclick="toggleStep(this)">
+          <div class="step-header-left">
+            <span class="step-number">STEP 2</span>
+            <span class="step-title">무술대회 (2~4일차) & 단기 서브 의뢰 4종 / 지하수로 서쪽 구역 (마지막 레시피)</span>
+          </div>
+          <span style="font-size:0.85rem; color:var(--text-secondary);">클릭하여 접기/펼치기 ▾</span>
+        </div>
+        <div class="step-body">
+          <div class="alert-banner danger" style="margin-bottom:4px;">
+            <div class="alert-title">🚨 종장 서브 의뢰는 당일 경기장 입장 전 즉시 클리어!</div>
+            <div style="font-size: 0.86rem;">그란셀 아레나(무술대회 경기장)에 들어가 시합을 시작하면 해당 일차의 서브 퀘스트가 즉시 만료됩니다. 매일 아침 길드 게시판을 확인하고 시합 전에 전부 해결하세요!</div>
+          </div>
+
+          <div class="check-item" data-id="cf_sub_day234" data-tags="bp chest recipe missable" data-bp="17">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-sub">2~4일차 서브 의뢰 4종</span>
+                <span class="badge badge-bp">총 BP +17</span>
+                <span class="badge badge-recipe">🍳 뜯어먹는 스페어립</span>
+                <span class="badge badge-chest">📦 서쪽 지하수로 상자</span>
+                <span class="item-title">지하수로 서쪽 구역 수배 마수(6) / 잃어버린 지갑(3) / 제국 대사관(4) / 미아 수색(4)</span>
+              </div>
+              <div class="item-desc">
+                1. <strong>지하수로 서쪽 구역의 수배 마수 (BP 6):</strong> 서쪽 지구 입구로 지하수로 서쪽 구역에 진입해 수배 마수를 토벌하고, <strong>서쪽 구역 보물상자에서 대표 메뉴 마지막 레시피인 『뜯어먹는 스페어립』을 반드시 회수</strong>합니다!<br/>
+                2. <strong>잃어버린 지갑 (BP 3):</strong> 남쪽 지구 관문 옆 귀부인 미란다 ➔ 공항·백화점·호텔·성당 등 수색<br/>
+                3. <strong>제국 대사관의 의뢰 (BP 4):</strong> 서쪽 지구 대사관 앞 비서 ➔ 도둑맞은 훈장 추적<br/>
+                4. <strong>미아 수색 (BP 4):</strong> 동쪽 지구 백화점 부근 수주 ➔ 아레나 경기장 앞 소년 발견
+              </div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="cf_main_day3" data-tags="bp missable" data-bp="2">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-bp">🔥 3일차 추가 BP +2 선택지</span>
+                <span class="badge badge-missable">⚠️ 신문사 대화</span>
+                <span class="item-title">[알리시아 여왕에게 전언] 3일차 저녁 리벨 통신사 2층 나이얼 대화 선택지</span>
+              </div>
+              <div class="choice-box">
+                정답 선택지: <strong>「리샤르 대령」</strong> ➔ <strong>BP +2 추가 획득!</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="cf_book_carnelia11" data-tags="book missable" data-carnelia="1">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-book">📕 카넬리아 제11권 (완결)</span>
+                <span class="badge badge-missable">⚠️ 4일차 결승 직후!</span>
+                <span class="item-title">《카넬리아》 11권 입수 — 4일차 결승전 승리 직후 에델 백화점 앞 (안톤)</span>
+              </div>
+              <div class="item-desc">4일차 무술대회 결승전(로란스 소위 팀 격파) 직후 저녁 만찬장으로 가기 전, <strong>왕도 동쪽 지구 에델 백화점 앞을 서성이는 안톤</strong>에게 여러 번 반복해서 말을 걸면 《카넬리아》 11권을 받습니다! <em>(※ 10권은 5일차 밤에 입수하므로 11권을 먼저 얻는 것이 정상입니다)</em></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 종장 STEP 3 -->
+      <div class="step-section">
+        <div class="step-header" onclick="toggleStep(this)">
+          <div class="step-header-left">
+            <span class="step-number">STEP 3</span>
+            <span class="step-title">5일차 밤 대성당 잠입 (BP +5 & 카넬리아 10권) ~ 6일차 최강 무기 교환 & 별궁 작전</span>
+          </div>
+          <span style="font-size:0.85rem; color:var(--text-secondary);">클릭하여 접기/펼치기 ▾</span>
+        </div>
+        <div class="step-body">
+          <div class="check-item" data-id="cf_book_carnelia10" data-tags="book missable" data-carnelia="1">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-book">📕 카넬리아 제10권</span>
+                <span class="badge badge-missable">⚠️ 5일차 밤 한정!</span>
+                <span class="item-title">《카넬리아》 10권 입수 — 5일차 밤 왕도 공항(발착장) 내부 (랄프)</span>
+              </div>
+              <div class="item-desc">5일차 밤 통행금지령을 뚫고 대성당으로 이동하는 도중, 북서쪽의 <strong>그란셀 공항(발착장) 안으로 들어가 랄프</strong>와 대화하면 《카넬리아》 10권을 획득하며 전 11권이 완성됩니다!</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="cf_main_day5" data-tags="bp missable" data-bp="15">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-main">메인 퀘스트 완료</span>
+                <span class="badge badge-bp">기본 10 + 무발각 5 BP</span>
+                <span class="badge badge-missable">⚠️ 단 한 번도 잡히지 말 것!</span>
+                <span class="item-title">[알리시아 여왕에게 전언] 5일차 밤 순찰 병사에게 무발각으로 대성당 도착</span>
+              </div>
+              <div class="item-desc">호텔을 빠져나와 남쪽 지구 ➔ 동쪽 지구(공항 경유) ➔ 서쪽 지구 대성당까지 이동할 때 <strong>순찰 중인 왕국군 병사에게 단 한 번도 붙잡히지 않고 도착</strong>하면 보너스 BP +5를 받습니다!</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="cf_ultimate_weapon" data-tags="book missable" data-news="1">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-book">⚔️ 최강 무기 교환</span>
+                <span class="badge badge-missable">⚠️ 6일차 시내 체류 중</span>
+                <span class="item-title">서쪽 지구 커피하우스 「바랄」 마스터에게 《카넬리아》 전 11권 주고 최강 무기 수령!</span>
+              </div>
+              <div class="item-desc">6일차 낮에 서쪽 지구 커피하우스 「바랄」의 마스터에게 말을 걸면 《카넬리아》 1~11권과 교환하여 <strong>에스텔의 최강 무기 『태양의 방망이(오우거 로드)』</strong> 또는 <strong>요슈아의 최강 무기 『천화의 쌍검(자오유)』</strong>을 받습니다! 또한 에델 백화점에서 <strong>《리벨 통신 제8호》</strong>를 구매하세요.</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="cf_sub_eastsewer" data-tags="bp chest missable" data-bp="8">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-sub">6일차 서브 의뢰</span>
+                <span class="badge badge-bp">BP +8</span>
+                <span class="badge badge-chest">📦 동쪽 지하수로 상자</span>
+                <span class="item-title">지하수로 동쪽 구역의 수배 마수 (보스 폼 토벌) & 동쪽 지하수로 보물상자 전수 회수</span>
+              </div>
+              <div class="item-desc">별궁 구출 작전을 시작하기 전에 지하수로 동쪽 구역으로 내려가 모든 보물상자를 열고 수배 마수 『보스 폼』 일행을 처치한 뒤 길드에 보고합니다.</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="cf_main_hostage" data-tags="bp missable" data-bp="19">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-main">메인 & 별궁 작전</span>
+                <span class="badge badge-bp">인질 해방 10(+4) + 마수 소탕 5 BP</span>
+                <span class="badge badge-missable">⚠️ 2연속 선택지 정답</span>
+                <span class="item-title">[인질 해방 작전] 리벨 통신사 조사 후 선택지 2종 (+4) & 엘베 별궁 탈환</span>
+              </div>
+              <div class="choice-box">
+                • 선택지 1: <strong>「누군가에게 불려 나갔다」</strong> (BP +2)<br/>
+                • 선택지 2: <strong>「클로디아 공주의 혼담에 대해」</strong> (BP +2)
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 종장 STEP 4 -->
+      <div class="step-section">
+        <div class="step-header" onclick="toggleStep(this)">
+          <div class="step-header-left">
+            <span class="step-number">STEP 4</span>
+            <span class="step-title">지하수로 북쪽 구역 ~ 그란셀 성 탈환 (준유격사 1급!) & 최종 던전</span>
+          </div>
+          <span style="font-size:0.85rem; color:var(--text-secondary);">클릭하여 접기/펼치기 ▾</span>
+        </div>
+        <div class="step-body">
+          <div class="alert-banner danger" style="margin-bottom:4px;">
+            <div class="alert-title">🚨 지하수로 최심부 진입 전 상자 최종 확인!</div>
+            <div style="font-size: 0.86rem;">지하수로 북쪽 구역 최심부에서 「대기한다」를 누르면 그란셀 성으로 진입하며 <strong>이후 지하수로에 다시 들어올 수 없습니다.</strong> 서쪽·동쪽·북쪽 지하수로의 모든 상자를 열었는지 반드시 확인하세요!</div>
+          </div>
+
+          <div class="check-item" data-id="cf_main_queen" data-tags="bp chest missable" data-bp="15">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-main">메인 퀘스트 완료</span>
+                <span class="badge badge-bp">기본 10 + 뒤낭 2 + 로란스 3 BP</span>
+                <span class="badge badge-chest">📦 북쪽 수로 & 왕성 상자</span>
+                <span class="badge badge-missable">⚠️ 뒤낭 공작 공격 금지!</span>
+                <span class="item-title">[여왕 폐하 구출 작전] 뒤낭 공작 생존 조건 (+2) & 로란스 소위 격파 (+3)</span>
+              </div>
+              <div class="choice-box">
+                • 조건 1 (뒤낭 공작 동반 전투): <strong>뒤낭 공작을 쓰러뜨리지 않고 주변 특무병만 처치</strong> (광역 S크래프트 자제! ➔ BP +2)<br/>
+                • 조건 2 (여왕의 방 앞 결전): <strong>로란스 소위(레베)에게 패배하지 않고 격파 승리</strong> (어스 월 + 클로제 리히트 크라이스 유지! ➔ BP +3)
+              </div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="cf_rank1_final" data-tags="bp book chest" data-bp="12" data-news="1">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-bp">🏆 준유격사 1급 등극!</span>
+                <span class="badge badge-book">📰 리벨 통신 제9호</span>
+                <span class="badge badge-chest">📦 봉인 구역 상자 전수 회수</span>
+                <span class="item-title">길드 최종 보고 (『투혼의 벨트』 수령) ➔ 《리벨 통신 제9호》 구매 ➔ 봉인 구역 주파 & 엔딩!</span>
+              </div>
+              <div class="item-desc">
+                1. 그란셀 길드 지부에 보고하여 <strong>최고 랭크 『준유격사 1급』 달성 보상 『투혼의 벨트』</strong>를 수령합니다!<br/>
+                2. 에델 백화점 잡화 코너에서 마지막 호수인 <strong>《리벨 통신 제9호》</strong>를 구매해 서적 수집을 100% 완료합니다.<br/>
+                3. 그란셀 성 지하 <strong>봉인 구역(최종 던전 제1~제4층)</strong>의 모든 보물상자(8인 최강 장비 포함)를 회수하며 최종 보스 <strong>『트로이메라이』 3연전</strong>을 격파하고 클리어 세이브 데이터를 저장합니다!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         PANEL 6: 캐릭터 & 쿼츠·아츠 세팅 공략
+         ========================================== -->
+    <div id="panel-characters" class="chapter-panel">
+      <div class="alert-banner info">
+        <div class="alert-title">⚔️ 《하늘의 궤적 the 1st》 전투 메타 & 오브먼트 세팅 핵심 요약</div>
+        <div style="font-size: 0.88rem; color: var(--text-secondary);">
+          • <strong>속도(SPD)와 가속이 곧 정의:</strong> 이 게임에서 가장 사기적인 스탯은 <strong>SPD(행동력)</strong>입니다. 전 캐릭터에게 <strong>『행동력』</strong> 쿼츠를 최우선 장착하세요.<br/>
+          • <strong>전원 목표 필수 아츠 2종:</strong> 물리 캐릭터라도 짧은 라인에 복합 쿼츠를 조합해 <strong>『클락 업 개』(시 3 + 공 3)</strong>와 <strong>『카오스 브랜드』(환 3)</strong>를 켜두면 보스전 난이도가 급락합니다.<br/>
+          • <strong>아츠(마법) 중심 메타:</strong> 중후반으로 갈수록 물리 평타보다 <strong>클로제·올리비에·셰라자드</strong>의 광역 아츠와 <strong>『어스 월』(완전 방어)</strong> 유지가 훨씬 안정적이고 강력합니다.
+        </div>
+      </div>
+
+      <h2 style="margin: 16px 0 12px; font-size: 1.2rem;">✨ 우선 확보해야 할 필수 아츠 5대장 (오브먼트 속성 요구치)</h2>
+      <div class="data-table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>아츠명</th>
+              <th>필요 속성치 (동일 라인 합산)</th>
+              <th>분류 / 범위</th>
+              <th>핵심 효과 및 운용법</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong style="color: var(--brand-gold);">클락 업 개 (Clock Up EX)</strong></td>
+              <td><strong>시 3 + 공 3</strong></td>
+              <td>보조 / 단일</td>
+              <td><strong>SPD +50% 상승 & 행동 순서 즉시 당기기(가속)</strong>. 모든 캐릭터 세팅의 최우선 목표 아츠.</td>
+            </tr>
+            <tr>
+              <td><strong style="color: #c084fc;">카오스 브랜드 (Chaos Brand)</strong></td>
+              <td><strong>환 3</strong></td>
+              <td>방해 / 단일</td>
+              <td><strong>확정급 혼란 부여 + 스탯 대폭 저하</strong>. 보스의 부하들이나 강력한 중보스를 서로 자멸하게 만듭니다.</td>
+            </tr>
+            <tr>
+              <td><strong style="color: var(--brand-emerald);">어스 가드 / 어스 월 (Earth Wall)</strong></td>
+              <td><strong>지 2 + 공 1</strong> / <strong>지 4 + 공 2</strong></td>
+              <td>보조 / 단일·원형</td>
+              <td><strong>1회 데미지 완전 무효화(절대 방어)</strong>. 뭉쳐 있는 아군에게 어스 월을 계속 리필하면 보스의 S크래프트도 무피해로 넘깁니다.</td>
+            </tr>
+            <tr>
+              <td><strong style="color: var(--brand-sky);">에어리얼 (Aerial)</strong></td>
+              <td><strong>풍 4</strong></td>
+              <td>공격 / 중원형</td>
+              <td>서장 후반~중반까지 가장 가성비가 뛰어난 주력 광역 공격 아츠. 잡몹전 정리에 탁월합니다.</td>
+            </tr>
+            <tr>
+              <td><strong style="color: var(--brand-rose);">섀도우 스피어 / 화이트 게헨나</strong></td>
+              <td><strong>시 2</strong> / <strong>시 4 + 환 2 + 공 2</strong></td>
+              <td>공격 / 단일·중원형</td>
+              <td>즉사 20%가 붙은 고화력 단일기(섀도우 스피어)와 기절 효과를 동반한 종반 주력 광역기(화이트 게헨나).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 style="margin: 24px 0 12px; font-size: 1.2rem;">👥 플레이어블 8인 캐릭터별 상세 공략 & 추천 쿼츠 세팅</h2>
+      <div class="char-grid">
+
+        <!-- 1. 클로제 -->
+        <div class="char-card">
+          <div class="char-header">
+            <div>
+              <div class="char-name">👑 클로제 린츠 (Kloe Rinz)</div>
+              <div class="char-role">최강 아츠 딜러 겸 메인 힐러 | 2장 합류</div>
+            </div>
+            <span class="tier-badge tier-sp">S+ 티어 (부동의 1황)</span>
+          </div>
+          <div class="char-meta-box">
+            <div class="char-meta-row"><span><strong>오브먼트 구조:</strong> 단일 1라인 (6슬롯 전부 직결)</span></div>
+            <div class="char-meta-row"><span><strong>속성 제한 슬롯:</strong> 중앙(1번) <strong style="color:#c084fc;">환(幻) 속성</strong> 고정</span></div>
+          </div>
+          <div class="char-section-title">🔥 핵심 강점 & 크래프트</div>
+          <ul class="char-list">
+            <li>전 캐릭터 중 유일하게 <strong>모든 슬롯이 1줄(1라인)로 연결</strong>되어 있어, 장착한 모든 쿼츠의 속성치가 하나로 합산됩니다. 최상위 공격/회복 아츠를 동시에 다수 보유할 수 있습니다.</li>
+            <li><strong>『케이 브리드』(케인즈):</strong> 적의 STR·DEF -30% 디버프 (보스에게도 유효).</li>
+            <li><strong>S크래프트 『리히트 크라이스』:</strong> 아군 전체 HP 완치 + 전투불능 부활 + DEF 상승. 위기 상황을 단번에 뒤집는 최고의 보험기입니다.</li>
+          </ul>
+          <div class="char-section-title">💎 추천 쿼츠 세팅</div>
+          <ul class="char-list">
+            <li><strong>필수 코어:</strong> <code>정신 3</code>(수) + <code>EP 3</code>(환·시·공) + <code>구동 2</code>(시) + <code>절약 EP 3</code>(공·시) + <code>행동력 3</code>(시) + <code>자애</code>(수·생명) 또는 <code>방어 3</code>(지)</li>
+            <li><strong>운용 팁:</strong> 높은 ATS를 살려 <strong>화이트 게헨나 / 다이아몬드 더스트</strong> 등 상위 아츠로 딜을 넣고, 보스전에서는 <strong>어스 월</strong>과 <strong>라 티아라</strong>를 전담합니다.</li>
+          </ul>
+        </div>
+
+        <!-- 2. 요슈아 -->
+        <div class="char-card">
+          <div class="char-header">
+            <div>
+              <div class="char-name">🗡️ 요슈아 브라이트 (Joshua Bright)</div>
+              <div class="char-role">초고속 물리·지연 딜러 & 만능 해결사 | 서장~상시 고정</div>
+            </div>
+            <span class="tier-badge tier-sp">S+ 티어 (상시 주전)</span>
+          </div>
+          <div class="char-meta-box">
+            <div class="char-meta-row"><span><strong>오브먼트 구조:</strong> 2라인 (5칸 + 2칸)</span></div>
+            <div class="char-meta-row"><span><strong>속성 제한 슬롯:</strong> 시(時) 속성 친화 (자유도 높음)</span></div>
+          </div>
+          <div class="char-section-title">🔥 핵심 강점 & 크래프트</div>
+          <ul class="char-list">
+            <li>팀 내 <strong>최고의 SPD(속도)와 높은 공격력·회피율</strong>을 보유하고 있으며 서장부터 종장까지 단 한 번도 빠지지 않는 핵심 딜러입니다.</li>
+            <li><strong>『쌍연격』:</strong> 저연비 2회 타격기 (독/상태이상 쿼츠와 시너지 발군).</li>
+            <li><strong>『절영』 / 『마안』:</strong> 직선/원형 범위 공격 + <strong>AT 지연(턴 밀기)</strong> 효과로 보스나 까다로운 적의 턴을 봉쇄합니다.</li>
+            <li><strong>S크래프트 『칠흑의 어금니(블랙 팽)』:</strong> 화면 전체 모든 적 타격. 잡몹 일소 및 택티컬 보너스 파밍의 일등공신.</li>
+          </ul>
+          <div class="char-section-title">💎 추천 쿼츠 세팅</div>
+          <ul class="char-list">
+            <li><strong>필수 코어:</strong> <code>행동력 3</code>(시) + <code>공격 3</code>(화) + <code>구동 2</code>(시) + <code>절약 EP 2</code>(공) + <code>회피 3</code>(풍) + <code>환혹의 방울/정신</code></li>
+            <li><strong>운용 팁:</strong> 빠른 턴 회전력을 이용해 전투 시작과 동시에 아군에게 <strong>『클락 업 개』</strong>를 걸어주고, 『절영』으로 적의 턴을 지연시키거나 『쌍연격』으로 딜을 넣습니다.</li>
+          </ul>
+        </div>
+
+        <!-- 3. 올리비에 -->
+        <div class="char-card">
+          <div class="char-header">
+            <div>
+              <div class="char-name">🌹 올리비에 렌하임 (Olivier Lenheim)</div>
+              <div class="char-role">초장거리 아츠 포격수 & 유틸 서포터 | 1장·종장 합류</div>
+            </div>
+            <span class="tier-badge tier-s">S 티어 (최강 후열)</span>
+          </div>
+          <div class="char-meta-box">
+            <div class="char-meta-row"><span><strong>오브먼트 구조:</strong> 2라인 (5칸 긴 라인 + 2칸 짧은 라인)</span></div>
+            <div class="char-meta-row"><span><strong>속성 제한 슬롯:</strong> 중앙(1번) 및 5번 <strong style="color:#10b981;">풍(風) 속성</strong> 고정</span></div>
+          </div>
+          <div class="char-section-title">🔥 핵심 강점 & 크래프트</div>
+          <ul class="char-list">
+            <li>클로제와 쌍벽을 이루는 높은 <strong>ATS(마법 공격력)</strong>와 <strong>매우 긴 권총 사거리(RNG)</strong>를 지녀 후열에서 이동 없이 안전하게 공격·아츠를 난사합니다.</li>
+            <li><strong>『스나이프 샷』:</strong> 원거리 구동 해제(적 아츠 캔슬).</li>
+            <li><strong>『해피 트리거』:</strong> 범위 내 아군 HP 회복(CP 20 소모로 매우 저렴).</li>
+          </ul>
+          <div class="char-section-title">💎 추천 쿼츠 세팅</div>
+          <ul class="char-list">
+            <li><strong>필수 코어:</strong> 5칸 긴 라인에 <code>절약 EP 3</code>(공·시) + <code>EP 3</code>(환·시·공) + <code>구동 2</code>(시) + <code>행동력 3</code>(시) 배치 / 짧은 라인에 <code>방어</code> 또는 <code>정신</code> 배치</li>
+            <li><strong>운용 팁:</strong> 풍 속성 제한 슬롯 덕분에 초반부터 <strong>『에어리얼』</strong>과 <strong>『플라즈마 웨이브』</strong> 세팅이 매우 쉽고, 종장에서는 클로제와 함께 더블 마법 포대로 활약합니다.</li>
+          </ul>
+        </div>
+
+        <!-- 4. 에스텔 -->
+        <div class="char-card">
+          <div class="char-header">
+            <div>
+              <div class="char-name">☀️ 에스텔 브라이트 (Estelle Bright)</div>
+              <div class="char-role">올라운더 / 어스 월 전담 서포터 & 서브 탱커 | 상시 고정</div>
+            </div>
+            <span class="tier-badge tier-a">A+ 티어 (필수 주전)</span>
+          </div>
+          <div class="char-meta-box">
+            <div class="char-meta-row"><span><strong>오브먼트 구조:</strong> 2라인 (4칸 + 4칸 균등 분기)</span></div>
+            <div class="char-meta-row"><span><strong>속성 제한 슬롯:</strong> <strong>제한 없음</strong> (모든 속성 자유 장착)</span></div>
+          </div>
+          <div class="char-section-title">🔥 핵심 강점 & 크래프트</div>
+          <ul class="char-list">
+            <li>속성 제한 슬롯이 하나도 없어 <strong>파티에 부족한 속성 아츠(특히 어스 월, 클락 업 개, 라 티아라)를 자유자재로 메울 수 있는 최고의 윤활유</strong>입니다.</li>
+            <li><strong>『격려』:</strong> 주변 아군 전원 STR 상승 버프.</li>
+            <li><strong>『선풍륜』 / 『형타』:</strong> 적들을 한곳으로 모으거나 적의 아츠 구동을 캔슬하는 유틸 크래프트.</li>
+            <li><strong>S크래프트 『열파무공』 / 『태극륜』:</strong> 보스 단일 극딜기 (체력이 높은 보스 마무리용).</li>
+          </ul>
+          <div class="char-section-title">💎 추천 쿼츠 세팅</div>
+          <ul class="char-list">
+            <li><strong>서포터 & 탱커형 (가장 추천):</strong> 한쪽 라인에 <code>방어 3</code>(지) + <code>절약 EP 2/3</code>(공) + <code>행동력 3</code>(시)을 넣어 <strong>『어스 월』</strong>과 <strong>『클락 업 개』</strong>를 확보하고, 반대쪽 라인에 <code>HP 3</code>(수) + <code>치유/자애</code>를 넣어 생존력과 회복을 보조합니다.</li>
+          </ul>
+        </div>
+
+        <!-- 5. 셰라자드 -->
+        <div class="char-card">
+          <div class="char-header">
+            <div>
+              <div class="char-name">🌪️ 셰라자드 하비 (Scherazard Harvey)</div>
+              <div class="char-role">가속 버퍼 (헤븐즈 키스) & 풍·시 아츠 캐스터 | 서장·1장·종장</div>
+            </div>
+            <span class="tier-badge tier-s">S 티어 (가속 특화)</span>
+          </div>
+          <div class="char-meta-box">
+            <div class="char-meta-row"><span><strong>오브먼트 구조:</strong> 2라인 (5칸 긴 라인 + 2칸 짧은 라인)</span></div>
+            <div class="char-meta-row"><span><strong>속성 제한 슬롯:</strong> 중앙(1번) 및 4번 <strong style="color:#10b981;">풍(風) 속성</strong> (또는 시 속성) 고정</span></div>
+          </div>
+          <div class="char-section-title">🔥 핵심 강점 & 크래프트</div>
+          <ul class="char-list">
+            <li><strong>『헤븐즈 키스』 (최강 크래프트):</strong> 범위 내 자신을 제외한 <strong>아군 전원의 행동 순서를 즉시 최우선으로 끌어당기는(AT 가속)</strong> 사기 기술입니다.</li>
+            <li><strong>『실피드 보이스』:</strong> 서장~1장 초반 구간에서 매우 높은 ATS 계수를 자랑하는 광역 마법 판정 크래프트.</li>
+            <li><strong>『구속의 채찍』:</strong> 원거리 적 아츠 구동 해제 + 봉기 부여.</li>
+          </ul>
+          <div class="char-section-title">💎 추천 쿼츠 세팅</div>
+          <ul class="char-list">
+            <li><strong>필수 코어:</strong> <code>행동력 3</code> + <code>구동 2</code> + <code>EP 3</code> + <code>절약 EP 3</code> + <code>정신 3</code></li>
+            <li><strong>운용 팁:</strong> 올리비에와 유사한 고성능 아츠 캐스터이면서, 보스전에서 <strong>『헤븐즈 키스』</strong>로 아군 3명의 턴을 연속으로 당겨와 보스가 행동하기 전에 녹여버리는 날먹 택틱의 핵심입니다.</li>
+          </ul>
+        </div>
+
+        <!-- 6. 애거트 -->
+        <div class="char-card">
+          <div class="char-header">
+            <div>
+              <div class="char-name">🔥 애거트 크로스너 (Agate Crosner)</div>
+              <div class="char-role">CP 자급자족 물리 폭딜러 | 2장·3장·종장</div>
+            </div>
+            <span class="tier-badge tier-a">A 티어 (S크래프트 연사)</span>
+          </div>
+          <div class="char-meta-box">
+            <div class="char-meta-row"><span><strong>오브먼트 구조:</strong> 3~4라인 (짧게 분산된 물리형 구조)</span></div>
+            <div class="char-meta-row"><span><strong>속성 제한 슬롯:</strong> 중앙 <strong style="color:var(--brand-rose);">화(火) 속성</strong> 고정</span></div>
+          </div>
+          <div class="char-section-title">🔥 핵심 강점 & 크래프트</div>
+          <ul class="char-list">
+            <li>오브먼트 라인이 짧게 쪼개져 있어 고위 아츠는 쓸 수 없지만, 압도적인 STR과 전용 크래프트로 먹고 사는 순수 물리 딜러입니다.</li>
+            <li><strong>『와일드 레이지』:</strong> 자신의 HP를 일부 소모하여 <strong>CP를 대량 회복</strong>합니다. 클로제의 힐(또는 리히트 크라이스)과 조합하면 <strong>매 턴 S크래프트(파이널 브레이크 / 다이너스트 게일)를 무한 난사</strong>할 수 있습니다.</li>
+            <li><strong>『드래곤 다이브』 / 『스파이럴 엣지』:</strong> 원거리 점프 범위 공격 및 AT 지연기.</li>
+          </ul>
+          <div class="char-section-title">💎 추천 쿼츠 세팅</div>
+          <ul class="char-list">
+            <li><strong>순수 물리 + 최소 보조:</strong> <code>공격 3</code>(화) + <code>행동력 3</code>(시) + <code>HP 3</code>(수) + <code>명중 3</code>(환) + <code>필살의 칼날</code> / 만약 『클락 업 개』를 쓰고 싶다면 같은 라인에 <code>행동력 3</code>(시 3) + <code>절약 EP 2/3</code>(공 3)을 배치하세요.</li>
+          </ul>
+        </div>
+
+        <!-- 7. 진 -->
+        <div class="char-card">
+          <div class="char-header">
+            <div>
+              <div class="char-name">⛰️ 진 바세크 (Zin Vathek)</div>
+              <div class="char-role">초고내구 어그로 탱커 & 무투가 | 3장·종장</div>
+            </div>
+            <span class="tier-badge tier-a">A 티어 (보스전 든든한 방패)</span>
+          </div>
+          <div class="char-meta-box">
+            <div class="char-meta-row"><span><strong>오브먼트 구조:</strong> 4라인 (가장 짧게 쪼개진 물리 특화형)</span></div>
+            <div class="char-meta-row"><span><strong>속성 제한 슬롯:</strong> 중앙 <strong style="color:var(--brand-gold);">지(地) 속성</strong> 고정</span></div>
+          </div>
+          <div class="char-section-title">🔥 핵심 강점 & 크래프트</div>
+          <ul class="char-list">
+            <li>파티 내 압도적 1위의 <strong>HP와 DEF(물리 방어력)</strong>를 가진 정통 탱커 겸 격투가입니다.</li>
+            <li><strong>『용신공』:</strong> 자신의 STR과 DEF를 동시에 크게 끌어올리는 최상급 자기 강화 버프.</li>
+            <li><strong>『도발』:</strong> 적의 타겟을 자신에게 집중시켜 물몸인 클로제·올리비에를 안전하게 보호합니다.</li>
+            <li><strong>『뇌신각』 / 『양기공』:</strong> 범위 공격 및 아군 상태이상 해제 + HP 회복.</li>
+          </ul>
+          <div class="char-section-title">💎 추천 쿼츠 세팅</div>
+          <ul class="char-list">
+            <li><strong>철벽 탱커 & 어스 가드:</strong> 중앙이 지(地) 속성이므로 <code>방어 3</code>(지) + 한 줄에 <code>절약 EP 2</code>(공)를 연결하면 손쉽게 <strong>『어스 가드/어스 월』</strong>이 켜집니다. 나머지 슬롯에는 <code>행동력 3</code>, <code>공격 3</code>, <code>HP 3</code>, <code>명중 3</code>을 장착하세요.</li>
+          </ul>
+        </div>
+
+        <!-- 8. 티타 -->
+        <div class="char-card">
+          <div class="char-header">
+            <div>
+              <div class="char-name">🛠️ 티타 러셀 (Tita Russell)</div>
+              <div class="char-role">평타 범위 포격수 & 암흑/회복 서포터 | 3장·종장</div>
+            </div>
+            <span class="tier-badge tier-b">B+ 티어 (잡몹전 & 암흑 특화)</span>
+          </div>
+          <div class="char-meta-box">
+            <div class="char-meta-row"><span><strong>오브먼트 구조:</strong> 3라인 (단거리 분기형)</span></div>
+            <div class="char-meta-row"><span><strong>속성 제한 슬롯:</strong> 중앙 공(空) / 수(水) 계열 제한</span></div>
+          </div>
+          <div class="char-section-title">🔥 핵심 강점 & 크래프트</div>
+          <ul class="char-list">
+            <li>유일하게 <strong>기본 일반 공격(평타)이 원거리 원형 범위 공격</strong>인 캐릭터입니다. 상태이상 부여 쿼츠를 끼우면 평타 한 방에 적 다수에게 상태이상을 뿌립니다.</li>
+            <li><strong>『연막탄(스모크 캐논)』:</strong> 범위 내 적들에게 <strong>100%에 가까운 확률로 『암흑(명중률 급감)』</strong>을 부여해 물리형 적들을 바보로 만듭니다.</li>
+            <li><strong>『바이탈 캐논』:</strong> 원거리 광역 아군 HP 회복 + 상태이상 치료 크래프트.</li>
+          </ul>
+          <div class="char-section-title">💎 추천 쿼츠 세팅</div>
+          <ul class="char-list">
+            <li><strong>보조 & 평타 상태이상 세팅:</strong> 낮은 HP와 DEF를 보완하기 위해 <strong>절대 최후열에 배치</strong>하고 <code>HP 3</code> + <code>방어 3</code> + <code>행동력 3</code> + <code>명중/환혹(또는 사신의 방울)</code>을 장착하여 광역 평타와 『연막탄』·『바이탈 캐논』 위주로 운용합니다.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <h2 style="margin: 24px 0 12px; font-size: 1.2rem;">🏅 종장(최종 던전 & 무술대회) 추천 최강 파티 조합 3선</h2>
+      <div class="data-table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>조합 명칭</th>
+              <th>파티 구성 (고정: 에스텔 + 요슈아)</th>
+              <th>전술 특징 및 추천 상황</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong style="color: var(--brand-gold);">1. 왕도 더블 캐스터 파티 (가장 추천)</strong></td>
+              <td><strong>에스텔 + 요슈아 + 클로제 + 올리비에</strong></td>
+              <td>
+                • <strong>올라운더 최강 조합:</strong> 에스텔이 전방에서 『어스 월』을 치고, 요슈아가 『클락 업 개』와 『절영(턴 지연)』으로 템포를 장악하는 동안, 후방의 <strong>클로제와 올리비에 2명의 고화력 아츠 포대</strong>가 모든 적과 보스를 녹여버립니다.<br/>
+                • 최종 보스전까지 가장 안정적이고 딜 누수가 없는 정석 조합입니다.
+              </td>
+            </tr>
+            <tr>
+              <td><strong style="color: var(--brand-sky);">2. 무한 가속 턴 압살 파티</strong></td>
+              <td><strong>에스텔 + 요슈아 + 클로제 + 셰라자드</strong></td>
+              <td>
+                • <strong>보스 턴 봉쇄 조합:</strong> 올리비에 대신 <strong>셰라자드</strong>를 투입해 <strong>『헤븐즈 키스』(아군 전체 즉시 행동 가속)</strong>를 활용합니다.<br/>
+                • 『클락 업 개』 + 『헤븐즈 키스』 + 요슈아의 『절영』을 맞물리면 보스에게 턴을 거의 주지 않고 일방적으로 공격할 수 있습니다.
+              </td>
+            </tr>
+            <tr>
+              <td><strong style="color: var(--brand-emerald);">3. 무술대회 & 공성 피지컬 파티</strong></td>
+              <td><strong>에스텔 + 요슈아 + 클로제(또는 올리비에) + 진(또는 애거트)</strong></td>
+              <td>
+                • <strong>아츠 캔슬이 심한 인간형 보스전(무술대회 결승 등) 특화:</strong> 아츠 구동 시간을 주지 않는 빠른 적들을 상대로, <strong>진의 『용신공 + 도발』</strong>로 버티거나 <strong>애거트의 『와일드 레이지 ➔ S크래프트 연사』</strong>로 즉발 물리 폭딜을 꽂아 넣는 조합입니다.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         PANEL 7: 인터랙티브 아츠 & 쿼츠 속성 계산기
+         ========================================== -->
+    <div id="panel-calculator" class="chapter-panel">
+      <div class="alert-banner info">
+        <div class="alert-title">🔮 인터랙티브 아츠(마법) & 쿼츠 속성 역산 계산기</div>
+        <div style="font-size: 0.88rem; color: var(--text-secondary);">
+          • <strong>오브먼트 아츠 발동 원리:</strong> 동일한 라인에 연결된 쿼츠들의 속성치 합계가 아츠의 요구치를 넘으면 해당 아츠들이 <strong>동시에 모두 활성화</strong>됩니다 (속성치가 소모되지 않고 중첩 적용됨!).<br/>
+          • 아래에서 한 캐릭터(또는 한 라인)에 넣고 싶은 <strong>목표 아츠들을 클릭해 선택</strong>하면, 해당 아츠들을 전부 켜기 위해 <strong>단일 라인에 필요한 최소 속성치(최댓값 기준)와 추천 쿼츠 조합</strong>을 자동으로 계산해 줍니다.
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 18px; margin-bottom: 24px;">
+        <!-- 왼쪽: 목표 아츠 선택 -->
+        <div class="step-section" style="margin-bottom: 0;">
+          <div class="step-header" style="cursor: default;">
+            <div class="step-header-left">
+              <span class="step-number">STEP 1</span>
+              <span class="step-title">원하는 아츠 클릭하여 선택 (복수 선택 가능)</span>
+            </div>
+            <button class="btn" onclick="resetArtCalc()" style="padding: 4px 10px; font-size: 0.78rem;">초기화</button>
+          </div>
+          <div class="step-body" id="artSelectorList" style="max-height: 520px; overflow-y: auto;">
+            <!-- JS로 렌더링됨 -->
+          </div>
+        </div>
+
+        <!-- 오른쪽: 계산 결과 및 추천 쿼츠 레시피 -->
+        <div class="step-section" style="margin-bottom: 0;">
+          <div class="step-header" style="cursor: default;">
+            <div class="step-header-left">
+              <span class="step-number" style="background: var(--brand-gold);">RESULT</span>
+              <span class="step-title">단일 라인 필요 속성치 & 추천 쿼츠 조합</span>
+            </div>
+          </div>
+          <div class="step-body">
+            <div id="calcElementBars" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px;">
+              <!-- JS로 7대 속성 바 렌더링 -->
+            </div>
+            <div class="choice-box" id="calcQuartzRecommendation" style="line-height: 1.7;">
+              왼쪽에서 사용할 아츠를 선택해 주세요. (기본 추천: <strong>클락 업 개 + 어스 월 + 카오스 브랜드</strong>가 선택되어 있습니다)
+            </div>
+            <div style="margin-top: 10px;">
+              <div class="char-section-title" style="margin-bottom: 6px;">💎 주요 고효율 복합/단일 쿼츠 속성표 (조합 참고용)</div>
+              <div class="data-table-wrapper" style="margin-bottom: 0;">
+                <table class="data-table" style="font-size: 0.82rem;">
+                  <thead>
+                    <tr>
+                      <th>쿼츠명</th>
+                      <th>제공 속성치</th>
+                      <th>핵심 효과</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td><strong>행동력 1 / 2 / 3</strong></td><td>시 1 / 시 2 / <strong>시 3</strong></td><td>SPD +10% / +15% / +20% (전원 필수)</td></tr>
+                    <tr><td><strong>구동 1 / 2</strong></td><td>시 1 / <strong>시 2</strong></td><td>아츠 구동 시간 단축</td></tr>
+                    <tr><td><strong>절약 EP 1 / 2 / 3</strong></td><td>공 1 / 공 2+시 1 / <strong>공 3+시 2+환 1</strong></td><td>EP 소비 감소 + 클락 업 개 핵심 파츠!</td></tr>
+                    <tr><td><strong>EP 1 / 2 / 3</strong></td><td>환 1 / 환 2+시 1+공 1 / <strong>환 3+시 2+공 2</strong></td><td>최대 EP 상승 + 카오스 브랜드·게헨나 파츠!</td></tr>
+                    <tr><td><strong>방어 1 / 2 / 3</strong></td><td>지 1 / 지 2 / <strong>지 3</strong></td><td>DEF 상승 + 어스 가드/어스 월 핵심 파츠!</td></tr>
+                    <tr><td><strong>정신 1 / 2 / 3</strong></td><td>수 1 / 수 2 / <strong>수 3</strong></td><td>ATS(마법력) 상승 + 회복 아츠 파츠</td></tr>
+                    <tr><td><strong>HP 1 / 2 / 3</strong></td><td>수 1 / 수 2 / <strong>수 3</strong></td><td>최대 HP 상승 + 티아라 계열 활성화</td></tr>
+                    <tr><td><strong>회피 1 / 2 / 3</strong></td><td>풍 1 / 풍 2 / <strong>풍 3</strong></td><td>AGL 상승 + 에어리얼 활성화</td></tr>
+                    <tr><td><strong>자애 / 기공 / 천안</strong></td><td>수3+지2 / 시2+공2 / 화2+풍2+환1</td><td>유격사 랭크 승급 특전 복합 쿼츠</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         PANEL 8: 챕터별 주요 보스 & 수배 마수 공략표
+         ========================================== -->
+    <div id="panel-bosses" class="chapter-panel">
+      <div class="alert-banner info">
+        <div class="alert-title">👹 챕터별 주요 보스 & 까다로운 수배 마수 약점·상태이상·파훼 공략</div>
+        <div style="font-size: 0.88rem; color: var(--text-secondary);">
+          • <strong>보스전 3대 불변의 법칙:</strong> ① 보스의 부하(잡몹)들에게는 <strong>『카오스 브랜드』(혼란)</strong>나 <strong>『마안/절영』(지연)</strong>이 먹히는 경우가 많습니다. ② 아군 4명을 한곳에 뭉쳐 두고 <strong>『어스 월』(지4+공2)</strong>을 매 턴 갱신하면 전멸기가 무력화됩니다. ③ 클로제의 <strong>『케이 브리드』(STR·DEF -30%)</strong>는 최종 보스에게도 들어갑니다!
+        </div>
+      </div>
+
+      <div class="data-table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>등장 챕터</th>
+              <th>보스 / 수배 마수명</th>
+              <th>유효 속성 / 상태이상</th>
+              <th>핵심 위험 패턴 & 완벽 파훼법</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="badge badge-main">서장</span></td>
+              <td><strong>파인 플랜트 (수배 마수) &<br/>조제트 + 공적 부하 3명</strong></td>
+              <td>화(火)·풍(風) 약점<br/>부하: 혼란·암흑 유효</td>
+              <td>• 파인 플랜트: 자가 회복을 하므로 화염 아츠(파이어 볼트)와 S크래프트로 일점사.<br/>• 조제트전: 셰라자드의 『실피드 보이스』나 『에어리얼』로 부하 3명을 먼저 쓸어버린 뒤 조제트를 포위 공격합니다.</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-main">제1장</span></td>
+              <td><strong>자이언트 풋 (안개 협곡) &<br/>앰버 터틀 (안젤 신도)</strong></td>
+              <td>자이언트 풋: 화(火) 약점<br/>앰버 터틀: 아츠(마법) 전용</td>
+              <td>• 자이언트 풋: 체력이 낮아지면 분노 버프를 쓰므로 화염 아츠 + 지연기로 턴을 밀며 처치.<br/>• 앰버 터틀: 물리 방어력이 극도로 높아 평타가 안 박힙니다. <strong>전원 아츠(에어리얼, 소울 블러 등)</strong>로 타격하세요.</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-main">제1장 보스</span></td>
+              <td><strong>도른 & 키스 & 조제트<br/>(공적 아지트 2연전)</strong></td>
+              <td>부하 및 도른: <strong>혼란(카오스 브랜드)</strong> 유효!</td>
+              <td>• 1차전 후 바로 2차전이 이어지므로 CP를 아껴두세요.<br/>• <strong>도른에게 『카오스 브랜드』를 걸면 아군(키스·조제트)을 때립니다!</strong> 키스가 분노 버프를 쓰면 에스텔/클로제로 회복 및 방어 버프를 유지하며 키스부터 집중 격파하세요.</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-main">제2장</span></td>
+              <td><strong>헬 배스 (메베 해안길) &<br/>레이븐 패거리 (남쪽 창고)</strong></td>
+              <td>풍(風)·수(水) 약점<br/>레이븐: <strong>혼란·암흑·수면</strong> 유효</td>
+              <td>• 헬 배스: 기절 공격을 연발하므로 『기절 방지 액세서리(화이트 브레이슬릿 등)』 장착 필수.<br/>• 레이븐 3인방: <strong>카오스 브랜드(혼란)</strong>와 광역 아츠 『에어리얼』을 난사하면 손쉽게 자멸합니다.</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-main">제2장 보스</span></td>
+              <td><strong>팬텀 라이트 (기아스 마수) &<br/>헬 하운드 2마리</strong></td>
+              <td>헬 하운드: 수(水) 약점<br/>보스: <strong>케이 브리드(디버프)</strong> 유효</td>
+              <td>• 보스가 <strong>『아츠 반사 결계』</strong>를 치면 마법 공격이 반사됩니다! 결계가 켜졌을 때는 평타나 물리 크래프트(요슈아 쌍연격, 에스텔 선풍륜)로 결계를 먼저 벗겨내거나 S크래프트로 타격하세요.</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-main">제3장</span></td>
+              <td><strong>어비스 웜 × 6마리<br/>(리터 가도 수배 마수 ②)</strong></td>
+              <td>풍(風) 약점 / <strong>수면·기절·봉기</strong> 유효</td>
+              <td>• ⚠️ <strong>가장 전멸하기 쉬운 수배 마수:</strong> 한 마리를 때릴 때마다 전체 지진 반격기(어스 셰이커)를 써서 파티가 폭사합니다.<br/>• 아군에게 <strong>『어스 월』</strong>을 걸어두거나, 클로제·에스텔의 광역 아츠(에어리얼/화이트 게헨나) + 요슈아의 전체 S크래프트 『칠흑의 어금니』로 한 턴에 동시에 쓸어버리세요!</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-main">종장 (무술대회)</span></td>
+              <td><strong>진 팀 (준결승) &<br/>로란스 소위 팀 (결승전)</strong></td>
+              <td>부하 특무병: 혼란·기절 유효<br/>로란스: <strong>케이 브리드</strong> 필수</td>
+              <td>• 결승전 로란스 소위는 아츠 구동 캔슬과 분신 소환, S크래프트 『실버 가시』를 사용합니다.<br/>• 시작하자마자 요슈아의 『클락 업 개』 후 <strong>클로제의 『케이 브리드』로 로란스의 공격력을 깎고</strong>, 특무병들을 광역 S크래프트로 먼저 지운 뒤 『어스 월』을 유지하며 싸우세요.</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-main">종장 (여왕궁)</span></td>
+              <td><strong>가면의 검사 로란스 소위 (레베)<br/>(승리 시 BP +3 보너스!)</strong></td>
+              <td>전 상태이상 면역 / <strong>케이 브리드(스탯 저하)만 유효!</strong></td>
+              <td>• 져도 스토리는 진행되지만 <strong>이기면 BP +3</strong>을 줍니다!<br/>• 아군 4명을 구석에 뭉쳐 놓고 에스텔이 매 턴 <strong>『어스 월』</strong>을 무한 리필합니다. 클로제는 『케이 브리드』를 유지하며 『화이트 게헨나/섀도우 스피어』로 딜을 넣고, 분신이 생기면 요슈아의 『칠흑의 어금니』로 본체와 함께 깎으세요.</td>
+            </tr>
+            <tr style="background: rgba(244, 63, 94, 0.08);">
+              <td><span class="badge badge-missable">최종 보스</span></td>
+              <td><strong>공상수 『트로이메라이』<br/>(제1형태 ➔ 제2형태 ➔ 최종형태)</strong></td>
+              <td>전 상태이상 면역 / <strong>케이 브리드 & 어스 월 필수!</strong></td>
+              <td>
+                • <strong>제1형태 (리샤르 대령 2연전 직후):</strong> 양팔 포드가 아군 버프를 지우거나 회복하므로 광역 아츠(화이트 게헨나/다이아몬드 더스트)로 양팔부터 파괴.<br/>
+                • <strong>제2형태:</strong> 보스가 <strong>속성 방어 모드 체인지</strong>를 하므로 무속성/시·공·환 아츠나 물리 S크래프트 병행.<br/>
+                • <strong>최종형태:</strong> 아군 1명을 즉사급으로 가두는 패턴과 전체 필살기를 씁니다. <strong>에스텔(어스 월 전담) + 요슈아(클락 업 개 & 쌍연격) + 클로제(케이 브리드 & 리히트 크라이스) + 올리비에(최상위 아츠 난사)</strong> 진형으로 구석에 뭉쳐 어스 월만 유지하면 완벽하게 격파할 수 있습니다!
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         PANEL 9: 전체 수집 도감 (요리 28선 / 트로피 / 2nd 연동)
+         ========================================== -->
+    <div id="panel-compendium" class="chapter-panel">
+      <h2 style="margin-bottom: 12px; font-size: 1.2rem;">🔗 후속작 《영웅전설 하늘의 궤적 the 2nd》 클리어 세이브 연동 특전 조건</h2>
+      <div class="alert-banner" style="margin-bottom: 18px;">
+        <div class="alert-title">💡 《하늘의 궤적 the 1st》 클리어 데이터를 《the 2nd》에서 불러올 때 주어지는 핵심 보상</div>
+        <div style="font-size: 0.88rem; color: var(--text-secondary);">
+          1. <strong>초기 시작 레벨 보정 (Lv 35 ~ Lv 40):</strong> 최종 보스 격파 시 에스텔의 레벨이 <strong>Lv 35 이하이면 Lv 35</strong>로 시작하고, <strong>Lv 35~40이면 해당 레벨 그대로</strong>, <strong>Lv 40 이상이면 최대 Lv 40</strong>으로 《the 2nd》를 시작합니다. (클리어 전 봉인 구역에서 에스텔 레벨 40 달성을 강력 추천!)<br/>
+          2. <strong>만점 BP (368 / 395 BP) 달성 보상:</strong> 초반부터 아이템 드롭률을 높여주는 초희귀 쿼츠 <strong>『행운(Luck)』</strong> + 전투불능 1회 자동 부활 액세서리 <strong>『신기합일/대신할 인형』</strong> + 상위 회복약을 받고 시작하며, 《the 2nd》에서 최고 랭크(정유격사 A급) 달성이 훨씬 여유로워집니다!<br/>
+          3. <strong>서브 퀘스트 인연 대사 & 추가 보상 연동:</strong> 1st에서 클리어한 서브 퀘스트(예: 지미의 고지도 조사, 안톤, 섭섭한 남매, 가로등 수리 등)의 NPC들이 2nd에서 에스텔을 알아보며 <strong>전용 이벤트 대사와 추가 퀘스트 보상 아이템</strong>을 지급합니다.
+        </div>
+      </div>
+
+      <h2 style="margin: 24px 0 12px; font-size: 1.2rem;">🏅 100% 플래티넘 트로피 / 업적 달성 체크리스트</h2>
+      <div class="step-section">
+        <div class="step-header" onclick="toggleStep(this)">
+          <div class="step-header-left">
+            <span class="step-number" style="background: var(--brand-gold);">TROPHY</span>
+            <span class="step-title">놓치기 쉬운 핵심 도전 과제 (업적) 10대 체크리스트</span>
+          </div>
+          <span style="font-size:0.85rem; color:var(--text-secondary);">클릭하여 접기/펼치기 ▾</span>
+        </div>
+        <div class="step-body">
+          <div class="check-item" data-id="tr_rank1" data-tags="bp missable">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-bp">🏆 명예 유격사</span>
+                <span class="item-title">준유격사 1급 달성 & 전 퀘스트 올클리어</span>
+              </div>
+              <div class="item-desc">서장~종장의 모든 게시판 의뢰 및 히든 퀘스트를 완료하고 종장에서 준유격사 1급(투혼의 벨트)에 도달합니다.</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="tr_treasure" data-tags="chest missable">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-chest">📦 트레저 헌터</span>
+                <span class="badge badge-missable">⚠️ 1회차 누적 필수</span>
+                <span class="item-title">리벨 왕국 전 지역의 모든 보물상자 개봉</span>
+              </div>
+              <div class="item-desc">미니맵 좌측 하단의 보물상자 아이콘이 사라질 때까지 모든 필드·던전·탑의 상자를 엽니다. (특히 공적 아지트, 제니스 구교사, 솔다트 군용로, 키르셰 도로, 왕도 지하수로 주의!)</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="tr_bookmaster" data-tags="book missable">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-book">📕 북 마스터</span>
+                <span class="badge badge-missable">⚠️ 시한부 서적</span>
+                <span class="item-title">《카넬리아》 전 11권 & 《리벨 통신》 제1호~제9호 전권 수집</span>
+              </div>
+              <div class="item-desc">각 챕터별 시한부 서적인 《카넬리아》 1~11권과 상점 판매 잡지 《리벨 통신》 1~9호를 빠짐없이 모읍니다.</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="tr_chef" data-tags="recipe missable">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-recipe">🍳 스리 스타 셰프 & 묘한 요리 셰프</span>
+                <span class="item-title">대표 메뉴(28) / 특제 메뉴(30) / 어레인지 요리(10) 및 묘한 요리 완성</span>
+              </div>
+              <div class="item-desc">모든 레시피를 습득한 뒤 직접 요리하여 특제 메뉴·어레인지 요리와 실패작(묘한 요리)까지 수첩에 모두 등록합니다. (3장 트래토 평원길 숨겨진 석회 동굴에서 마수의 어란·젤라틴 파밍 필수!)</div>
+            </div>
+          </div>
+
+          <div class="check-item" data-id="tr_tactical" data-tags="bp">
+            <div class="check-box">✓</div>
+            <div class="item-content">
+              <div class="item-header">
+                <span class="badge badge-main">⚔️ 택티컬 보너스 마스터</span>
+                <span class="item-title">단일 전투에서 택티컬 보너스 x3.0 ~ x4.0 이상 달성</span>
+              </div>
+              <div class="item-desc">배후 기습(어드밴티지) + 2~3연속 체인 배틀 + 노데미지(노히트) + 아츠/S크래프트 동시 5마리 이상 격파 + 7턴 이내 승리를 한 전투에서 중첩시키면 높은 배율 보너스와 업적을 쉽게 달성할 수 있습니다.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 style="margin: 24px 0 12px; font-size: 1.2rem;">🍳 대표 메뉴 28종 전체 입수처 & 마수 식재료 파밍 일람표</h2>
+      <div class="data-table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>번호</th>
+              <th>대표 요리명</th>
+              <th>최초 입수 챕터</th>
+              <th>입수 장소 및 파생(어레인지/주의점)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>01</td><td><strong>메이플 쿠키</strong></td><td>서장</td><td>초기 보유 / 롤렌트 리논 종합상점 (어레인지: 활력 스무디)</td></tr>
+            <tr><td>02</td><td><strong>프라이드 포테이토</strong></td><td>서장</td><td>롤렌트 주점 「아벤트」 / 루안 찻집 폰타나</td></tr>
+            <tr><td>03</td><td><strong>플라워리 소다</strong></td><td>서장</td><td>롤렌트 주점 「아벤트」 / 보스 마켓 카틀레야의 가게</td></tr>
+            <tr><td>04</td><td><strong>카마인 아이</strong></td><td>서장</td><td>롤렌트 주점 「아벤트」 / 보스 주점 키르셰</td></tr>
+            <tr><td>05</td><td><strong>꿈꾸는 등딱지 구이</strong></td><td>서장</td><td>비취의 탑 보물상자 / 롤렌트 주점 「아벤트」 / 하켄 게이트</td></tr>
+            <tr><td>06</td><td><strong>드릴 미트볼 (특제/의뢰)</strong></td><td>서장</td><td>⚠️ 서장 서브 퀘스트 〈빛나는 돌 탐색〉 완료 보상 (말가 광산 전 필수!)</td></tr>
+            <tr><td>07</td><td><strong>햇살 머금은 딸기 밀크 크레이프</strong></td><td>제1장</td><td>⚠️ 1장 초반 〈엘리사의 부탁〉 완료 보상 (한정 레시피!)</td></tr>
+            <tr><td>08</td><td><strong>플라워리 젤리</strong></td><td>제1장</td><td>⚠️ 보스 마켓 「카틀레야의 가게」 (유일한 입수처!)</td></tr>
+            <tr><td>09</td><td><strong>스위트 카스텔라</strong></td><td>제1장</td><td>보스 마켓 「카틀레야의 가게」 / 왕도 에델 백화점</td></tr>
+            <tr><td>10</td><td><strong>레드 테일 수프</strong></td><td>제1장</td><td>보스 시 주점 「키르셰」 / 루안 카지노 바 라반타르</td></tr>
+            <tr><td>11</td><td><strong>왕국풍 오믈렛</strong></td><td>제1장</td><td>⚠️ 1장 서브 퀘스트 〈식재료 수집〉 (안테로즈 주방장 그로프) 완료 보상</td></tr>
+            <tr><td>12</td><td><strong>샐러드 샌드위치</strong></td><td>제1장</td><td>하켄 게이트 휴게소 / 3장 생트하임 게이트 식당</td></tr>
+            <tr><td>13</td><td><strong>빈어 튀김</strong></td><td>제1장</td><td>발레리아 호반 여관 「물총새정」 / 3장 엘모 마을 단풍정</td></tr>
+            <tr><td>14</td><td><strong>붕어 된장 조림</strong></td><td>제1장</td><td>발레리아 호반 여관 「물총새정」 / 3장 엘모 마을 단풍정</td></tr>
+            <tr><td>15</td><td><strong>곤돌매기 꼬치구이</strong></td><td>제1장</td><td>발레리아 호반 여관 「물총새정」 / 2장 에어 레텡 식당</td></tr>
+            <tr><td>16</td><td><strong>살모나 뫼니에르</strong></td><td>제1장</td><td>발레리아 호반 여관 「물총새정」 / 2장 카지노 바 라반타르</td></tr>
+            <tr><td>17</td><td><strong>아침 이슬 허브티</strong></td><td>제2장</td><td>마놀리아 마을 여관 「백목련정」 / 3장 차이스 풀리암 드링크</td></tr>
+            <tr><td>18</td><td><strong>착즙 주스</strong></td><td>제2장</td><td>⚠️ 루안 호텔 방 이동 이벤트 직후 프런트 어니스트 대화 / 찻집 폰타나</td></tr>
+            <tr><td>19</td><td><strong>아젤리아 로제</strong></td><td>제2장</td><td>루안 카지노 바 「라반타르」 / 왕도 에델 백화점</td></tr>
+            <tr><td>20</td><td><strong>애플 아이스</strong></td><td>제2장</td><td>왕립학교 학원제 「빙과 플뢰레」 / 종장 왕도 아이스크림 노점 소르베</td></tr>
+            <tr><td>21</td><td><strong>바삭바삭 팝콘</strong></td><td>제2장</td><td>⚠️ 왕립학교 학원제 당일 클럽하우스 1층 노점 (한정 입수처 주의!)</td></tr>
+            <tr><td>22</td><td><strong>휴대 부야베스</strong></td><td>제3장</td><td>⚠️ 중앙 공방 2층 자료실 사서 퀘스트 중 책장 《내일의 요리》 직접 열람!</td></tr>
+            <tr><td>23</td><td><strong>쓴 토마토 샌드위치</strong></td><td>제3장</td><td>⚠️ 3장 서브 퀘스트 〈신식재료 조달〉 (주점 포겔 벤) 완료 보상</td></tr>
+            <tr><td>24</td><td><strong>유혹 산채전골</strong></td><td>제3장</td><td>엘모 마을 여관 「단풍정」</td></tr>
+            <tr><td>25</td><td><strong>궁극 고기전골</strong></td><td>제3장</td><td>생트하임 게이트 식당</td></tr>
+            <tr><td>26</td><td><strong>농축 에스프레소</strong></td><td>종장</td><td>왕도 그란셀 서쪽 지구 커피하우스 「바랄」</td></tr>
+            <tr><td>27</td><td><strong>진심 카레 / 왕도 정식류</strong></td><td>종장</td><td>왕도 커피하우스 「바랄」 / 남쪽 지구 주점 「서니벨 인」</td></tr>
+            <tr style="background: rgba(244, 63, 94, 0.08);"><td>28</td><td><strong>뜯어먹는 스페어립 (마지막)</strong></td><td>종장</td><td>⚠️ <strong>왕도 지하수로 서쪽 구역 보물상자</strong>에서 레시피 입수!</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 style="margin: 24px 0 12px; font-size: 1.2rem;">🏆 준유격사 랭크 승급 기준 및 보상 일람 (만점: 395 BP)</h2>
+      <div class="data-table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>유격사 랭크</th>
+              <th>필요 누적 BP</th>
+              <th>주요 달성 시점 (퍼펙트 기준)</th>
+              <th>승급 보상 아이템 / 쿼츠</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>준유격사 9급</strong></td>
+              <td>0 BP</td>
+              <td>서장 시작 시</td>
+              <td>준유격사 수첩 및 기본 지급품</td>
+            </tr>
+            <tr>
+              <td><strong>준유격사 8급</strong></td>
+              <td>30 BP</td>
+              <td>서장 중반 ~ 후반 (최대 53 BP)</td>
+              <td>양검 『소드 브레이커』 / 쿼츠 보수</td>
+            </tr>
+            <tr>
+              <td><strong>준유격사 7급</strong></td>
+              <td>70 BP</td>
+              <td>제1장 중반</td>
+              <td>쿼츠 『기공』 (EP 소비 감소 / 핵심 쿼츠)</td>
+            </tr>
+            <tr>
+              <td><strong>준유격사 6급</strong></td>
+              <td>110 BP</td>
+              <td>제1장 완료 시점</td>
+              <td>글러브 / 액세서리 장비</td>
+            </tr>
+            <tr>
+              <td><strong>준유격사 5급</strong></td>
+              <td>150 BP</td>
+              <td>제2장 중반</td>
+              <td>쿼츠 『자애』 (회복 아츠 효과 대폭 상승)</td>
+            </tr>
+            <tr>
+              <td><strong>준유격사 4급</strong></td>
+              <td>200 BP</td>
+              <td>제2장 완료 ~ 제3장 초반</td>
+              <td>쿼츠 『천안』 (적 정보 및 시야 확보)</td>
+            </tr>
+            <tr>
+              <td><strong>준유격사 3급</strong></td>
+              <td>250 BP</td>
+              <td>제3장 중·후반</td>
+              <td>고급 방어구 / 액세서리</td>
+            </tr>
+            <tr>
+              <td><strong>준유격사 2급</strong></td>
+              <td>300 BP</td>
+              <td>종장 초반 ~ 중반</td>
+              <td>쿼츠 『음양』</td>
+            </tr>
+            <tr style="background: rgba(245, 158, 11, 0.1);">
+              <td><strong style="color: var(--brand-gold);">준유격사 1급 (최고 랭크)</strong></td>
+              <td><strong>350 BP 이상</strong></td>
+              <td>종장 왕성 돌입 전 (만점 395 BP)</td>
+              <td><strong>『투혼의 벨트』 (매 턴 CP 자동 회복 최강 액세서리) & 후속작 《the 2nd》 특전 연동</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 style="margin: 24px 0 12px; font-size: 1.2rem;">📕 《카넬리아》 전 11권 입수 타이밍 요약표</h2>
+      <div class="data-table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>권수</th>
+              <th>챕터</th>
+              <th>입수 장소 및 대상 NPC</th>
+              <th>주의 기한</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>제1권</td><td>서장</td><td>롤렌트 시내 주점 뒤 공동주택 2층 <strong>레토라</strong></td><td>서장 진행 중</td></tr>
+            <tr><td>제2권</td><td>서장</td><td>베르테 다리 관소 우측 구석 <strong>병사 해럴드</strong></td><td>서장 종료 전</td></tr>
+            <tr><td>제3권</td><td>제1장</td><td>하켄 게이트 휴게소 안 <strong>마르코</strong></td><td>올리비에 이벤트 직후, 보스 귀환 전!</td></tr>
+            <tr><td>제4권</td><td>제1장</td><td>보스 마켓 내부 서점</td><td>남가도 강도 사건 발생 후 ~ 1장 종료 전</td></tr>
+            <tr><td>제5권</td><td>제2장</td><td>루안 시 남쪽 도개교 다리 부근 <strong>마틸다</strong></td><td>왕립학교 학원제 종료 직후!</td></tr>
+            <tr><td>제6권</td><td>제3장</td><td>제니스 왕립학교 클럽하우스 2층 학생회실 맞은편 방</td><td>3장 시작 직후 에어 레텡 통과 전!</td></tr>
+            <tr><td>제7권</td><td>제3장</td><td>볼프 요새 안쪽 <strong>게르빈 부대장</strong></td><td>홍련의 탑 클리어 직후 ~ 레이스톤 잠입 전!</td></tr>
+            <tr><td>제8권</td><td>종장</td><td>에어 레텡 관소 <strong>병사 오터</strong></td><td>종장 시작 직후 차이스 지방 떠나기 전</td></tr>
+            <tr><td>제9권</td><td>종장</td><td>그뤼네 게이트 성벽 위 <strong>병사 서번트</strong></td><td>그란셀 진입 시</td></tr>
+            <tr><td>제10권</td><td>종장</td><td>그란셀 공항(발착장) 내부 <strong>랄프</strong></td><td>5일차 밤 대성당 이동 중</td></tr>
+            <tr><td>제11권</td><td>종장</td><td>왕도 동쪽 에델 백화점 앞 <strong>안톤</strong> (반복 대화)</td><td>무술대회 결승전 승리 직후</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         PANEL 10: 유격사 랭크 · 샤이닝 폼 · 최강 장비 · 리메이크 시스템
+         ========================================== -->
+    <div id="panel-systems" class="chapter-panel">
+      <div class="alert-banner warning">
+        <div class="alert-title">🎖️ 유격사 승급 보수 · 샤이닝 폼 노가다 · 최강 장비 · 리메이크 전투/2회차 총정리</div>
+        <div style="font-size: 0.88rem; color: var(--text-secondary);">
+          체크리스트에서 획득한 BP에 따라 아래 <strong>준유격사 등급표의 현재 등급 행이 실시간으로 하이라이트</strong>됩니다. 또한 스위치 2 / 리메이크의 신규 전투 시스템과 샤이닝 폼 원킬 파밍법, 최강 장비 입수처를 한눈에 확인하세요.
+        </div>
+      </div>
+
+      <!-- SECTION 1: 준유격사 승급 등급표 (실시간 연동) -->
+      <div class="ref-card">
+        <h3>🎖️ 준유격사 9급 ~ 1급 승급 필요 BP & 핵심 보상 일람표 (실시간 내 등급 연동)</h3>
+        <table class="data-table" id="bracerRankTable">
+          <thead>
+            <tr>
+              <th>유격사 등급</th>
+              <th>필요 누적 BP</th>
+              <th>승급 보상 아이템 (핵심 효과)</th>
+              <th>최단 달성 가능 시점 (풀 BP 기준)</th>
+              <th>현재 달성 상태</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-rank-min="0" data-rank-max="9">
+              <td><strong>준유격사 9급</strong></td>
+              <td>0 BP (시작)</td>
+              <td>준유격사 배지 & 유격사 수첩 (초기 지급)</td>
+              <td>서장 시작 직후</td>
+              <td class="rank-status-cell">-</td>
+            </tr>
+            <tr data-rank-min="10" data-rank-max="39">
+              <td><strong>준유격사 8급</strong></td>
+              <td>10 BP 이상</td>
+              <td><strong>소드 브레이커</strong> (STR·DEF 소폭 상승 장갑)</td>
+              <td>서장 중반 (에스라스의 탑 완료 후)</td>
+              <td class="rank-status-cell">-</td>
+            </tr>
+            <tr data-rank-min="40" data-rank-max="74">
+              <td><strong>준유격사 7급</strong></td>
+              <td>40 BP 이상</td>
+              <td><strong>쿼츠 「기공(機功)」</strong> (시2+공2 / 매 턴 EP 1% 자동 회복 — 클락 업 개 핵심 재료!)</td>
+              <td>서장 보스전 직전 (최대 42 BP)</td>
+              <td class="rank-status-cell">-</td>
+            </tr>
+            <tr data-rank-min="75" data-rank-max="114">
+              <td><strong>준유격사 6급</strong></td>
+              <td>75 BP 이상</td>
+              <td><strong>유격사의 글러브</strong> (명중·회피·DEF 상승)</td>
+              <td>제1장 중반 (보스 마켓·라벤누 마을 해결 후)</td>
+              <td class="rank-status-cell">-</td>
+            </tr>
+            <tr data-rank-min="115" data-rank-max="164">
+              <td><strong>준유격사 5급</strong></td>
+              <td>115 BP 이상</td>
+              <td><strong>쿼츠 「자애(慈愛)」</strong> (수3+지2 / 회복 아츠 효과 +50% 상승 — 어스 월·라 티아라 동시에 확보!)</td>
+              <td>제1장 종료 ~ 제2장 초반 (1장 종료 최대 128 BP)</td>
+              <td class="rank-status-cell">-</td>
+            </tr>
+            <tr data-rank-min="165" data-rank-max="219">
+              <td><strong>준유격사 4급</strong></td>
+              <td>165 BP 이상</td>
+              <td><strong>쿼츠 「천안(天眼)」</strong> (화2+풍2+환1 / 미니맵에 적 위치 및 모든 보물상자 위치 실시간 표시!)</td>
+              <td>제2장 중후반 (학원제 전후)</td>
+              <td class="rank-status-cell">-</td>
+            </tr>
+            <tr data-rank-min="220" data-rank-max="279">
+              <td><strong>준유격사 3급</strong></td>
+              <td>220 BP 이상</td>
+              <td><strong>미라주 링</strong> (ATS +15, 전 상태이상 저항 보조 액세서리)</td>
+              <td>제3장 초중반 (2장 종료 최대 217 BP 직후)</td>
+              <td class="rank-status-cell">-</td>
+            </tr>
+            <tr data-rank-min="280" data-rank-max="349">
+              <td><strong>준유격사 2급</strong></td>
+              <td>280 BP 이상</td>
+              <td><strong>쿼츠 「음양(陰陽)」</strong> (수3+환2 / 필드 이동 시 HP·EP 자동 회복 — 던전 탐색 최강 쿼츠!)</td>
+              <td>제3장 후반 (홍련의 탑~레이스톤 요새 전후)</td>
+              <td class="rank-status-cell">-</td>
+            </tr>
+            <tr data-rank-min="350" data-rank-max="999">
+              <td><strong style="color:var(--brand-gold);">🏆 준유격사 1급 (MAX)</strong></td>
+              <td><strong style="color:var(--brand-gold);">350 BP 이상</strong><br/><span style="font-size:0.75rem; color:var(--text-secondary);">(만점 395 BP)</span></td>
+              <td><strong style="color:var(--brand-gold);">액세서리 「투혼의 벨트」</strong> (매 턴 자기 차례마다 CP +3 자동 회복 — S크래프트 무한 난사 핵심 장비!)</td>
+              <td>종장 중반 (무술대회~대성당 잠입 직후)</td>
+              <td class="rank-status-cell">-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- SECTION 2: 장별 샤이닝 폼 출현 위치 & 확정 원킬 파밍법 -->
+      <div class="ref-card">
+        <h3>✨ 장별 샤이닝 폼(반짝이 폼) 출현 위치 & 확정 원킬 레벨링·세피스 파밍 가이드</h3>
+        <div class="alert-banner info" style="margin-bottom:12px;">
+          <div class="alert-title">💡 샤이닝 폼(Shining Pom) 물리/일반 마법 면역 뚫는 4가지 확정 처치법</div>
+          <div style="font-size:0.85rem; color:var(--text-secondary);">
+            샤이닝 폼은 일반 평타와 지·수·화·풍 속성 아츠에 거의 피해를 입지 않고 도주합니다. 반드시 아래 4가지 방법 중 하나로 선제 타격하세요!<br/>
+            ① <strong>S-크래프트 / 브레이브 체인 폭격:</strong> 전투 돌입 전 CP를 100~200 채운 뒤, 필드 퀵 배틀 기습으로 진입하자마자 S-크래프트 연사 (방어 무시 & 명중 100%).<br/>
+            ② <strong>시(時) 속성 아츠 「섀도우 스피어(시 2)」 / 「데스 스크림(시 6+화 2+환 2)」:</strong> 샤이닝 폼은 <strong>즉사(Death) 상태이상 20% 판정에 면역이 없어</strong> 한 방에 즉사합니다!<br/>
+            ③ <strong>공격용 투척 요리(실패 요리 / 경악 나폴리탄 / 일격의 죽 / 승천 리조또):</strong> 방어력을 무시하는 고정 피해 + 즉사 판정이 붙어 있어 아츠/CP가 부족할 때 최고의 사냥 수단입니다.<br/>
+            ④ <strong>AT 보너스 「세피스 업(Sepith Up)」 & 「크리티컬(!)」 활용:</strong> 리메이크의 필드 퀵 배틀 스턴 진입 시 AT 보너스가 다수 생성되므로, 세피스 보너스 턴에 다단히트 S-크래프트(요슈아 `칠흑의 아` 등)를 꽂으면 <strong>1회 전투당 7속성 세피스를 수백 개씩</strong> 쓸어담을 수 있습니다.
+          </div>
+        </div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>챕터</th>
+              <th>샤이닝 폼 출현 장소 (정확한 포인트)</th>
+              <th>동반 출현 마수</th>
+              <th>적정 목표 레벨 & 파밍 팁</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>서장 (롤렌트)</strong></td>
+              <td>• <strong>비취의 탑(에스라스의 탑)</strong> 2층~옥상 직전 계단 부근<br/>• <strong>미스트 발드</strong> 동쪽 갈림길 안쪽 공터</td>
+              <td>파인 로더 / 동글 폼</td>
+              <td><strong>목표 Lv.10~12</strong> / 요슈아에게 `섀도우 스피어(시 2)` 세팅 후 사냥</td>
+            </tr>
+            <tr>
+              <td><strong>제1장 (보스)</strong></td>
+              <td>• <strong>동 보스 가도</strong> (아이젠 로드 입구 갈림길 수풀 부근)<br/>• <strong>네벨 계곡 길</strong> (산장 휠러 씨의 집 맵 동쪽 눈길)</td>
+              <td>크리피 쉽 / 프로스트 노즈</td>
+              <td><strong>목표 Lv.18~20</strong> / 호박의 탑 진입 전 올리비에·셰라자드 합류 시점에 파밍 추천</td>
+            </tr>
+            <tr>
+              <td><strong>제2장 (루안)</strong></td>
+              <td>• <strong>아이나 가도</strong> (곤돌라 남쪽 해변가 언덕 나무 밑)<br/>• <strong>감벽의 탑</strong> 입구 외부 공터</td>
+              <td>제트 톨토이즈 / 헬가 공작새</td>
+              <td><strong>목표 Lv.24~26</strong> / 클로제 합류 후 `케이오스 브랜드` + 요슈아 광역 S-크래프트 연계</td>
+            </tr>
+            <tr>
+              <td><strong>제3장 (차이스)</strong></td>
+              <td>• <strong>트라트 평원 길</strong> (홍련의 탑으로 가는 남쪽 갈림길 바위 옆)<br/>• <strong>리터 가도</strong> (엘모 마을 분기점 부근)</td>
+              <td>블랙 워리어 / 마하 배틀러</td>
+              <td><strong>목표 Lv.31~33</strong> / 애거트 `다이나스트 게일` + 티타 범위 포격으로 광역 세피스 수급</td>
+            </tr>
+            <tr>
+              <td><strong>종장 (그란셀)</strong></td>
+              <td>• <strong>엘베 산책로</strong> (엘베 별궁 입구 직전 서쪽 막다른 숲길 공터)<br/><em>※ 맵 이동 반복(리젠)이 가장 빠르고 한 번에 최대 3~6마리 출현!</em></td>
+              <td>어비스 웜 / 버팔로</td>
+              <td><strong>목표 Lv.38~40 (2nd 연동 최고 보상 조건!)</strong> / 봉인구역 진입 전 여기서 전원 Lv.38+ 달성 및 최종 쿼츠 세피스 파밍 강력 추천</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- SECTION 3: 리메이크 신규 전투 시스템 & 나이트메어 / 2회차 가이드 -->
+      <div class="ref-card">
+        <h3>⚡ 《하늘의 궤적 the 1st》 리메이크 신규 전투 시스템 & 나이트메어 / 2회차(NG+) 완벽 가이드</h3>
+        <div class="char-grid">
+          <div class="char-card" style="padding:14px;">
+            <strong style="color:var(--brand-sky); font-size:0.95rem;">1️⃣ 필드 퀵 배틀 ➔ 커맨드 배틀 스턴 연계 (핵심!)</strong>
+            <div style="font-size:0.84rem; color:var(--text-secondary); margin-top:6px;">
+              • 필드에서 적의 공격을 <strong>저스트 회피(회피 버튼)</strong>하면 슬로우 모션과 함께 강공격 찬스가 발생합니다.<br/>
+              • 강공격으로 적의 <strong>스턴 게이지(Stun Gauge)를 100% 채워 기절</strong>시킨 직후 즉시 <strong>커맨드 배틀 전환 버튼</strong>을 누르세요!<br/>
+              • <strong>효과:</strong> 아군 전원 선제 턴 + 적 기절 상태 시작 + 첫 타격 시 <strong>브레이브 어택(추격타) 100% 발동</strong>으로 CP 회복과 오버드라이브 게이지를 순식간에 채웁니다.
+            </div>
+          </div>
+          <div class="char-card" style="padding:14px;">
+            <strong style="color:var(--brand-gold); font-size:0.95rem;">2️⃣ 브레이브 체인 & 오버드라이브 (Overdrive)</strong>
+            <div style="font-size:0.84rem; color:var(--text-secondary); margin-top:6px;">
+              • 적을 스턴시키거나 약점 속성을 찌르면 아군 간 <strong>브레이브 어택 / 체인</strong>이 발동하여 턴 소모 없이 추가 협공을 가합니다.<br/>
+              • <strong>오버드라이브(Overdrive)</strong> 발동 중에는 아군의 스탯 상승, 상태이상 자동 해제, 아츠 즉시 구동/추격 확정 효과가 부여되므로 보스가 광폭화하거나 분신을 소환했을 때 아껴둔 오버드라이브를 터뜨리세요.
+            </div>
+          </div>
+          <div class="char-card" style="padding:14px;">
+            <strong style="color:var(--brand-rose); font-size:0.95rem;">3️⃣ 나이트메어(Nightmare) 난이도 정복 3원칙</strong>
+            <div style="font-size:0.84rem; color:var(--text-secondary); margin-top:6px;">
+              • <strong>SPD(행동력)가 생명:</strong> 나이트메어 보스는 SPD가 매우 높습니다. 전 파티원에게 `행동력 3` + `클락 업 개`를 최우선 부여하세요.<br/>
+              • <strong>어스 월(지4+공2) 전담자 2명 배치:</strong> 1명은 주력 아츠 딜러, 1명은 서브 힐러에게 어스 월을 모두 세팅해 보스의 전체기에 방어막이 끊기지 않게 유지하세요.<br/>
+              • <strong>요슈아 `절영(지연)` + 클로제 `케이오스 브랜드(혼란)` + 셰라자드 `헤븐즈 키스(가속)`:</strong> 보스에게 턴을 아예 주지 않는 무한 턴 스틸(Turn Steal) 택틱이 나이트메어의 정석입니다.
+            </div>
+          </div>
+          <div class="char-card" style="padding:14px;">
+            <strong style="color:var(--brand-emerald); font-size:0.95rem;">4️⃣ 2회차(New Game+) 인계 항목 & 플래티넘 팁</strong>
+            <div style="font-size:0.84rem; color:var(--text-secondary); margin-top:6px;">
+              • 클리어 데이터를 불러와 2회차(NG+)를 시작하면 <strong>캐릭터 레벨, 장비/쿼츠, 미라/세피스, 수첩 데이터(요리·몬스터·서적 기록)</strong>를 선택하여 인계할 수 있습니다.<br/>
+              • 1회차는 <strong>Normal 또는 Hard 난이도로 본 공략집의 395 BP + 상자 100% + Lv.38~40</strong>을 달성하고, 2회차에 레벨/최강 장비를 인계해 <strong>Nightmare 난이도를 고속 돌파</strong>하면 전 업적(플래티넘)을 가장 빠르게 달성할 수 있습니다.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 4: 최종 장비 & 상태이상 면역 액세서리 총정리 -->
+      <div class="ref-card">
+        <h3>🛡️ 최종 방어구·신발 & 보스전 필수 상태이상 면역 액세서리 입수처 총정리</h3>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>분류</th>
+              <th>장비 / 액세서리 명칭</th>
+              <th>핵심 능력치 및 특수 효과</th>
+              <th>입수 시점 및 장소</th>
+              <th>추천 장착 캐릭터</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="badge badge-bp">최강 무기</span></td>
+              <td><strong>태극봉 (에스텔) / 흑천세 (요슈아)</strong></td>
+              <td>최상위 STR (요슈아 흑천세는 SPD 대폭 상승 포함) / 카넬리아 11권 교환 (택1) + 봉인구역 상자</td>
+              <td>종장 알리시아 여왕 구출 직후 커피하우스 바랄 교환 & 봉인구역 제4층</td>
+              <td>에스텔 / 요슈아</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-main">최강 방어구</span></td>
+              <td><strong>보이드 브레이커 / 아우라 가드 / 미라주 로브</strong></td>
+              <td>최상위 DEF 및 ADF 상승 (미라주 로브는 ATS +20 추가)</td>
+              <td>종장 왕립성 보물상자 & 봉인구역(제1~4층) 보물상자</td>
+              <td>전열 물리캐 / 후열 아츠캐</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-main">최강 신발</span></td>
+              <td><strong>게슈텔 슈즈 / 세라핌 부츠 / 페더 부츠</strong></td>
+              <td>최상위 MOV(이동 범위) & <strong>SPD(속도) +10~15 상승</strong></td>
+              <td>종장 에델 백화점 구입 & 봉인구역 보물상자</td>
+              <td>요슈아·셰라자드·클로제 (SPD 최우선)</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-missable">S티어 액세서리</span></td>
+              <td><strong>투혼의 벨트 (Gladiator Belt)</strong></td>
+              <td><strong>매 턴 자기 차례마다 CP +3 자동 회복</strong> (투혼의 머리띠 상위호환)</td>
+              <td>준유격사 1급(350 BP+) 승급 보수 / 무술대회 우승 후 에델 백화점(한정)</td>
+              <td>요슈아 / 에스텔 / 애거트</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-missable">S티어 액세서리</span></td>
+              <td><strong>그랄 로켓 (Grail Locket)</strong></td>
+              <td><strong>모든 상태이상(즉사·석화·혼란·기절·동결·봉기·봉마 등) 100% 완전 면역!</strong></td>
+              <td>종장 왕립성 지하 봉인구역 보물상자 / 여왕 궁전 이벤트</td>
+              <td>클로제 (메인 힐러·부활 담당 필수!)</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-sub">필수 면역</span></td>
+              <td><strong>릴리 네클리스 (Lily Necklace)</strong></td>
+              <td><strong>혼란(Chaos) & 수면 100% 면역</strong> (로렌스 소위·공작가 친위대·펜서의 자살 팀킬 방지)</td>
+              <td>제2장 루안 백화점 / 종장 에델 백화점</td>
+              <td>전원 1개씩 총 4개 구비 필수!</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-sub">필수 면역</span></td>
+              <td><strong>스컬 펜던트 (Skull Pendant)</strong></td>
+              <td><strong>즉사(Death) 100% 면역</strong> (지하수로 마수·어비스 웜·데스 스크림 즉사 방지)</td>
+              <td>제1장 보스 마켓 / 종장 에델 백화점 & 지하수로 상자</td>
+              <td>전원 구비 권장 (최소 힐러/탱커 2개)</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-sub">필수 면역</span></td>
+              <td><strong>화이트 브레이슬릿 / 워치 계열</strong></td>
+              <td><strong>동결(Freeze) · 석화(Petrify) · 기절(Faint) 면역</strong> (트로이메라이·펭귄 보스전 필수)</td>
+              <td>제2~3장 상점 및 종장 에델 백화점</td>
+              <td>보스 패턴에 맞춰 스위칭 장착</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-chest">전용 장비</span></td>
+              <td><strong>롱 배럴 II / 기신지리(機神之理)</strong></td>
+              <td>티타 전용 사거리 +2 증가 / 진 전용 STR·DEF·명중 복합 상승</td>
+              <td>제3장 중앙공방(롱 배럴) & 종장 봉인구역 보물상자</td>
+              <td>티타 / 진</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const STORAGE_KEY = 'trails_sky_1st_guide_progress_v1';
+    const THEME_KEY = 'trails_sky_1st_guide_theme';
+    let currentTab = 'prologue';
+    let currentFilter = 'all';
+
+    function loadState() {
+      try {
+        const savedTheme = localStorage.getItem(THEME_KEY);
+        if (savedTheme) {
+          document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+        const raw = localStorage.getItem(STORAGE_KEY);
+        return raw ? JSON.parse(raw) : {};
+      } catch (e) {
+        return {};
+      }
+    }
+
+    function saveState(state) {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      } catch (e) {}
+    }
+
+    let checkedState = loadState();
+
+    function initCheckItems() {
+      const items = document.querySelectorAll('.check-item[data-id]');
+      items.forEach(item => {
+        const id = item.getAttribute('data-id');
+        if (checkedState[id]) {
+          item.classList.add('completed');
+        }
+        item.addEventListener('click', () => {
+          item.classList.toggle('completed');
+          checkedState[id] = item.classList.contains('completed');
+          saveState(checkedState);
+          updateDashboard();
+          applyFilters();
+        });
+      });
+      updateDashboard();
+    }
+
+    function calculateRank(bp) {
+      const ranks = [
+        { name: '준유격사 9급', min: 0, next: 10, reward: '8급(10 BP) 승급 시: 소드 브레이커' },
+        { name: '준유격사 8급', min: 10, next: 40, reward: '7급(40 BP) 승급 시: 쿼츠 [기공]' },
+        { name: '준유격사 7급', min: 40, next: 75, reward: '6급(75 BP) 승급 시: 유격사의 글러브' },
+        { name: '준유격사 6급', min: 75, next: 115, reward: '5급(115 BP) 승급 시: 쿼츠 [자애]' },
+        { name: '준유격사 5급', min: 115, next: 165, reward: '4급(165 BP) 승급 시: 쿼츠 [천안]' },
+        { name: '준유격사 4급', min: 165, next: 220, reward: '3급(220 BP) 승급 시: 미라주 링' },
+        { name: '준유격사 3급', min: 220, next: 280, reward: '2급(280 BP) 승급 시: 쿼츠 [음양]' },
+        { name: '준유격사 2급', min: 280, next: 350, reward: '1급(350 BP) 승급 시: [투혼의 벨트]' },
+        { name: '준유격사 1급 (MAX)', min: 350, next: null, reward: '최고 랭크 달성 완료! (투혼의 벨트 & 2nd 공로장)' }
+      ];
+      let current = ranks[0];
+      for (const r of ranks) {
+        if (bp >= r.min) current = r;
+      }
+      return current;
+    }
+
+    function updateRankTableHighlight(totalBp) {
+      const rows = document.querySelectorAll('#bracerRankTable tbody tr');
+      rows.forEach(row => {
+        const min = parseInt(row.getAttribute('data-rank-min') || '0', 10);
+        const max = parseInt(row.getAttribute('data-rank-max') || '999', 10);
+        const statusCell = row.querySelector('.rank-status-cell');
+        if (totalBp >= min && totalBp <= max) {
+          row.style.background = 'rgba(56, 189, 248, 0.16)';
+          row.style.outline = '1px solid var(--brand-sky)';
+          if (statusCell) statusCell.innerHTML = '<span class="badge badge-main">📍 현재 달성 등급 (' + totalBp + ' BP)</span>';
+        } else if (totalBp > max) {
+          row.style.background = '';
+          row.style.outline = '';
+          if (statusCell) statusCell.innerHTML = '<span style="color:var(--brand-emerald); font-weight:700;">✓ 승급 완료</span>';
+        } else {
+          row.style.background = '';
+          row.style.outline = '';
+          if (statusCell) statusCell.innerHTML = '<span style="color:var(--text-muted);">미달성 (' + (min - totalBp) + ' BP 필요)</span>';
+        }
+      });
+    }
+
+    function updateDashboard() {
+      // 1. Per-tab completion pills
+      const tabs = ['prologue', 'ch1', 'ch2', 'ch3', 'finale', 'compendium'];
+      tabs.forEach(tabId => {
+        const panel = document.getElementById('panel-' + tabId);
+        if (!panel) return;
+        const allItems = panel.querySelectorAll('.check-item[data-id]');
+        const doneItems = panel.querySelectorAll('.check-item[data-id].completed');
+        const pct = allItems.length ? Math.round((doneItems.length / allItems.length) * 100) : 0;
+        const pill = document.getElementById('pill-' + tabId);
+        if (pill) pill.textContent = pct + '%';
+
+        if (tabId === currentTab) {
+          document.getElementById('currentTabCountText').textContent = `${doneItems.length} / ${allItems.length} 완료`;
+          document.getElementById('currentTabPercentText').textContent = `${pct}%`;
+          document.getElementById('currentTabProgressBar').style.width = `${pct}%`;
+        }
+      });
+
+      if (currentTab === 'characters' || currentTab === 'calculator' || currentTab === 'bosses' || currentTab === 'systems') {
+        const allItems = document.querySelectorAll('.check-item[data-id]');
+        const doneItems = document.querySelectorAll('.check-item[data-id].completed');
+        const pct = allItems.length ? Math.round((doneItems.length / allItems.length) * 100) : 0;
+        document.getElementById('currentTabCountText').textContent = `전체 ${doneItems.length} / ${allItems.length} 완료`;
+        document.getElementById('currentTabPercentText').textContent = `${pct}%`;
+        document.getElementById('currentTabProgressBar').style.width = `${pct}%`;
+      }
+
+      // 2. Prologue BP & Total BP
+      let prologueBp = 0;
+      let totalBp = 0;
+      let carnelia = 0;
+      let chests = 0;
+      let recipes = 0;
+      let news = 0;
+
+      document.querySelectorAll('.check-item[data-id].completed').forEach(item => {
+        const pBp = parseInt(item.getAttribute('data-prologue-bp') || '0', 10);
+        const bp = parseInt(item.getAttribute('data-bp') || '0', 10);
+        const cBook = parseInt(item.getAttribute('data-carnelia') || '0', 10);
+        const cChest = parseInt(item.getAttribute('data-chest') || '0', 10);
+        const cRecipe = parseInt(item.getAttribute('data-recipe') || '0', 10);
+        const cNews = parseInt(item.getAttribute('data-news') || '0', 10);
+
+        prologueBp += pBp;
+        totalBp += bp;
+        carnelia += cBook;
+        chests += cChest;
+        recipes += cRecipe;
+        news += cNews;
+      });
+
+      if (checkedState['p_recipe_1']) recipes += 3;
+
+      document.getElementById('prologueBpText').textContent = prologueBp;
+      const prologuePct = Math.min(100, Math.round((prologueBp / 53) * 100));
+      document.getElementById('prologueBpBar').style.width = `${prologuePct}%`;
+
+      document.getElementById('totalBpText').textContent = `${totalBp} BP`;
+      const rankInfo = calculateRank(totalBp);
+      document.getElementById('currentRankBadge').textContent = rankInfo.name;
+      document.getElementById('nextRankText').textContent = rankInfo.next
+        ? `다음 승급까지: ${rankInfo.next - totalBp} BP`
+        : '최고 랭크 달성!';
+      document.getElementById('rankRewardPreview').textContent = rankInfo.reward;
+
+      document.getElementById('carneliaCount').textContent = `${carnelia}/11`;
+      document.getElementById('chestCount').textContent = `${chests}/32`;
+      document.getElementById('recipeCount').textContent = `${recipes}/8`;
+      document.getElementById('liberlNewsCount').textContent = `${news}/9`;
+
+      updateRankTableHighlight(totalBp);
+    }
+
+    // ==========================================
+    // Interactive Arts & Quartz Calculator Logic
+    // ==========================================
+    const ARTS_DB = [
+      { id: 'clock_up_ex', name: '⚡ 클락 업 개 (필수 가속)', desc: 'SPD +50% 상승 & 행동 순서 즉시 당기기', req: { 시: 3, 공: 3 }, defaultSelected: true },
+      { id: 'earth_wall', name: '🛡️ 어스 월 (범위 완전방어)', desc: '원형 범위 아군 1회 데미지 완전 무효화', req: { 지: 4, 공: 2 }, defaultSelected: true },
+      { id: 'chaos_brand', name: '🌀 카오스 브랜드 (확정급 혼란)', desc: '단일 적 혼란 부여 + 스탯 저하', req: { 환: 3 }, defaultSelected: true },
+      { id: 'earth_guard', name: '🛡️ 어스 가드 (단일 완전방어)', desc: '단일 아군 1회 데미지 완전 무효화', req: { 지: 2, 공: 1 }, defaultSelected: false },
+      { id: 'aerial', name: '🌪️ 에어리얼 (초중반 광역기)', desc: '중원형 범위 풍 속성 공격', req: { 풍: 4 }, defaultSelected: false },
+      { id: 'white_gehenna', name: '💀 화이트 게헨나 (종반 주력기)', desc: '중원형 범위 시 속성 공격 + 기절 20%', req: { 시: 4, 공: 2, 환: 2 }, defaultSelected: false },
+      { id: 'shadow_spear', name: '🗡️ 섀도우 스피어 (고화력 단일)', desc: '단일 시 속성 공격 + 즉사 20%', req: { 시: 2 }, defaultSelected: false },
+      { id: 'la_tearal', name: '💧 라 티아라 (범위 중회복)', desc: '원형 범위 아군 HP 1000 회복', req: { 수: 4, 공: 2 }, defaultSelected: false },
+      { id: 'la_tear_all', name: '💧 아쿠아 미라주 / 전체 회복', desc: '전체 아군 HP 2000 회복 (최상위 힐)', req: { 수: 6, 공: 3, 시: 1 }, defaultSelected: false },
+      { id: 'diamond_dust', name: '❄️ 다이아몬드 더스트 (수 최상위)', desc: '중원형 수 속성 공격 + 동결 20%', req: { 수: 5, 공: 2, 환: 1 }, defaultSelected: false },
+      { id: 'spiral_flare', name: '🔥 스파이럴 플레어 (화 최상위)', desc: '중원형 화 속성 고화력 공격', req: { 화: 5, 공: 2, 풍: 1 }, defaultSelected: false },
+      { id: 'plasma_wave', name: '🌩️ 플라즈마 웨이브 (풍 최상위)', desc: '전체 범위 풍 속성 공격 + 봉기', req: { 풍: 5, 화: 2, 공: 2 }, defaultSelected: false },
+      { id: 'titanic_roar', name: '⛰️ 타이타닉 로어 (지 최상위)', desc: '전체 범위 지 속성 공격', req: { 지: 5, 공: 3 }, defaultSelected: false },
+      { id: 'death_scream', name: '👻 데스 스크림 (시 전체공격)', desc: '전체 범위 시 속성 공격 + 즉사 20%', req: { 시: 6, 화: 2, 환: 2 }, defaultSelected: false },
+      { id: 'thelas', name: '✨ 세라스 / 리제네 (부활)', desc: '전투불능 아군 부활 및 HP 회복', req: { 수: 2, 공: 2 }, defaultSelected: false }
+    ];
+
+    let selectedArts = {};
+    ARTS_DB.forEach(a => { if (a.defaultSelected) selectedArts[a.id] = true; });
+
+    function initArtCalculator() {
+      const listEl = document.getElementById('artSelectorList');
+      if (!listEl) return;
+      listEl.innerHTML = '';
+      ARTS_DB.forEach(art => {
+        const reqStr = Object.entries(art.req).map(([k, v]) => `${k} ${v}`).join(' + ');
+        const div = document.createElement('div');
+        div.className = 'check-item' + (selectedArts[art.id] ? ' completed' : '');
+        div.style.padding = '10px 14px';
+        div.innerHTML = `
+          <div class="check-box">✓</div>
+          <div class="item-content">
+            <div class="item-header">
+              <span class="badge badge-bp">${reqStr}</span>
+              <span class="item-title" style="text-decoration:none; color:var(--text-primary);">${art.name}</span>
+            </div>
+            <div class="item-desc" style="font-size:0.82rem;">${art.desc}</div>
+          </div>
+        `;
+        div.addEventListener('click', () => {
+          selectedArts[art.id] = !selectedArts[art.id];
+          div.classList.toggle('completed', selectedArts[art.id]);
+          renderArtCalcResult();
+        });
+        listEl.appendChild(div);
+      });
+      renderArtCalcResult();
+    }
+
+    function resetArtCalc() {
+      selectedArts = {};
+      initArtCalculator();
+    }
+
+    function renderArtCalcResult() {
+      const elements = [
+        { key: '지', name: '지(地)', color: '#f59e0b' },
+        { key: '수', name: '수(水)', color: '#38bdf8' },
+        { key: '화', name: '화(火)', color: '#f43f5e' },
+        { key: '풍', name: '풍(風)', color: '#10b981' },
+        { key: '시', name: '시(時)', color: '#94a3b8' },
+        { key: '공', name: '공(空)', color: '#fbbf24' },
+        { key: '환', name: '환(幻)', color: '#c084fc' }
+      ];
+      const maxReq = { 지: 0, 수: 0, 화: 0, 풍: 0, 시: 0, 공: 0, 환: 0 };
+      const chosenNames = [];
+
+      ARTS_DB.forEach(art => {
+        if (selectedArts[art.id]) {
+          chosenNames.push(art.name.replace(/^[^\s]+\s/, ''));
+          Object.entries(art.req).forEach(([k, v]) => {
+            if (v > maxReq[k]) maxReq[k] = v;
+          });
+        }
+      });
+
+      const barsEl = document.getElementById('calcElementBars');
+      if (barsEl) {
+        barsEl.innerHTML = elements.map(el => {
+          const val = maxReq[el.key];
+          const pct = Math.min(100, Math.round((val / 8) * 100));
+          return `
+            <div style="display:flex; align-items:center; gap:10px; font-size:0.86rem;">
+              <strong style="width:52px; color:${el.color};">${el.name}</strong>
+              <div style="flex:1; height:10px; background:rgba(148,163,184,0.18); border-radius:999px; overflow:hidden;">
+                <div style="width:${pct}%; height:100%; background:${el.color}; transition:width 0.25s ease;"></div>
+              </div>
+              <strong style="width:45px; text-align:right; color:${val > 0 ? el.color : 'var(--text-muted)'};">${val} 필요</strong>
+            </div>
+          `;
+        }).join('');
+      }
+
+      const recEl = document.getElementById('calcQuartzRecommendation');
+      if (!recEl) return;
+      if (chosenNames.length === 0) {
+        recEl.innerHTML = '왼쪽 목록에서 발동시키고 싶은 아츠를 1개 이상 선택해 주세요.';
+        return;
+      }
+
+      // Build smart quartz suggestions based on maxReq
+      const suggestions = [];
+      if (maxReq['시'] >= 3 && maxReq['공'] >= 3) {
+        suggestions.push('• <strong>시·공 동시 확보:</strong> <code>절약 EP 3</code>(공3+시2+환1) + <code>행동력 2/3</code>(시2~3) 또는 <code>기공</code>(시2+공2)');
+      } else if (maxReq['시'] > 0 || maxReq['공'] > 0) {
+        suggestions.push(`• <strong>시(${maxReq['시']}) / 공(${maxReq['공']}) 확보:</strong> <code>행동력 3</code>(시3) + <code>구동 2</code>(시2) + <code>절약 EP 2/3</code>(공2~3)`);
+      }
+      if (maxReq['환'] >= 3) {
+        suggestions.push('• <strong>환(幻) 속성 확보:</strong> <code>EP 3</code>(환3+시2+공2) 또는 <code>환혹의 방울 / 명중 3</code>(환3)');
+      } else if (maxReq['환'] > 0) {
+        suggestions.push('• <strong>환(幻) 보조:</strong> <code>절약 EP 3</code>(환1 포함) 또는 <code>EP 2</code>(환2+시1+공1)');
+      }
+      if (maxReq['지'] >= 4) {
+        suggestions.push('• <strong>지(地) 4+ 확보 (어스 월):</strong> <code>방어 3</code>(지3) + <code>자애</code>(수3+지2) 또는 <code>석화의 칼날/생명</code>(지1~2)');
+      } else if (maxReq['지'] > 0) {
+        suggestions.push(`• <strong>지(地) ${maxReq['지']} 확보:</strong> <code>방어 2/3</code>(지2~3)`);
+      }
+      if (maxReq['수'] >= 4) {
+        suggestions.push('• <strong>수(水) 4+ 확보:</strong> <code>정신 3</code>(수3) + <code>HP 3</code>(수3) 또는 <code>자애</code>(수3+지2)');
+      } else if (maxReq['수'] > 0) {
+        suggestions.push(`• <strong>수(水) ${maxReq['수']} 확보:</strong> <code>정신 2/3</code> 또는 <code>HP 2/3</code>`);
+      }
+      if (maxReq['풍'] >= 4) {
+        suggestions.push('• <strong>풍(風) 4+ 확보:</strong> <code>회피 3</code>(풍3) + <code>천안</code>(화2+풍2+환1) 또는 <code>취기/봉기의 칼날</code>(풍2)');
+      }
+      if (maxReq['화'] >= 4) {
+        suggestions.push('• <strong>화(火) 4+ 확보:</strong> <code>공격 3</code>(화3) + <code>천안</code>(화2+풍2+환1) 또는 <code>필살의 칼날</code>');
+      }
+
+      const activeSummary = Object.entries(maxReq).filter(([_, v]) => v > 0).map(([k, v]) => `<strong>${k} ${v}</strong>`).join(', ');
+      recEl.innerHTML = `
+        <div>✅ <strong>선택한 아츠 (${chosenNames.length}종):</strong> ${chosenNames.join(', ')}</div>
+        <div style="margin-top:4px;">📌 <strong>단일 라인 목표 속성 합계:</strong> ${activeSummary}</div>
+        <div style="margin-top:8px; border-top:1px dashed var(--border-color); padding-top:6px;">
+          <strong>💡 최소 슬롯 달성 추천 쿼츠 레시피:</strong><br/>
+          ${suggestions.join('<br/>')}
+        </div>
+      `;
+    }
+
+    function switchTab(tabId) {
+      currentTab = tabId;
+      document.querySelectorAll('.chapter-tab').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-tab') === tabId);
+      });
+      document.querySelectorAll('.chapter-panel').forEach(panel => {
+        panel.classList.toggle('active', panel.id === 'panel-' + tabId);
+      });
+      updateDashboard();
+    }
+
+    function setFilter(filter) {
+      currentFilter = filter;
+      document.querySelectorAll('.chip').forEach(chip => {
+        chip.classList.toggle('active', chip.getAttribute('data-filter') === filter);
+      });
+      const hdrBtn = document.getElementById('headerIncompleteBtn');
+      if (hdrBtn) {
+        if (filter === 'incomplete') {
+          hdrBtn.textContent = '⏳ 미완료만 보기: ON';
+          hdrBtn.style.borderColor = 'var(--brand-gold)';
+          hdrBtn.style.color = 'var(--brand-gold)';
+        } else {
+          hdrBtn.textContent = '⏳ 미완료만 보기: OFF';
+          hdrBtn.style.borderColor = '';
+          hdrBtn.style.color = '';
+        }
+      }
+      applyFilters();
+    }
+
+    function toggleIncompleteFilter() {
+      setFilter(currentFilter === 'incomplete' ? 'all' : 'incomplete');
+    }
+
+    function toggleBackupPanel() {
+      const drawer = document.getElementById('backupDrawer');
+      if (!drawer) return;
+      const isHidden = drawer.style.display === 'none';
+      drawer.style.display = isHidden ? 'block' : 'none';
+      if (isHidden) {
+        const input = document.getElementById('syncCodeInput');
+        if (input) {
+          const activeKeys = Object.keys(checkedState).filter(k => checkedState[k]);
+          input.value = btoa(encodeURIComponent(JSON.stringify(activeKeys)));
+        }
+      }
+    }
+
+    function showBackupMsg(text, isError) {
+      const msg = document.getElementById('backupStatusMsg');
+      if (!msg) return;
+      msg.style.display = 'block';
+      msg.style.color = isError ? 'var(--brand-rose)' : 'var(--brand-emerald)';
+      msg.textContent = text;
+    }
+
+    function copySyncCode() {
+      const activeKeys = Object.keys(checkedState).filter(k => checkedState[k]);
+      const code = btoa(encodeURIComponent(JSON.stringify(activeKeys)));
+      const input = document.getElementById('syncCodeInput');
+      if (input) {
+        input.value = code;
+        input.select();
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(code).then(() => {
+          showBackupMsg('✅ 동기화 코드가 클립보드에 복사되었습니다! 스마트폰/PC에서 붙여넣어 복원하세요.', false);
+        }).catch(() => {
+          showBackupMsg('✅ 입력창에 코드가 생성되었습니다. 전체 선택(Ctrl+C)하여 복사하세요.', false);
+        });
+      } else {
+        showBackupMsg('✅ 입력창에 코드가 생성되었습니다. 전체 선택(Ctrl+C)하여 복사하세요.', false);
+      }
+    }
+
+    function applyRestoredKeys(keysArray) {
+      checkedState = {};
+      keysArray.forEach(k => { checkedState[k] = true; });
+      saveState(checkedState);
+      document.querySelectorAll('.check-item[data-id]').forEach(item => {
+        const id = item.getAttribute('data-id');
+        item.classList.toggle('completed', !!checkedState[id]);
+      });
+      updateDashboard();
+      applyFilters();
+    }
+
+    function restoreSyncCode() {
+      const input = document.getElementById('syncCodeInput');
+      const raw = (input ? input.value : '').trim();
+      if (!raw) {
+        showBackupMsg('⚠️ 복원할 동기화 코드를 입력창에 먼저 붙여넣어 주세요.', true);
+        return;
+      }
+      try {
+        const parsed = JSON.parse(decodeURIComponent(atob(raw)));
+        if (Array.isArray(parsed)) {
+          applyRestoredKeys(parsed);
+          showBackupMsg(`✅ 총 ${parsed.length}개 완료 항목이 성공적으로 복원되었습니다!`, false);
+        } else if (parsed && typeof parsed === 'object') {
+          const keys = Object.keys(parsed).filter(k => parsed[k]);
+          applyRestoredKeys(keys);
+          showBackupMsg(`✅ 총 ${keys.length}개 완료 항목이 성공적으로 복원되었습니다!`, false);
+        } else {
+          showBackupMsg('⚠️ 올바르지 않은 동기화 코드 형식입니다.', true);
+        }
+      } catch (e) {
+        showBackupMsg('⚠️ 코드 해독에 실패했습니다. 복사한 코드가 잘리지 않았는지 확인해 주세요.', true);
+      }
+    }
+
+    function downloadBackupJson() {
+      const activeKeys = Object.keys(checkedState).filter(k => checkedState[k]);
+      const payload = {
+        game: 'Trails in the Sky the 1st',
+        exportedAt: new Date().toISOString(),
+        completedIds: activeKeys
+      };
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'trails_sky_1st_progress_backup.json';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showBackupMsg('⬇️ JSON 백업 파일이 다운로드되었습니다.', false);
+    }
+
+    function uploadBackupJson(event) {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        try {
+          const data = JSON.parse(e.target.result);
+          if (data && Array.isArray(data.completedIds)) {
+            applyRestoredKeys(data.completedIds);
+            showBackupMsg(`✅ 파일에서 총 ${data.completedIds.length}개 완료 항목을 복원했습니다!`, false);
+          } else if (data && typeof data === 'object') {
+            const keys = Object.keys(data).filter(k => data[k] === true);
+            applyRestoredKeys(keys);
+            showBackupMsg(`✅ 파일에서 총 ${keys.length}개 완료 항목을 복원했습니다!`, false);
+          } else {
+            showBackupMsg('⚠️ 지원하지 않는 JSON 파일 구조입니다.', true);
+          }
+        } catch (err) {
+          showBackupMsg('⚠️ JSON 파일을 읽는 중 오류가 발생했습니다.', true);
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    function applyFilters() {
+      const query = (document.getElementById('searchInput').value || '').trim().toLowerCase();
+      document.querySelectorAll('.check-item[data-id]').forEach(item => {
+        const tags = (item.getAttribute('data-tags') || '').split(' ');
+        const text = item.textContent.toLowerCase();
+        const isCompleted = item.classList.contains('completed');
+
+        let matchFilter = true;
+        if (currentFilter === 'incomplete') {
+          matchFilter = !isCompleted;
+        } else if (currentFilter !== 'all') {
+          matchFilter = tags.includes(currentFilter);
+        }
+
+        const matchQuery = !query || text.includes(query);
+        item.style.display = (matchFilter && matchQuery) ? 'flex' : 'none';
+      });
+    }
+
+    function toggleStep(headerEl) {
+      headerEl.parentElement.classList.toggle('collapsed');
+    }
+
+    function expandAllSteps(expand) {
+      document.querySelectorAll('.step-section').forEach(sec => {
+        sec.classList.toggle('collapsed', !expand);
+      });
+    }
+
+    function toggleTheme() {
+      const html = document.documentElement;
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      try {
+        localStorage.setItem(THEME_KEY, next);
+      } catch (e) {}
+    }
+
+    function resetProgress() {
+      if (!confirm('체크한 모든 공략 진행 상태를 초기화할까요?')) return;
+      checkedState = {};
+      saveState(checkedState);
+      document.querySelectorAll('.check-item[data-id]').forEach(item => item.classList.remove('completed'));
+      updateDashboard();
+      applyFilters();
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      initCheckItems();
+      initArtCalculator();
+    });
+  </script>
+</body>
+</html>
