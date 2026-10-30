@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" data-theme="dark">
+<html lang="ko" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -289,53 +289,83 @@
 
     /* Navigation Tabs & Controls */
     .controls-section {
-      margin-top: 22px;
+      margin-top: 18px;
       display: flex;
       flex-direction: column;
       gap: 14px;
     }
 
-    .chapter-tabs {
+    .chapter-nav-box {
+      background: linear-gradient(135deg, rgba(2, 132, 199, 0.1), rgba(245, 158, 11, 0.08));
+      border: 2px solid var(--brand-sky);
+      border-radius: 14px;
+      padding: 14px 16px;
+      box-shadow: var(--shadow);
       display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .chapter-nav-label {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--brand-sky);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      letter-spacing: -0.2px;
+    }
+
+    .chapter-tabs {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
       gap: 8px;
-      overflow-x: auto;
-      padding-bottom: 4px;
     }
 
     .chapter-tab {
       background: var(--bg-card);
-      color: var(--text-secondary);
-      border: 1px solid var(--border-color);
-      padding: 11px 18px;
+      color: var(--text-primary);
+      border: 1.5px solid var(--border-color);
+      padding: 11px 12px;
       border-radius: 10px;
-      font-weight: 700;
-      font-size: 0.92rem;
+      font-weight: 800;
+      font-size: 0.9rem;
       cursor: pointer;
       white-space: nowrap;
       transition: all 0.15s ease;
       display: flex;
       align-items: center;
-      gap: 8px;
+      justify-content: space-between;
+      gap: 6px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
     }
 
     .chapter-tab:hover {
-      color: var(--text-primary);
       border-color: var(--brand-sky);
+      transform: translateY(-1px);
     }
 
     .chapter-tab.active {
-      background: var(--brand-sky-soft);
-      color: var(--brand-sky);
-      border-color: var(--brand-sky);
-      box-shadow: 0 0 0 1px var(--brand-sky);
+      background: linear-gradient(135deg, #0284c7 0%, #1d4ed8 100%);
+      color: #ffffff;
+      border-color: #0284c7;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
+      transform: translateY(-1px);
     }
 
     .tab-progress-pill {
-      font-size: 0.73rem;
+      font-size: 0.72rem;
+      font-weight: 800;
       padding: 2px 7px;
       border-radius: 999px;
-      background: rgba(148, 163, 184, 0.18);
-      color: var(--text-primary);
+      background: var(--brand-sky-soft);
+      color: var(--brand-sky);
+      flex-shrink: 0;
+    }
+
+    .chapter-tab.active .tab-progress-pill {
+      background: rgba(255, 255, 255, 0.25);
+      color: #ffffff;
     }
 
     .filter-bar {
@@ -793,8 +823,10 @@
       .mini-stats { font-size: 0.73rem; gap: 6px; }
       .mini-btn { padding: 4px 7px; font-size: 0.7rem; }
       .controls-section { margin-top: 12px; gap: 10px; }
-      .chapter-tabs { gap: 6px; padding-bottom: 2px; -webkit-overflow-scrolling: touch; }
-      .chapter-tab { padding: 8px 12px; font-size: 0.82rem; border-radius: 8px; }
+      .chapter-nav-box { padding: 11px 12px; gap: 8px; }
+      .chapter-tabs { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+      .chapter-tabs .chapter-tab:last-child { grid-column: span 2; justify-content: center; }
+      .chapter-tab { padding: 9px 10px; font-size: 0.81rem; border-radius: 9px; }
       .filter-bar { padding: 10px 12px; gap: 8px; flex-direction: column; align-items: stretch; }
       .search-box { order: 1; width: 100%; min-width: 0; max-width: 100%; }
       .filter-chips {
@@ -833,7 +865,7 @@
       </div>
 
       <!-- Collapsible Backup / Restore Drawer -->
-      <div id="backupDrawer" style="display:none; background:rgba(15, 23, 42, 0.88); border:1px solid var(--brand-sky); border-radius:10px; padding:12px 14px; margin-bottom:12px;">
+      <div id="backupDrawer" style="display:none; background:var(--bg-card); border:1.5px solid var(--brand-sky); border-radius:10px; padding:12px 14px; margin-bottom:12px;">
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:nowrap; gap:8px; margin-bottom:8px;">
           <strong style="color:var(--brand-sky); font-size:0.84rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">💾 진행도 동기화 & 백업 관리</strong>
           <button class="btn" style="padding:4px 10px; font-size:0.74rem; flex-shrink:0;" onclick="toggleBackupPanel()">닫기 ✕</button>
@@ -925,43 +957,50 @@
   <main class="container">
     <!-- Chapter Navigation & Filter Controls -->
     <section class="controls-section">
-      <div class="chapter-tabs" id="chapterTabs">
-        <button class="chapter-tab active" data-tab="prologue" onclick="switchTab('prologue')">
-          🧭 서장: 롤렌트 (초정밀)
-          <span class="tab-progress-pill" id="pill-prologue">0%</span>
-        </button>
-        <button class="chapter-tab" data-tab="ch1" onclick="switchTab('ch1')">
-          ✈️ 제1장: 보스 (초정밀)
-          <span class="tab-progress-pill" id="pill-ch1">0%</span>
-        </button>
-        <button class="chapter-tab" data-tab="ch2" onclick="switchTab('ch2')">
-          🌊 제2장: 루안 (초정밀)
-          <span class="tab-progress-pill" id="pill-ch2">0%</span>
-        </button>
-        <button class="chapter-tab" data-tab="ch3" onclick="switchTab('ch3')">
-          ⚙️ 제3장: 차이스 (초정밀)
-          <span class="tab-progress-pill" id="pill-ch3">0%</span>
-        </button>
-        <button class="chapter-tab" data-tab="finale" onclick="switchTab('finale')">
-          👑 종장: 그란셀 (초정밀)
-          <span class="tab-progress-pill" id="pill-finale">0%</span>
-        </button>
-        <button class="chapter-tab" data-tab="characters" onclick="switchTab('characters')">
-          ⚔️ 캐릭터 & 쿼츠 공략
-        </button>
-        <button class="chapter-tab" data-tab="calculator" onclick="switchTab('calculator')">
-          🔮 아츠·쿼츠 계산기
-        </button>
-        <button class="chapter-tab" data-tab="bosses" onclick="switchTab('bosses')">
-          👹 보스 & 수배 마수
-        </button>
-        <button class="chapter-tab" data-tab="compendium" onclick="switchTab('compendium')">
-          📚 요리·트로피·2nd 연동
-          <span class="tab-progress-pill" id="pill-compendium">0%</span>
-        </button>
-        <button class="chapter-tab" data-tab="systems" onclick="switchTab('systems')">
-          🎖️ 랭크·샤이닝폼·장비·시스템
-        </button>
+      <div class="chapter-nav-box" id="chapterTabs">
+        <div class="chapter-nav-label">🗺️ 스토리 챕터 선택 (원하는 장을 터치하세요)</div>
+        <div class="chapter-tabs">
+          <button class="chapter-tab active" data-tab="prologue" onclick="switchTab('prologue')">
+            <span>🧭 서장: 롤렌트</span>
+            <span class="tab-progress-pill" id="pill-prologue">0%</span>
+          </button>
+          <button class="chapter-tab" data-tab="ch1" onclick="switchTab('ch1')">
+            <span>✈️ 제1장: 보스</span>
+            <span class="tab-progress-pill" id="pill-ch1">0%</span>
+          </button>
+          <button class="chapter-tab" data-tab="ch2" onclick="switchTab('ch2')">
+            <span>🌊 제2장: 루안</span>
+            <span class="tab-progress-pill" id="pill-ch2">0%</span>
+          </button>
+          <button class="chapter-tab" data-tab="ch3" onclick="switchTab('ch3')">
+            <span>⚙️ 제3장: 차이스</span>
+            <span class="tab-progress-pill" id="pill-ch3">0%</span>
+          </button>
+          <button class="chapter-tab" data-tab="finale" onclick="switchTab('finale')">
+            <span>👑 종장: 왕도 그란셀</span>
+            <span class="tab-progress-pill" id="pill-finale">0%</span>
+          </button>
+        </div>
+
+        <div class="chapter-nav-label" style="margin-top: 4px; color: var(--brand-gold);">📚 전투 · 캐릭터 · 도감 · 시스템 공략 메뉴</div>
+        <div class="chapter-tabs">
+          <button class="chapter-tab" data-tab="characters" onclick="switchTab('characters')">
+            <span>⚔️ 캐릭터 & 파티</span>
+          </button>
+          <button class="chapter-tab" data-tab="calculator" onclick="switchTab('calculator')">
+            <span>🔮 아츠·쿼츠 계산기</span>
+          </button>
+          <button class="chapter-tab" data-tab="bosses" onclick="switchTab('bosses')">
+            <span>👹 보스 & 수배 마수</span>
+          </button>
+          <button class="chapter-tab" data-tab="compendium" onclick="switchTab('compendium')">
+            <span>📚 요리·트로피·연동</span>
+            <span class="tab-progress-pill" id="pill-compendium">0%</span>
+          </button>
+          <button class="chapter-tab" data-tab="systems" onclick="switchTab('systems')">
+            <span>🎖️ 랭크·샤이닝폼·장비</span>
+          </button>
+        </div>
       </div>
 
       <div class="filter-bar">
@@ -3693,7 +3732,7 @@
 
   <script>
     const STORAGE_KEY = 'trails_sky_1st_guide_progress_v1';
-    const THEME_KEY = 'trails_sky_1st_guide_theme';
+    const THEME_KEY = 'trails_sky_1st_guide_theme_v2';
     let currentTab = 'prologue';
     let currentFilter = 'all';
 
